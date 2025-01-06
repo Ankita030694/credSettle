@@ -20,7 +20,6 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7); /* Optional: Adds slight background overlay for contrast */
 }
 
@@ -33,18 +32,28 @@ body, html {
     width: 100%;
     height: 100%;
     background: url('../assets/images/bgImage.png') no-repeat center center/cover;
-    filter: blur(0px); /* Adjust the blur effect */
-    opacity: 1; /* Makes the logo faintly visible */
+    filter: blur(2px); /* Adjust the blur effect */
+    opacity: 0.6; /* Makes the logo faintly visible */
     z-index: -1; /* Places the background behind other elements */
 }
 
-/* Middle content */
-.content {
+/* Glassy box for content */
+.glassy-box {
+    position: relative;
+    padding: 40px 60px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    backdrop-filter: blur(1px); /* Blur effect for the background */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
     text-align: center;
-    z-index: 1; /* Ensures content is above the background */
+    z-index: 1; /* Ensure it's above the background */
 }
 
+/* Heading inside glassy box */
 h1 {
+    font-family: monospace;
     font-size: 5rem;
     letter-spacing: 20px;
     font-weight: bold;
@@ -57,7 +66,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 0px; /* Adds spacing between "COMING SOON" and social icons */
+    margin-top: 20px; /* Adds spacing between "COMING SOON" and social icons */
 }
 
 .social-icons a {
@@ -94,6 +103,10 @@ h1 {
         gap: 25px; /* Reduce the gap between icons */
         margin-top: 20px; /* Adds a bit more space below "COMING SOON" */
     }
+
+    .glassy-box {
+        padding: 20px 30px; /* Reduce padding for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -105,5 +118,9 @@ h1 {
     .social-icons {
         gap: 20px; /* Reduce gap further on very small screens */
         margin-top: 15px; /* Adds spacing for mobile views */
+    }
+
+    .glassy-box {
+        padding: 15px 20px; /* Further reduce padding for very small screens */
     }
 }
