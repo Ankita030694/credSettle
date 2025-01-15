@@ -1,0 +1,18 @@
+
+.navbar {
+    height: 120px; /* Increase navbar height */
+  }
+  
+  .nav-btn {
+    border-radius: 25px; /* Make the button rounded */
+    padding: 10px 20px; /* Adjust padding for better appearance */
+    font-size: 16px; /* Adjust font size */
+    background-color: darkslateblue;
+
+  }
+  
+  .links .nav-link {
+    font-size: 15px; /* Optional: Adjust font size for links */
+    /* margin: 0 10px; Add spacing between links÷÷ */
+    margin-left: 10px;
+  }

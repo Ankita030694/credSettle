@@ -1,0 +1,43 @@
+.hero {
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    align-items: center;
+    background-color: #243B8D; /* Light background color */
+    padding: 20px;
+  }
+  
+  .text-content {
+    text-align: left;
+  }
+  
+  .welcome-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+  }
+  
+  .tagline {
+    font-size: 48px;
+    font-weight: bold;
+    color: white; /* Primary theme color */
+    margin: 20px 0;
+  }
+  h1{
+    letter-spacing: 0px !important;
+  }
+  .get-started-btn {
+    border-radius: 25px; /* Rounded corners for the button */
+    padding: 20px 30px; /* Adjust padding for better appearance */
+    font-size: 18px;
+    background-color: darkslateblue;
+    border-color: darkslateblue;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+  }
+  .hero-container{
+    margin-left: 150px;
+    margin-right: 150px;
+  }

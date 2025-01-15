@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import './App.css'
-import ComingSoon from './components/ComingSoon'
+import ComingSoon from './components/comingsoon/ComingSoon'
+import Navbar from './components/layout/navbar/Navbar'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/home/Home';
 
 function App() {
 
   return (
     <>
      <Router>
-            <div>
                 <Routes>
                     <Route path="/" element={<ComingSoon />} />
+                    <Route path="/home" element={<Home />} />
                 </Routes>
-            </div>
+            
         </Router>
     </>
   )
