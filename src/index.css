@@ -1,0 +1,6 @@
+html, body {
+    height: 100%; /* Ensure the body spans the full height */
+    margin: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
