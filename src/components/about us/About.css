@@ -1,6 +1,41 @@
-.tagline2{
-    font-weight: 100;
+.tagline2 {
+  font-weight: 100;
 }
-.about_cont{
-    width: 550px;
+.about_cont {
+  width: 550px;
 }
+.tagline3 {
+  font-weight: 900;
+  color: #040018;
+}
+.icon_text {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Align items horizontally */
+    gap: 10px; /* Space between the icon and the text */
+  }
+  
+  .icon-img {
+    width: 40px; /* Set desired width */
+    height: 40px; /* Set desired height to maintain a consistent size */
+    object-fit: contain; /* Maintain the aspect ratio */
+  }
+  
+  .icon_cont {
+    display: flex;
+    flex-direction: row; /* Stack the icon_text divs */
+    gap: 20px; /* Add spacing between each icon_text pair */
+  }
+  
+  .elipse{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  .about_icon{
+    width: 25px; 
+    height: 25px; 
+    object-fit: contain;
+    padding-bottom: 5px;
+  }

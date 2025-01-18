@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css"
+import logo from "../../../assets/images/logo.png"
 const Navbar = () => {
   return (
     <div className="bg-body-tertiary">
@@ -9,7 +10,9 @@ const Navbar = () => {
           <div className="row w-100 align-items-center justify-content-around">
             {/* First Column - Logo */}
             <div className="col-4 text-center">
-              <a className="navbar-brand" href="#">LOGO</a>
+              <a className="navbar-brand" href="#">
+                <img className = "nav-logo"src={logo} alt="LOGO" />
+              </a>
             </div>
 
             {/* Second Column - Navigation Links */}

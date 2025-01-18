@@ -5,6 +5,8 @@ import heroImage from "../../assets/images/Credit.png";
 import Footer from "../layout/footer/Footer";
 import strap from "../../assets/images/2IconBox.png";
 import About from "../about us/About";
+import Services from "../services/Services";
+import Whyus from "../Whyus/Whyus";
 const Home = () => {
   return (
     <div>
@@ -30,7 +32,7 @@ const Home = () => {
         </div>
       </div>
       <div className="hero container-fluid">
-        <div className="row align-items-center hero-container">
+        <div className="row align-items-center hero-container align-items-stretch">
           {/* First Column - Text Content */}
           <div className="col-md-6 text-content bg-translucent">
             <p>.</p>
@@ -49,7 +51,7 @@ const Home = () => {
           </div>
 
           {/* Second Column - Details */}
-          <div className="col-md-6 bg-white py-5 text-start">
+          <div className="col-md-6 bg-white py-5 text-start ">
             {/* Buttons */}
             <div className="btns d-flex gap-2 mx-4">
               <button className="btn btn-primary get-started-btn">2004</button>
@@ -88,6 +90,8 @@ const Home = () => {
         </div>
       </div>
       <About/>
+      <Services/>
+      <Whyus/>
     </div>
   );
 };

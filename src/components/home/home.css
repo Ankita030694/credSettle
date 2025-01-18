@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   background-color: #243b8d;
-  padding: 20px;
+  padding-top: 20px;
     overflow: visible !important;
   
 }
@@ -28,10 +28,10 @@ h1 {
 }
 .get-started-btn {
   border-radius: 25px;
-  padding: 20px 30px;
+  padding: 10px 30px;
   font-size: 18px;
-  background-color: darkslateblue;
-  border-color: darkslateblue;
+  background-color: #070030;
+  border-color: #070030;
 }
 
 .hero-image {
@@ -48,4 +48,10 @@ h1 {
 .strap{
   height: 351px !important;
   background-color: #040018;
+}
+.nav-logo{
+  object-fit: contain;
+  width: 150px; 
+  height: 150px; 
+  padding-bottom: 5px;
 }
