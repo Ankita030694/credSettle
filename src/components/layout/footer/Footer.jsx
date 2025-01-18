@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaMapMarkerAlt, FaPhone, FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import "./Footer.css";
+import logo from "../../../assets/images/logo.png"
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="footerCont">
         <Row className="justify-content-between">
           <Col md={3}>
-            <h5 className="mb-3">Logo</h5>
+            <img className = "nav-logo"src={logo} alt="LOGO" />
             <p className="mt-4">Line of text 1</p>
             <p className="mt-4">Line of text 2</p>
             <p className="mt-4">Line of text 3</p>
