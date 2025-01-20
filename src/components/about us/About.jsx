@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useRef, useState } from 'react';
 import heroImage from "../../assets/images/Credit.png";
 import "./About.css";
 import partners from "../../assets/images/partners.png";
@@ -6,7 +6,17 @@ import Card from "../../assets/images/Card.png";
 import icon from "../../assets/images/Icon.png";
 import elipse from "../../assets/images/Elipse.png"
 import image from "../../assets/images/Image.png"
+import video from "../../assets/videos/video.mp4"
 const about = () => {
+  const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false)
+    const handlePlayVideo = () => {
+      if (videoRef.current && !isPlaying) {
+          videoRef.current.muted = false;
+          videoRef.current.play().catch(error => console.log('Autoplay blocked:', error));
+          setIsPlaying(true);
+      }
+  };
   return (
     <div>
       <div className="about container-fluid bg-white mb-5 ">
@@ -36,11 +46,19 @@ const about = () => {
 
           {/* Second Column - Image */}
           <div className="col-md-6 text-center">
-            <img
-              src={image}
-              alt="Credsettle Illustration"
-              className="hero-image"
+          <div onClick={handlePlayVideo}>
+            <video
+                ref={videoRef}
+                src={video}
+                width="560"
+                height="577"
+                controls
+                autoPlay
+                loop
+                muted
             />
+            <p>Click anywhere to play video with sound</p>
+        </div>
           </div>
         </div>
       </div>
