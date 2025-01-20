@@ -20,7 +20,7 @@ const Navbar = () => {
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav justify-content-center">
                   <li className="nav-item links">
-                    <a className="nav-link active" aria-current="page" href="#">Home</a>
+                    <a className="nav-link active" aria-current="page" href="/home">Home</a>
                   </li>
                   <li className="nav-item links">
                     <a className="nav-link" href="#">About Us</a>
