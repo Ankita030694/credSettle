@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css"
-import logo from "../../../assets/images/logo.png"
+import logo from "../../../assets/images/transparent.png"
 const Navbar = () => {
   return (
     <div className="bg-body-tertiary">

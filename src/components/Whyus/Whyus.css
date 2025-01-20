@@ -1,0 +1,30 @@
+.disc_btn{
+    background-color: #F2F5FF !important;
+    border-color: #F2F5FF !important;
+    box-shadow: none !important;
+}
+.dropdown-icon {
+    height: 1em;  /* Makes the height of the icon equal to the text height */
+    width: auto;  /* Maintains aspect ratio */
+    margin-left: 10px; /* Optional: Adjusts spacing between the text and icon */
+  }
+.rating{
+    background-color: #070030;
+    max-width: 50%;
+    height: 300px;
+    color: white;
+}  
+.rate_text_sec{
+    line-height: 60px;
+}
+.txt1{
+    max-width: 70%;
+}
+.rate_txt{
+    margin-top: 40px;
+}
+.icon{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}

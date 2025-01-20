@@ -7,6 +7,7 @@ import strap from "../../assets/images/2IconBox.png";
 import About from "../about us/About";
 import Services from "../services/Services";
 import Whyus from "../Whyus/Whyus";
+import Testimonials from "../testimonials/Testimonials";
 const Home = () => {
   return (
     <div>
@@ -92,6 +93,7 @@ const Home = () => {
       <About/>
       <Services/>
       <Whyus/>
+      <Testimonials/>
     </div>
   );
 };

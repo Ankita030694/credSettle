@@ -2,5 +2,11 @@ html, body {
     height: 100%; /* Ensure the body spans the full height */
     margin: 0;
     overflow-y: auto; /* Enable vertical scrolling */
+    font-family: "Urbanist" !important;
+  }
+  h1{
+    font-family: "Urbanist" !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
   }
   
