@@ -28,3 +28,26 @@
     height: 100px;
     object-fit: contain;
 }
+@media screen and (max-width: 767px){
+    .txt2{
+        text-align: center !important;
+    }
+    .txt1{
+        max-width: 100%;
+    }
+    .rating{
+        max-width: 100%;
+    }
+    .why_btn{
+        text-align: center !important;
+        align-items: center !important;
+    }
+    .faq{
+        align-items: center !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .rate_text_sec{
+        line-height: 45px;
+    }
+}

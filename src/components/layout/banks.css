@@ -1,0 +1,38 @@
+.banks-bg{
+    margin: 100px 0px;
+}
+.banks{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: flex-start;
+}
+.bank-span{
+    font-family:  Helvetica;
+    width: 100%;
+    text-align: center;
+}
+.bank-logos{
+    display: flex;
+    align-items: center;
+}
+.bank-logos {
+    height: 200px;
+    width: 100%;
+    /* overflow: hidden; */
+    margin: 0px, 10vw;
+    /* position: relative; */
+    animation: moveSlideshow 20s linear infinite;
+
+}
+.bank-logos >img{
+    padding: 0px 10px;
+    /* animation-direction: normal; */
+    /* animation-direction: reverse; */
+}
+  @keyframes moveSlideshow{
+    100% { 
+      transform: translateX(-100%);
+        
+    }
+    
+  }

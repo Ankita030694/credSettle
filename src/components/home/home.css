@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   background-color: #243b8d;
-  padding-top: 20px;
+  padding-top: 80px;
     overflow: visible !important;
   
 }
@@ -27,9 +27,9 @@ h1 {
   letter-spacing: 0px !important;
 }
 .get-started-btn {
-  border-radius: 25px;
-  padding: 10px 30px;
-  font-size: 18px;
+  border-radius: 35px; /* Make the button rounded */
+  padding: 15px 30px;
+  font-size: 20px;
   background-color: #070030;
   border-color: #070030;
 }
@@ -48,10 +48,91 @@ h1 {
 .strap{
   height: 351px !important;
   background-color: #040018;
+  overflow: hidden;
 }
-.nav-logo{
+.nav-logo{ 
   object-fit: contain;
   width: 150px; 
   height: 150px; 
   padding-bottom: 5px;
+}
+.reviews_png{
+  min-width: 250px;
+  height: 80px;
+  object-fit:cover;
+  margin: 0px -24px;
+}
+.trustpilot_png{
+  min-width: 150px;
+  height: 50px;
+  object-fit:cover;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-top: -18px;
+}
+.bank_marq{
+  /* margin-top: -10px; */
+  /* object-fit: cover; */
+  height: 500px;
+}
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #040016;
+  white-space: nowrap;
+  position: relative;
+  margin-top: -50px;
+}
+.bank_head{
+  z-index: 2;
+}
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 10s linear infinite;
+}
+.marquee-content img {
+  width: 100%;  /* Set the width of the image (adjust if needed) */
+  height: auto; /* Maintain aspect ratio of the image */
+}
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 767px){
+  .hero{
+    display: block;
+  }
+  .hero-container{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .hero-image{
+    display: none;
+  }
+  .text-content{
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .strap{
+    display: none;
+  }
+  .trustpilot_png{
+    min-width: 150px;
+    height: 50px;
+    object-fit:cover;
+    margin-left: 24px;
+    margin-right: -24px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  .tagline {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    margin: 20px 0;
+  }
 }

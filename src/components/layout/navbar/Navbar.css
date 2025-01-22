@@ -2,18 +2,51 @@
 .navbar {
     height: 120px; /* Increase navbar height */
   }
-  
+  .nav-logo{
+    width: 216px !important;
+    height: 216px !important;
+  }
   .nav-btn {
-    border-radius: 25px; /* Make the button rounded */
-    padding: 10px 20px; /* Adjust padding for better appearance */
-    font-size: 16px; /* Adjust font size */
+    border-radius: 35px; /* Make the button rounded */
+    padding: 15px 30px; /* Adjust padding for better appearance */
+    font-size: 20px; /* Adjust font size */
     background-color: #070030;
 
   }
   
   .links .nav-link {
-    font-size: 15px; /* Optional: Adjust font size for links */
+    font-size: 18px; /* Optional: Adjust font size for links */
     /* margin: 0 10px; Add spacing between links÷÷ */
     margin-left: 10px;
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 767px){
+    .navbar{
+      min-height: 120px;
+    }
+    .nav-logo{
+      width: 200px !important;
+      height: 120px !important;
+      object-fit: cover !important;
+    }
+   
+  }
+  @media screen and (max-width: 596px){
+    .nav-btn {
+      border-radius: 30px; 
+      padding: 15px 30px; 
+      font-size: 15px; 
+      background-color: #070030;
+  
+    } 
+  }
+  @media screen and (max-width: 519px){
+    .nav-btn {
+      border-radius: 25px; 
+      padding: 10px 25px; 
+      font-size: 15px; 
+      background-color: #070030;
+  
+    } 
   }

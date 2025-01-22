@@ -41,7 +41,7 @@ const Navbar = () => {
 
             {/* Third Column - Get Started Button */}
             <div className="col-4 text-center">
-              <button className="btn btn-primary nav-btn">Get Started</button>
+              <button className="btn btn-primary nav-btn">Register Now</button>
             </div>
           </div>
         </div>

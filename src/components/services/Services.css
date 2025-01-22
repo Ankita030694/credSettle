@@ -1,5 +1,6 @@
 .services{
     background-color: #E6E1FC;
+    /* overflow: hidden; */
 }
 
   
@@ -39,4 +40,16 @@
   .container{
     background-color: #E6E1FC !important;
     display: block !important;
+  }
+
+  @media screen and (max-width: 767px){
+    .serv_text{
+      text-align: center !important;
+    }
+    .serv_btn{
+      margin-top: 30px;
+    }
+    .card-container {
+      display: none;
+    }
   }
