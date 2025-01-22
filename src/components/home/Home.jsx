@@ -10,7 +10,7 @@ import Whyus from "../Whyus/Whyus";
 import Testimonials from "../testimonials/Testimonials";
 import reviews from "../../assets/images/reviews.png";
 import trustpilot from "../../assets/images/trustpilot.png";
-import Banks from "../layout/banks";
+// import Banks from "../layout/banks";
 const Home = () => {
   return (
     <div>
