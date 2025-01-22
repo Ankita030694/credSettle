@@ -15,8 +15,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ComingSoon />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/" element={<ComingSoon />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
         </Routes>
         <Footer />
