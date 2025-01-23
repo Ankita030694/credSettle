@@ -11,9 +11,14 @@ import Testimonials from "../testimonials/Testimonials";
 import reviews from "../../assets/images/reviews.png";
 import trustpilot from "../../assets/images/trustpilot.png";
 import Calculator from "../calculator/Calculator";
+import Graph from "../barChart/Graph";
+import { BarChart } from "@mui/x-charts/BarChart";
+import settLetters1 from "../../assets/images/1.png"
+import settLetters2 from "../../assets/images/2.png"
+
 // import Banks from "../layout/banks";
+// import Graph from "../barChart/Graph"
 const Home = () => {
-  
   return (
     <div>
       <div className="hero container-fluid">
@@ -51,7 +56,19 @@ const Home = () => {
           {/* Second Column - Details */}
           <div className="col-md-6 bg-white pt-5 pb-2 text-start ">
             {/* Buttons */}
-            <div className="btns d-flex gap-2 mx-4">
+            <BarChart
+              series={[
+                { data: [400000, 100000] },
+                // { data: [51, 6, 49, 30] },
+                // { data: [15, 25, 30, 50] },
+                // { data: [60, 50, 15, 25] },
+              ]}
+              height={290}
+              width={350}
+              xAxis={[{ data: ["Without CredSettle", "With CredSettle"], scaleType: "band" }]}
+              margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+            />
+            {/* <div className="btns d-flex gap-2 mx-4">
               <button className="btn btn-primary get-started-btn">2004</button>
               <button className="btn btn-warning text-dark">
                 <span className="me-1">Insert</span>
@@ -59,20 +76,18 @@ const Home = () => {
               </button>
             </div>
 
-            {/* Heading */}
+
             <h2 className="my-5 mx-4">
               Take the first step toward a<br /> debt-free future! Calculate
               your settlement amount and the time it will take to achieve
               financial freedom today
             </h2>
 
-            {/* Horizontal Line */}
             <hr className="my-3 mx-4" />
 
-            {/* Paragraph */}
+
             <img className="reviews_png" src={reviews} alt="" />
-            <img className="trustpilot_png" src={trustpilot} alt="" />
-            {/* <h5 className="mx-4">See our 12,353 reviews</h5> */}
+            <img className="trustpilot_png" src={trustpilot} alt="" /> */}
           </div>
         </div>
       </div>
@@ -99,12 +114,44 @@ const Home = () => {
             </div>
           </div>
 
+          
+
           {/* <div className="col-md-3 text-white">PERSONAL LOAN</div>
           <div className="col-md-3 text-white">CREDIT CARD</div>
           <div className="col-md-3 text-white">HOME EQUITY</div>
           <div className="col-md-3 text-white">INVESTMENTS</div> */}
         </div>
       </div>
+      <div className="strap1 container-fluid text-start mb-5">
+        <div className="row align-items-center hero-container">
+        <h3 className="bank_head text-black text-center mt-5">
+            Some successful letters of our clients:
+          </h3>
+          {/* <marquee
+            behavior=""
+            direction="left"
+            className="bank_marq"
+            loop="infinite"
+            scrollamount="10"
+          >
+           
+
+          </marquee> */}
+          <div className="marquee-container">
+            <div className="marquee-content">
+              <img src={settLetters1} alt="" />
+              <img src={settLetters2} alt="" />
+            </div>
+          </div>
+
+          
+
+          {/* <div className="col-md-3 text-white">PERSONAL LOAN</div>
+          <div className="col-md-3 text-white">CREDIT CARD</div>
+          <div className="col-md-3 text-white">HOME EQUITY</div>
+          <div className="col-md-3 text-white">INVESTMENTS</div> */}
+        </div>
+      </div>  
       {/* <Banks/> */}
       <div id="about">
         <About />

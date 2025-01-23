@@ -52,6 +52,12 @@ h1 {
   background-color: #040018;
   overflow: hidden;
 }
+.strap1{
+  height: 450px !important;
+  background-color: #C0B3F7;
+  overflow: hidden;
+  margin-top: 50px;
+}
 .nav-logo{ 
   object-fit: contain;
   width: 150px; 
@@ -79,11 +85,11 @@ h1 {
 }
 .marquee-container {
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #040016;
   white-space: nowrap;
   position: relative;
-  margin-top: -50px;
+  margin-top: 0px;
 }
 .bank_head{
   z-index: 2;

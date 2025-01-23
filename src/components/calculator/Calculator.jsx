@@ -40,7 +40,7 @@ const Calculator = () => {
       />
       <span> ₹{personalLoanDebt.toLocaleString()}</span>
       <br /><br />
-      <label>Missed any payments in last 30 days?</label>
+      <label>Missed any payments in last 30 days?</label><br/>
       <input
         type="radio"
         value="yes"

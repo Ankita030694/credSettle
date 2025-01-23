@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
+import Graph from "./components/barChart/Graph";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/calc" element={<Calculator />} />
+          <Route path="/graph" element={<Graph />} />
         </Routes>
         <Footer />
       </Router>
