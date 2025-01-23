@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css"
 import logo from "../../../assets/images/transparent.png"
 const Navbar = () => {
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="bg-body-tertiary">
       <nav className="navbar navbar-expand-lg">
@@ -20,19 +23,19 @@ const Navbar = () => {
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav justify-content-center">
                   <li className="nav-item links">
-                    <a className="nav-link active" aria-current="page" href="/home">Home</a>
+                    <a className="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li className="nav-item links">
-                    <a className="nav-link" href="#">About Us</a>
+                    <a className="nav-link"  onClick={() => scrollToSection('about')}>About Us</a>
                   </li>
                   <li className="nav-item links">
-                    <a className="nav-link" href="#">Services</a>
+                    <a className="nav-link" onClick={() => scrollToSection('services')}>Services</a>
                   </li>
                   <li className="nav-item links">
-                    <a className="nav-link" href="#">Contact Us</a>
+                    <a className="nav-link" onClick={() => scrollToSection('faq')}>Faq's</a>
                   </li>
                   <li className="nav-item links">
-                    <a className="nav-link" href="#">Blog</a>
+                    <a className="nav-link" onClick={() => scrollToSection('testimonials')}>Why Us</a>
                   </li>
                  
                 </ul>

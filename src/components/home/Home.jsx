@@ -10,8 +10,10 @@ import Whyus from "../Whyus/Whyus";
 import Testimonials from "../testimonials/Testimonials";
 import reviews from "../../assets/images/reviews.png";
 import trustpilot from "../../assets/images/trustpilot.png";
+import Calculator from "../calculator/Calculator";
 // import Banks from "../layout/banks";
 const Home = () => {
+  
   return (
     <div>
       <div className="hero container-fluid">
@@ -41,19 +43,9 @@ const Home = () => {
         <div className="row align-items-center hero-container align-items-stretch">
           {/* First Column - Text Content */}
           <div className="col-md-6 text-content bg-translucent">
-            <p>.</p>
-            <p>.</p>
-            <br />
-            <p>.</p>
-            <br />
-            <p>.</p>
-            <br />
-            <p>.</p>
-            <br />
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <br />
+            <div className="calc_comp">
+              <Calculator />
+            </div>
           </div>
 
           {/* Second Column - Details */}
@@ -69,9 +61,9 @@ const Home = () => {
 
             {/* Heading */}
             <h2 className="my-5 mx-4">
-              Take the first step toward a<br/> debt-free future! Calculate your
-              settlement amount and the time it will take to achieve financial
-              freedom today
+              Take the first step toward a<br /> debt-free future! Calculate
+              your settlement amount and the time it will take to achieve
+              financial freedom today
             </h2>
 
             {/* Horizontal Line */}
@@ -86,7 +78,10 @@ const Home = () => {
       </div>
       <div className="strap container-fluid text-start mb-5">
         <div className="row align-items-center hero-container">
-          <h3 className="bank_head text-white text-center mt-5">We have effectively assisted our clients in achieving settlements from</h3>
+          <h3 className="bank_head text-white text-center mt-5">
+            We have effectively assisted our clients in achieving settlements
+            from
+          </h3>
           {/* <marquee
             behavior=""
             direction="left"
@@ -99,8 +94,8 @@ const Home = () => {
           </marquee> */}
           <div className="marquee-container">
             <div className="marquee-content">
-            <img src={strap} alt="" />
-            <img src={strap} alt="" />
+              <img src={strap} alt="" />
+              <img src={strap} alt="" />
             </div>
           </div>
 
@@ -111,10 +106,19 @@ const Home = () => {
         </div>
       </div>
       {/* <Banks/> */}
-      <About />
-      <Services />
-      <Whyus />
-      <Testimonials />
+      <div id="about">
+        <About />
+      </div>
+
+      <div id="services">
+        <Services />
+      </div>
+      <div id="faq">
+        <Whyus />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import Navbar from "./components/layout/navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/footer/Footer";
+import Calculator from "./components/calculator/Calculator";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           {/* <Route path="/" element={<ComingSoon />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/calc" element={<Calculator />} />
         </Routes>
         <Footer />
       </Router>

@@ -43,7 +43,9 @@ h1 {
 }
 .bg-translucent{
   background-color: white;
-  opacity: 0.2;
+}
+.calc_comp{
+  opacity: 1 !important;
 }
 .strap{
   height: 351px !important;

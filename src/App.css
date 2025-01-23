@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     overflow-y: auto; /* Enable vertical scrolling */
     font-family: "Urbanist" !important;
+    scroll-behavior: smooth;
   }
   h1{
     font-family: "Urbanist" !important;
