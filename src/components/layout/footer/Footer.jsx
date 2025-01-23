@@ -24,40 +24,40 @@ const Footer = () => {
             </p>
           </Col>
           <Col md={3} className="foot_col">
-            <h5 className="mb-3">Company</h5>
+            <h5 className="mb-3 foot_head">Company</h5>
             <ul className="list-unstyled">
               <li className="mt-3">
-                <a href="#about-us" className="text-light text-decoration-none">
+                <a href="#about-us" className="text-light text-decoration-none foot_txt">
                   About Us
                 </a>
               </li>
               <li className="mt-3">
-                <a href="#services" className="text-light text-decoration-none">
+                <a href="#services" className="text-light text-decoration-none foot_txt">
                   Services
-                </a>
+                </a> 
               </li>
               <li className="mt-3">
                 <a
                   href="#contact-us"
-                  className="text-light text-decoration-none"
+                  className="text-light text-decoration-none foot_txt"
                 >
                   Contact Us
                 </a>
               </li>
               <li className="mt-3">
-                <a href="#blog" className="text-light text-decoration-none">
+                <a href="#blog" className="text-light text-decoration-none foot_txt">
                   Blog
                 </a>
               </li>
             </ul>
           </Col>
           <Col md={3} className="foot_col">
-            <h5 className="mb-3">Services</h5>
+            <h5 className="mb-3 foot_head">Services</h5>
             <ul className="list-unstyled">
               <li className="mt-3">
                 <a
                   href="#business-loan"
-                  className="text-light text-decoration-none"
+                  className="text-light text-decoration-none foot_txt"
                 >
                   Business Loan
                 </a>
@@ -65,7 +65,7 @@ const Footer = () => {
               <li className="mt-3">
                 <a
                   href="#personal-loan"
-                  className="text-light text-decoration-none"
+                  className="text-light text-decoration-none foot_txt"
                 >
                   Personal Loan
                 </a>
@@ -73,7 +73,7 @@ const Footer = () => {
               <li className="mt-3">
                 <a
                   href="#financial-planning"
-                  className="text-light text-decoration-none"
+                  className="text-light text-decoration-none foot_txt"
                 >
                   Financial Planning
                 </a>
@@ -81,7 +81,7 @@ const Footer = () => {
               <li className="mt-3">
                 <a
                   href="#consultation"
-                  className="text-light text-decoration-none"
+                  className="text-light text-decoration-none foot_txt"
                 >
                   Consultation
                 </a>
@@ -89,17 +89,17 @@ const Footer = () => {
             </ul>
           </Col>
           <Col md={3} className="foot_col">
-            <h5 className="mb-3">Contact Us</h5>
-            <p className="mt-4">
+            <h5 className="mb-3 foot_head">Contact Us</h5>
+            <p className="mt-4 foot_txt">
               Our support team is <br></br>here to help you 24/7
             </p>
-            <p className="mt-4">
-              <a className="text-white"href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
+            <p className="mt-4 foot_txt">
+              <a className="text-white "href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
               <FaMapMarkerAlt /> Location
               </a>
               
             </p>
-            <p className="mt-4">
+            <p className="mt-4 foot_txt">
               <FaPhone /> Register Now
             </p>
           </Col>

@@ -1,6 +1,6 @@
 .services{
     background-color: #E6E1FC;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
   
@@ -37,9 +37,11 @@
     transform: translateY(-5px); /* Slight lift on hover */
     transition: all 0.3s ease;
   }
-  .container{
+  .container1{
     background-color: #E6E1FC !important;
     display: block !important;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   @media screen and (max-width: 767px){
@@ -48,8 +50,23 @@
     }
     .serv_btn{
       margin-top: 30px;
+    } 
+    .container1{
+      background-color: #E6E1FC !important;
+      display: block !important;
+      padding-left: 0px;
+      padding-right: 0px;
     }
     .card-container {
-      display: none;
+      background-color: white; /* Card background */
+      padding: 30px;
+      margin: 15px;
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      position: relative;
+      max-height: 90%; 
     }
+    /* .card-container {
+      display: none;
+    } */
   }

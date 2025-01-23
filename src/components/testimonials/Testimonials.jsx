@@ -14,7 +14,7 @@ const Testimonials = () => {
     <div>
       <div className="testimonials container-fluid text-black py-5">
         <div className="row align-items-center hero-container text-start">
-          <div className="col-md-6 text-content about_cont marg">
+          <div className="col-md-6 text-content testim_cont marg">
             <div className="elipse mb-4">
               <h3>Testimonials</h3>
               <img className="about_icon" src={elipse} alt="" />

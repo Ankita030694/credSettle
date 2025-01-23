@@ -57,7 +57,7 @@ const Home = () => {
           </div>
 
           {/* Second Column - Details */}
-          <div className="col-md-6 bg-white py-5 text-start ">
+          <div className="col-md-6 bg-white pt-5 pb-2 text-start ">
             {/* Buttons */}
             <div className="btns d-flex gap-2 mx-4">
               <button className="btn btn-primary get-started-btn">2004</button>
@@ -69,7 +69,7 @@ const Home = () => {
 
             {/* Heading */}
             <h2 className="my-5 mx-4">
-              Take the first step toward a debt-free future! Calculate your
+              Take the first step toward a<br/> debt-free future! Calculate your
               settlement amount and the time it will take to achieve financial
               freedom today
             </h2>
@@ -80,7 +80,7 @@ const Home = () => {
             {/* Paragraph */}
             <img className="reviews_png" src={reviews} alt="" />
             <img className="trustpilot_png" src={trustpilot} alt="" />
-            <h5 className="mx-4">See our 12,353 reviews</h5>
+            {/* <h5 className="mx-4">See our 12,353 reviews</h5> */}
           </div>
         </div>
       </div>

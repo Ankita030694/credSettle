@@ -63,7 +63,7 @@ const about = () => {
           </div>
 
           {/* Second Column - Image */}
-          <div className="col-md-6 text-center vid_margin">
+          <div className="col-md-6 text-center vid_margin"> 
             <div onClick={handlePlayVideo}>
               <video
                 ref={videoRef}
@@ -76,7 +76,7 @@ const about = () => {
                 muted
                 className="vid"
               />
-              <p>Click anywhere to play video with sound</p>
+              {/* <p>Click anywhere to play video with sound</p> */}
             </div>
           </div>
         </div>

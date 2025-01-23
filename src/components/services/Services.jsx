@@ -10,7 +10,7 @@ import { FaBriefcase, FaWallet, FaGlobe } from "react-icons/fa";
 const services = () => {
   return (
     <div>
-      <div className="services container-fluid py-5">
+      <div className="services container-fluid py-5 ">
         <div className="row align-items-center hero-container text-start">
           {/* First Column - Text Content */}
           <div className="col-md-6 text-content about_cont">
@@ -37,8 +37,10 @@ const services = () => {
             </button>
           </div>
 
-          <div className="loan-cards-section pt-5">
-            <div className="container">
+          
+        </div>
+        <div className="loan-cards-section pt-5">
+            <div className="container1">
               <div className="row justify-content-center py-5">
                 {/* Card 1 */}
                 <div className="col-md-4">
@@ -86,7 +88,7 @@ const services = () => {
                   </div>
                 </div>
               </div>
-              <div className="row justify-content-center py-5">
+              <div className="row justify-content-center md:py-5 py-0">
                 {/* Card 1 */}
                 <div className="col-md-4">
                   <div className="card-container text-center">
@@ -134,7 +136,6 @@ const services = () => {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   );

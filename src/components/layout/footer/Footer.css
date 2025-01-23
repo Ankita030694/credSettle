@@ -49,12 +49,21 @@ footer{
     }
     .foot_col1{
         margin: 20px 0px;
-        font-size: 20px;
+        
+    }
+    .foot_head{
+      font-size: 24px !important;
     }
     .socials{
         margin-top: 10px;
         text-align: center;
         margin-left: 8px;
       }
-    
+      .foot_txt{
+        font-size:16px;
+      }
+      .testim_cont {
+        text-align: center;
+        /* width: auto; */
+      }
 }
