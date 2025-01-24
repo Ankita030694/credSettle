@@ -75,7 +75,7 @@
 } */
 .marquee-content1 {
   display: inline-block;
-  animation: marquee-scroll 10s linear infinite;
+  /* animation: marquee-scroll 10s linear infinite; */
 }
 .marquee-content1 img {
   width: 100%;  /* Set the width of the image (adjust if needed) */
@@ -96,7 +96,7 @@
 } */
 .marquee-content2 {
   display: inline-block;
-  animation: marquee-scroll 10s linear infinite;
+  /* animation: marquee-scroll 10s linear infinite; */
 }
 .marquee-content2 img {
   width: 100%;  /* Set the width of the image (adjust if needed) */
@@ -110,9 +110,9 @@
     transform: translateX(-100%);
   }
 }
-/* .vid_margin{
-  width: 100%;
-} */
+  /* .vid_margin{
+    width: 100%;
+  } */
 @media screen and (max-width: 767px) {
   .about_cont {
     text-align: center;
