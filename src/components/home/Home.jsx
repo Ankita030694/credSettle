@@ -88,7 +88,7 @@ const Home = () => {
                   {
                     data: ["Without CredSettle", "With CredSettle"],
                     scaleType: "band",
-                    valueFormatter: () => "",
+                    // valueFormatter: () => "",
                   },
                 ]}
                 barLabel="value"
