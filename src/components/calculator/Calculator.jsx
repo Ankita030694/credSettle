@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./calculator.css";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Calculator = ({
   setwithCredSettle,
@@ -87,11 +87,12 @@ const Calculator = ({
             <label className="form-check-label text-primary-color">No</label>
           </div>
         </div>
-        <a href="/form">
+        <Link to="/form">
           <button className="btn btn-primary get-started-btn mt-4">
             Register Now
           </button>
-        </a>
+        </Link>
+
 
         {/* <br /> */}
         {/* <br /> */}
