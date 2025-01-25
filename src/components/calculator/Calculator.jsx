@@ -87,11 +87,11 @@ const Calculator = ({
             <label className="form-check-label text-primary-color">No</label>
           </div>
         </div>
-        <Link href="/form">
+        <a href="/form">
           <button className="btn btn-primary get-started-btn mt-4">
             Register Now
           </button>
-        </Link>
+        </a>
 
         {/* <br /> */}
         {/* <br /> */}
