@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import "./form.css";
 import affStrap from "../../assets/images/affStrap.png";
 import strap from "../../assets/images/strapw.png";
-import turndown from "../../assets/images/turn-down.png"
+import turndown from "../../assets/images/turn-down.png";
 const Form = () => {
   const {
     register,
@@ -16,21 +16,19 @@ const Form = () => {
     alert("Form submitted successfully!");
   };
   const handleNameInput = (e) => {
-    const value = e.target.value.replace(/[^A-Za-z\s]/g, ""); 
-    setValue("name", value); 
+    const value = e.target.value.replace(/[^A-Za-z\s]/g, "");
+    setValue("name", value);
   };
-
 
   const handleNumberInput = (e) => {
-    const value = e.target.value.replace(/\D/g, "").slice(0, 10); 
-    setValue("number", value); 
+    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+    setValue("number", value);
   };
-
 
   const handleEmailInput = (e) => {
     const value = e.target.value;
     if (!/^[a-zA-Z0-9._%+-]*@gmail\.com$/.test(value) && value !== "") {
-      setValue("email", ""); 
+      setValue("email", "");
     } else {
       setValue("email", value);
     }
@@ -44,7 +42,7 @@ const Form = () => {
           <h1 className="tagline1">
             SETTLE YOUR LOANS AND STOP YOUR HARASSEMENT IN 24 HOURS
           </h1>
-          <img src={turndown} alt=""  className="turnDown"/>
+          <img src={turndown} alt="" className="turnDown" />
           {/* <button className="btn btn-primary get-started-btn mt-4">
               Register Now
             </button> */}
@@ -54,7 +52,7 @@ const Form = () => {
         {" "}
         <h1>Contact Us</h1>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
-        <div className="col-md-12 form_container form-group">
+          <div className="col-md-12 form_container form-group">
             <label htmlFor="name" className="label">
               Name <span className="text-danger">*</span>
             </label>
@@ -64,11 +62,12 @@ const Form = () => {
               id="name"
               {...register("name", {
                 required: "Name is required",
-               
               })}
               onInput={handleNameInput}
             />
-            {errors.name && <p className="text-danger">{errors.name.message}</p>}
+            {errors.name && (
+              <p className="text-danger">{errors.name.message}</p>
+            )}
           </div>
 
           <div className="col-md-12 form_container form-group">
@@ -84,7 +83,9 @@ const Form = () => {
               })}
               onInput={handleNumberInput}
             />
-            {errors.number && <p className="text-danger">{errors.number.message}</p>}
+            {errors.number && (
+              <p className="text-danger">{errors.number.message}</p>
+            )}
           </div>
 
           <div className="col-md-12 form_container">
@@ -101,7 +102,9 @@ const Form = () => {
               onInput={handleEmailInput}
               placeholder="example@gmail.com"
             />
-            {errors.email && <p className="text-danger">{errors.email.message}</p>}
+            {errors.email && (
+              <p className="text-danger">{errors.email.message}</p>
+            )}
           </div>
           <div className="col-md-12 form_container">
             <label htmlFor="" className="label">
@@ -178,16 +181,41 @@ const Form = () => {
             <label htmlFor="" className="label">
               Total Credit Card Dues? <span className="text-danger">*</span>
             </label>
-            <input type="number" className="form-control" />
-
+            <select className="form-control">
+              <option value="">Select</option>
+              {[
+                "1,00,000 - 2,00,000",
+                "2,00,000 - 3,00,000",
+                "3,00,000 - 4,00,000",
+                "4,00,000 - 5,00,000",
+                "5,00,000 - 10,00,000",
+                "10,00,000 or above",
+              ].map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="col-md-12 form_container">
             <label htmlFor="" className="label">
               Total Personal Loan Dues? <span className="text-danger">*</span>
             </label>
-            <input type="number" className="form-control" />
-            
-            
+            <select className="form-control">
+              <option value="">Select</option>
+              {[
+                "1,00,000 - 2,00,000",
+                "2,00,000 - 3,00,000",
+                "3,00,000 - 4,00,000",
+                "4,00,000 - 5,00,000",
+                "5,00,000 - 10,00,000",
+                "10,00,000 or above",
+              ].map((status) => (
+                <option key={status} value={status}>
+                  {status}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="col-md-12 form_container">
             <label htmlFor="" className="label">
