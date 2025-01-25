@@ -10,7 +10,7 @@ import Home from "./components/home/Home";
 import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
 import Graph from "./components/barChart/Graph";
-
+import Form from "./components/contact us/Form";
 function App() {
   return (
     
@@ -19,9 +19,11 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<ComingSoon />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path="/calc" element={<Calculator />} />
-          <Route path="/graph" element={<Graph />} />
+          <Route path="/form" element={<Form />} />
+
+          {/* <Route path="/footer" element={<Footer />} /> */}
+          {/* <Route path="/calc" element={<Calculator />} /> */}
+          {/* <Route path="/graph" element={<Graph />} /> */}
         </Routes>
         <Footer />
       </Router>

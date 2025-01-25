@@ -13,10 +13,12 @@ input[type="range"] {
     border-radius: 8px;
     background-image: linear-gradient(90deg,#070030 0,#070030);
     background-repeat: no-repeat;
+    accent-color: white;
 }
   .switch-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   .missedEMI{
     display: flex;
@@ -44,4 +46,28 @@ input[type="range"] {
   .form-check .form-check-input {
     float: left;
     margin-left: -1.5em;
+  }
+  .calc_head{
+    font-size: 25px;
+    margin-bottom: 1rem;
+  }
+  .calc_txt{
+    font-size: 14.5px;
+    margin-bottom: 1rem;
+    line-height: 30px;
+  }
+  .sub_txt{
+    padding: 5px;
+    background-color: #243b8d;
+    color: white;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 767px){
+    .calc_head{
+        margin-bottom: 1rem;
+    }
+    .calc_txt{
+    margin-bottom: 2rem;
+    }
   }

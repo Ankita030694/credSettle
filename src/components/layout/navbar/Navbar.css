@@ -15,10 +15,13 @@
   }
   
   .links .nav-link {
-    font-size: 18px; /* Optional: Adjust font size for links */
+    font-size: 16px; /* Optional: Adjust font size for links */
     /* margin: 0 10px; Add spacing between links÷÷ */
     margin-left: 10px;
     font-weight: 500;
+  }
+  .nav-link:hover{
+    cursor: pointer;
   }
 
   @media screen and (max-width: 767px){

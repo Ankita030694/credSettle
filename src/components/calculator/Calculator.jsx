@@ -13,8 +13,8 @@ const Calculator = ({
 
   useEffect(() => {
     const totalDebt = creditCardDebt + personalLoanDebt;
-    const withoutCredSettle = totalDebt * 2.48; // Assumed multiplier
-    const withCredSettle = totalDebt * 0.5; // FREED program reduces to 50%%
+    const withoutCredSettle = totalDebt * 2.48; 
+    const withCredSettle = totalDebt * 0.5; 
     setwithCredSettle(withCredSettle);
     setwithoutCredSettle(withoutCredSettle);
     const savings = totalDebt - withCredSettle;
@@ -30,71 +30,67 @@ const Calculator = ({
 
   return (
     <div style={{ fontFamily: "Arial", padding: "20px" }}>
-      <h1 className="mb-5">Debt Calculator</h1>
+      <h1 className="calc_head">DEBT FREE, STRESS FREE</h1>
+      <p className="calc_txt">
+        This tool will help you calculate how much you can save with{" "}
+        <span className="sub_txt">CredSettle</span>
+      </p>
       <span>Credit Card Debt: </span>
-      <span className="data"> ₹{creditCardDebt.toLocaleString()}</span>
+      <span className="data"> ₹{creditCardDebt.toLocaleString("en-IN")}</span>
       <input
         type="range"
         min="0"
-        max="1000000"
+        max="10000000"
         step="5000"
         value={creditCardDebt}
         onChange={(e) => setCreditCardDebt(Number(e.target.value))}
-        // style={{ backgroundSize: '10% 100%' }}
       />
-      {/* <span> ₹{creditCardDebt.toLocaleString()}</span> */}
-      <br />
+      {/* <span>Credit Card Debt: ₹{creditCardDebt.toLocaleString("en-IN")}</span> */}
       <br />
       <span>Personal Loan Debt: </span>
-      <span className="data"> ₹{personalLoanDebt.toLocaleString()}</span>
+      <span className="data"> ₹{personalLoanDebt.toLocaleString("en-IN")}</span>
       <input
         type="range"
         min="0"
-        max="1000000"
+        max="10000000"
         step="5000"
         value={personalLoanDebt}
         onChange={(e) => setPersonalLoanDebt(Number(e.target.value))}
-        // style={{ backgroundSize: '10% 100%' }}
       />
+      {/* <br /> */}
       <br />
-      <br />
-      <div className="switch-section mt-4">
+      <div className="switch-section">
         <label>Missed any payments in last 30 days?</label>
         <br />
         <div className="missedEMI">
           <div className="form-check form-check-inline activeInput">
-          <input
-            id="yes"
-            type="radio"
-            value="yes"
-            checked={missedPayment === "yes"}
-            onChange={() => setMissedPayment("yes")}
-            className="form-check-input"
-          />
-          <label className="form-check-label text-primary-color">
-            Yes I have missed
-          </label>
+            <input
+              id="yes"
+              type="radio"
+              value="yes"
+              checked={missedPayment === "yes"}
+              onChange={() => setMissedPayment("yes")}
+              className="form-check-input"
+            />
+            <label className="form-check-label text-primary-color">Yes</label>
           </div>
           <div className="form-check form-check-inline activeInput">
-          <input
-            id="no"
-            type="radio"
-            value="no"
-            checked={missedPayment === "no"}
-            onChange={() => setMissedPayment("no")}
-            className="form-check-input"
-          />
-          <label className="form-check-label text-primary-color">
-            No I have not
-          </label>
+            <input
+              id="no"
+              type="radio"
+              value="no"
+              checked={missedPayment === "no"}
+              onChange={() => setMissedPayment("no")}
+              className="form-check-input"
+            />
+            <label className="form-check-label text-primary-color">No</label>
           </div>
-
         </div>
         <button className="btn btn-primary get-started-btn mt-4">
-              Register Now
-            </button>
-        <br />
-        <br />
+          Register Now
+        </button>
+        {/* <br /> */}
+        {/* <br /> */}
       </div>
 
       {/* {result && (

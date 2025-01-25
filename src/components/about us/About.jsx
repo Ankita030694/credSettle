@@ -45,19 +45,21 @@ const about = () => {
               restore peace of mind.
             </p>
             {/* <h4 className="mt-5">Our Affiliations:</h4> */}
-            <div className="marq_cont mt-5"></div>
+            <div className="marq_cont mt-5">
             <h3 className="text-center">We work with guidelines of:</h3>
             <div className="marquee-container1">
               <div className="marquee-content1">
                 <img src={affStrap} alt="" /> 
-                <img src={affStrap} alt="" />
+                {/* <img src={affStrap} alt="" /> */}
               </div>
             </div>
+            </div>
+            
             <h3 className="text-center">Our media coverages:</h3>
             <div className="marquee-container2">
               <div className="marquee-content2">
                 <img src={strap} alt="" />
-                <img src={strap} alt="" />
+                {/* <img src={strap} alt="" /> */}
               </div>
             </div>
           </div>

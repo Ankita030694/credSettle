@@ -27,6 +27,7 @@ const Home = () => {
   // const [loading, setLoading] = useState(true);
   // if (withCredSettle > 0) {
   //   setLoading(false);
+  
   // }
   return (
     <div>
@@ -38,9 +39,9 @@ const Home = () => {
             <h1 className="tagline">
               SETTLE YOUR LOANS AND STOP YOUR HARASSEMENT IN 24 HOURS
             </h1>
-            <button className="btn btn-primary get-started-btn mt-4">
+            {/* <button className="btn btn-primary get-started-btn mt-4">
               Register Now
-            </button>
+            </button> */}
           </div>
 
           {/* Second Column - Image */}
@@ -53,10 +54,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="hero container-fluid">
+      <div className="herox container-fluid">
         <div className="row align-items-center heroc-container align-items-stretch graphCont">
           {/* First Column - Text Content */}
-          <div className="col-md-6 text-content bg-translucent w-full">
+          <div className="col-md-6 text-content1 bg-translucent w-full">
             <div className="calc_comp">
               <Calculator
                 setwithCredSettle={setwithCredSettle}
@@ -69,24 +70,27 @@ const Home = () => {
           </div>
 
           {/* Second Column - Details */}
-          <div className="col-md-6 bg-white pt-5 pb-2 text-center w-full graphCont">
+          <div className="col-md-6 bg-white pb-2 text-center w-full graphCont">
             <div className="graph_sub_cont">
               <BarChart
+              className="custom-barchart"
                 series={[
                   {
-                    data: [withoutCredSettle, withCredSettle],
+                    data: [withCredSettle, withoutCredSettle],
+                    color: "white",
                     mark: {
-                      data: [withoutCredSettle, withCredSettle],
+                      data: [withCredSettle, withoutCredSettle],
                     },
-                    color: (d, i) => (i === 0 ? "white" : "#070030"), // Customize color based on index
+                    // color: (d, i) => (i === 0 ? "#FFFFFF" : "#FFFFFF"),
                   },
                 ]}
                 height={290}
                 width={400}
+                // barWidth={5}
                 leftAxis={null}
                 xAxis={[
                   {
-                    data: ["Without CredSettle", "With CredSettle"],
+                    data: ["With CredSettle", "Without CredSettle"],
                     scaleType: "band",
                     // valueFormatter: () => "",
                   },
@@ -102,7 +106,7 @@ const Home = () => {
             </div>
             <div className="results">
               <div className="result1">
-                <p>Total Savings</p>
+                <p>Settlement Amount</p>
                 <div className="result2">
                   ₹{savings?.toLocaleString()} or more
                 </div>
@@ -118,6 +122,7 @@ const Home = () => {
               <span className="debt-helper-text-style">50%*</span>
               <span> </span>
               <span> on your debt</span>
+              
             </div>
             {/* <div className="btns d-flex gap-2 mx-4">
               <button className="btn btn-primary get-started-btn">2004</button>
