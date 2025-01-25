@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./calculator.css";
+import { Link } from "@mui/material";
 
 const Calculator = ({
   setwithCredSettle,
@@ -13,8 +14,8 @@ const Calculator = ({
 
   useEffect(() => {
     const totalDebt = creditCardDebt + personalLoanDebt;
-    const withoutCredSettle = totalDebt * 2.48; 
-    const withCredSettle = totalDebt * 0.5; 
+    const withoutCredSettle = totalDebt * 2.48;
+    const withCredSettle = totalDebt * 0.5;
     setwithCredSettle(withCredSettle);
     setwithoutCredSettle(withoutCredSettle);
     const savings = totalDebt - withCredSettle;
@@ -86,9 +87,12 @@ const Calculator = ({
             <label className="form-check-label text-primary-color">No</label>
           </div>
         </div>
-        <button className="btn btn-primary get-started-btn mt-4">
-          Register Now
-        </button>
+        <Link href="/form">
+          <button className="btn btn-primary get-started-btn mt-4">
+            Register Now
+          </button>
+        </Link>
+
         {/* <br /> */}
         {/* <br /> */}
       </div>
