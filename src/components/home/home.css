@@ -104,23 +104,31 @@ h1 {
 }
 .marquee-container {
   width: 100%;
-  /* overflow: hidden; */
   background-color: #040016;
   white-space: nowrap;
   position: relative;
   margin-top: 0px;
 }
-.bank_head{
+
+.bank_head {
   z-index: 2;
 }
+
 .marquee-content {
   display: inline-block;
   animation: marquee-scroll 10s linear infinite;
+  animation-play-state: paused; /* Initially paused */
 }
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: running; /* Play the animation when hovered */
+}
+
 .marquee-content img {
   width: 100%;  /* Set the width of the image (adjust if needed) */
   height: auto; /* Maintain aspect ratio of the image */
 }
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
@@ -129,6 +137,7 @@ h1 {
     transform: translateX(-100%);
   }
 }
+
 .graphCont{
   background: #fff;
   box-shadow: 0 12px 28px rgba(189,201,210,.32);

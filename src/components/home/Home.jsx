@@ -195,7 +195,6 @@ const Home = () => {
               <img src={settLetters2} alt="" />
             </div>
           </div>
-
           {/* <div className="col-md-3 text-white">PERSONAL LOAN</div>
           <div className="col-md-3 text-white">CREDIT CARD</div>
           <div className="col-md-3 text-white">HOME EQUITY</div>
