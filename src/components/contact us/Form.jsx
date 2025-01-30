@@ -1,20 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import "./form.css";
 import affStrap from "../../assets/images/affStrap.png";
 import strap from "../../assets/images/strapw.png";
 import turndown from "../../assets/images/turn-down.png";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase";
+import { useLocation } from "react-router-dom";
 const Form = () => {
+  const location = useLocation();
+  const { state } = location;
+  const creditCardDebt = state?.creditCardDebt || 0;
+  const personalLoanDebt = state?.personalLoanDebt || 0;
+
+  const[error, setError] = useState();
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
   } = useForm();
-  const onSubmit = (data) => {
-    console.log("Form submitted successfully:", data);
-    alert("Form submitted successfully!");
+
+  const onSubmit = async (data) => {
+    const today = new Date();
+    const formattedDate = `${String(today.getDate()).padStart(2, "0")}-${String(today.getMonth() + 1).padStart(2, "0")}-${today.getFullYear()}`;
+    data["created"] = Date.now();
+    data["date"] = formattedDate;
+    try {
+      await addDoc(collection(db, "Form"), data);
+      console.log("Data Submitted!", data);
+      alert("SUBMITTED!");
+    } catch (error) {
+      console.error("Error Submitting form:", error);
+      alert("Failed to submit the form!");
+    }
   };
+
   const handleNameInput = (e) => {
     const value = e.target.value.replace(/[^A-Za-z\s]/g, "");
     setValue("name", value);
@@ -27,13 +48,33 @@ const Form = () => {
 
   const handleEmailInput = (e) => {
     const value = e.target.value;
-    if (!/^[a-zA-Z0-9._%+-]*@gmail\.com$/.test(value) && value !== "") {
-      setValue("email", "");
-    } else {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    if (value === "" || gmailRegex.test(value)) {
       setValue("email", value);
+      setError("email", "");
+    } else {
+      setError("email", "Please enter a valid Gmail address.");
     }
   };
+  useEffect(() => {
+    if (creditCardDebt) {
+      setValue("creditCardDues", getDebtRange(creditCardDebt));
+    }
+    if (personalLoanDebt) {
+      setValue("personalLoanDues", getDebtRange(personalLoanDebt));
+    }
+  }, [creditCardDebt, personalLoanDebt]);
 
+  const getDebtRange = (amount) => {
+    if (amount >= 1000000) return "10,00,000 or above";
+    if (amount >= 500000) return "5,00,000 - 10,00,000";
+    if (amount >= 400000) return "4,00,000 - 5,00,000";
+    if (amount >= 300000) return "3,00,000 - 4,00,000";
+    if (amount >= 200000) return "2,00,000 - 3,00,000";
+    return "1,00,000 - 2,00,000";
+  };
   return (
     <div className="text-center row">
       <div className="col-md-4 mt-5">
@@ -43,9 +84,6 @@ const Form = () => {
             SETTLE YOUR LOANS AND STOP YOUR HARASSEMENT IN 24 HOURS
           </h1>
           <img src={turndown} alt="" className="turnDown" />
-          {/* <button className="btn btn-primary get-started-btn mt-4">
-              Register Now
-            </button> */}
         </div>
       </div>
       <div className="col-md-4 row1">
@@ -60,9 +98,7 @@ const Form = () => {
               type="text"
               className="form-control"
               id="name"
-              {...register("name", {
-                required: "Name is required",
-              })}
+              {...register("name", { required: "Name is required" })}
               onInput={handleNameInput}
             />
             {errors.name && (
@@ -78,9 +114,7 @@ const Form = () => {
               type="text"
               className="form-control"
               id="number"
-              {...register("number", {
-                required: "Mobile number is required",
-              })}
+              {...register("number", { required: "Mobile number is required" })}
               onInput={handleNumberInput}
             />
             {errors.number && (
@@ -96,9 +130,7 @@ const Form = () => {
               type="text"
               className="form-control"
               id="email"
-              {...register("email", {
-                required: "Email is required",
-              })}
+              {...register("email", { required: "Email is required" })}
               onInput={handleEmailInput}
               placeholder="example@gmail.com"
             />
@@ -106,11 +138,15 @@ const Form = () => {
               <p className="text-danger">{errors.email.message}</p>
             )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="city" className="label">
               City <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("city", { required: "City is required" })}
+            >
               <option value="">Select City</option>
               {[
                 "Delhi",
@@ -126,12 +162,21 @@ const Form = () => {
                 </option>
               ))}
             </select>
+            {errors.city && (
+              <p className="text-danger">{errors.city.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="employmentStatus" className="label">
               Employment Status <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("employmentStatus", {
+                required: "Employment status is required",
+              })}
+            >
               <option value="">Select</option>
               {[
                 "Not employed",
@@ -144,12 +189,21 @@ const Form = () => {
                 </option>
               ))}
             </select>
+            {errors.employmentStatus && (
+              <p className="text-danger">{errors.employmentStatus.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="monthlyIncome" className="label">
               Monthly Income <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("monthlyIncome", {
+                required: "Monthly income is required",
+              })}
+            >
               <option value="">Select</option>
               {[
                 "10,000 - 50,000",
@@ -163,12 +217,21 @@ const Form = () => {
                 </option>
               ))}
             </select>
+            {errors.monthlyIncome && (
+              <p className="text-danger">{errors.monthlyIncome.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
-              Facing Harrasement? <span className="text-danger">*</span>
+            <label htmlFor="harassment" className="label">
+              Facing Harassment? <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("harassment", {
+                required: "Harassment status is required",
+              })}
+            >
               <option value="">Select</option>
               {["Yes", "No"].map((harassment) => (
                 <option key={harassment} value={harassment}>
@@ -176,12 +239,21 @@ const Form = () => {
                 </option>
               ))}
             </select>
+            {errors.harassment && (
+              <p className="text-danger">{errors.harassment.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="creditCardDues" className="label">
               Total Credit Card Dues? <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("creditCardDues", {
+                required: "Credit card dues are required",
+              })}
+            >
               <option value="">Select</option>
               {[
                 "1,00,000 - 2,00,000",
@@ -196,12 +268,21 @@ const Form = () => {
                 </option>
               ))}
             </select>
+            {errors.creditCardDues && (
+              <p className="text-danger">{errors.creditCardDues.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="personalLoanDues" className="label">
               Total Personal Loan Dues? <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("personalLoanDues", {
+                required: "Personal loan dues are required",
+              })}
+            >
               <option value="">Select</option>
               {[
                 "1,00,000 - 2,00,000",
@@ -216,32 +297,45 @@ const Form = () => {
                 </option>
               ))}
             </select>
+            {errors.personalLoanDues && (
+              <p className="text-danger">{errors.personalLoanDues.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="canPay" className="label">
               Can you pay 2,000 to 5,000 to start the process?{" "}
               <span className="text-danger">*</span>
             </label>
-            <select className="form-control">
+            <select
+              className="form-control"
+              {...register("canPay", {
+                required: "This field is required",
+              })}
+            >
               <option value="">Select</option>
-              {["Yes", "No"].map((harassment) => (
-                <option key={harassment} value={harassment}>
-                  {harassment}
+              {["Yes", "No"].map((option) => (
+                <option key={option} value={option}>
+                  {option}
                 </option>
               ))}
             </select>
+            {errors.canPay && (
+              <p className="text-danger">{errors.canPay.message}</p>
+            )}
           </div>
+
           <div className="col-md-12 form_container">
-            <label htmlFor="" className="label">
+            <label htmlFor="queries" className="label">
               Your Queries
             </label>
             <textarea
               placeholder="Your Queries"
-              name=""
-              id=""
               className="form-control"
+              {...register("queries")}
             ></textarea>
           </div>
+
           <div className="col-md-12 text-center">
             <button className="btn btn-primary get-started-btn mt-4">
               Register Now
@@ -264,163 +358,6 @@ const Form = () => {
           </div>
         </div>
       </div>
-      {/* <div className="col-md-4 text-black">
-            txt
-        </div> */}
-
-      {/* <div className="col-md-4 text-black">
-            txt
-        </div> */}
-      {/* <form onSubmit={handleSubmit(onSubmit)} className="form-container">
-        <div className="row">
-          <div className=" mb-3">
-            <div className="row">
-              <div className="col-md-6">
-                <label className="form-label">
-                  Name <span style={{ color: "red" }}>*</span>
-                </label>
-              </div>
-              <div className="col-md-6">
-                <input
-                  type="text"
-                  className={`form-control ${errors.Name ? "is-invalid" : ""}`}
-                  {...register("Name", {
-                    required: "Name is required",
-                    pattern: {
-                      value: /^[A-Za-z\s]+$/,
-                      message: "Name must contain only alphabets and spaces",
-                    },
-                  })}
-                  onInput={(e) => {
-                    e.target.value = e.target.value.replace(/[^A-Za-z\s]/g, "");
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className=" mb-3">
-            <label className="form-labell">
-              Mobile Number <span style={{ color: "red" }}>*</span>
-            </label>
-            <input type="number" minLength="10" maxLength="10" />
-          </div>
-
-          <div className=" mb-3">
-            <label className="form-labell">
-              Email <span style={{ color: "red" }}>*</span>
-            </label>
-            <input type="email" />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-labell">
-              City <span style={{ color: "red" }}>*</span>
-            </label>
-            <select>
-              <option value="">Select City</option>
-              {[
-                "Delhi",
-                "Mumbai",
-                "Pune",
-                "Bangalore",
-                "Chennai",
-                "Hyderabad",
-                "Other",
-              ].map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3">
-            <label className="form-labell">
-              Employment Status <span style={{ color: "red" }}>*</span>
-            </label>
-            <select>
-              <option value="">Select</option>
-              {[
-                "Not employed",
-                "Working as salaried employee",
-                "Self employed",
-                "Business with more than 10 employees",
-              ].map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3">
-            <label className="form-labell">
-              Monthly Income <span style={{ color: "red" }}>*</span>
-            </label>
-            <select>
-              <option value="">Select</option>
-              {[
-                "10,000 - 50,000",
-                "50,000 - 1,00,000",
-                "1,00,000 - 3,00,000",
-                "3,00,000 - 5,00,000",
-                "5,00,000 or above",
-              ].map((status) => (
-                <option key={status} value={status}>
-                  {status}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3">
-            <label className="form-labell">
-              Facing Harassment? <span style={{ color: "red" }}>*</span>
-            </label>
-            <select>
-              <option value="">Select</option>
-              {["Yes", "No"].map((harassment) => (
-                <option key={harassment} value={harassment}>
-                  {harassment}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3">
-            <label className="form-labell">
-              Can you pay 2,000 to 5,000 to start the process?{" "}
-              <span style={{ color: "red" }}>*</span>
-            </label>
-            <select>
-              <option value="">Select</option>
-              {["Yes", "No"].map((settlement) => (
-                <option key={settlement} value={settlement}>
-                  {settlement}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="mb-3">
-            <textarea
-              placeholder="Your Queries"
-              name=""
-              id=""
-              className=" form-controll pyy-5"
-            />
-          </div>
-          <div className="coll-12 mbb-3 bg-warningg w-fulll">
-            <button
-              type="submit"
-              className="btn btn-primary get-started-btn mt-4"
-            >
-              Submit
-            </button>
-          </div>
-        </div>
-      </form> */}
     </div>
   );
 };

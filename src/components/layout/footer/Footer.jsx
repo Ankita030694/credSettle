@@ -12,6 +12,9 @@ import "./Footer.css";
 import logo from "../../../assets/images/whitelogo.png";
 
 const Footer = () => {
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <footer className="text-light pt-4">
       <div className="footerCont">
@@ -27,12 +30,12 @@ const Footer = () => {
             <h5 className="mb-3 foot_head">Company</h5>
             <ul className="list-unstyled">
               <li className="mt-3">
-                <a href="#about-us" className="text-light text-decoration-none foot_txt">
+                <a href="#about-us" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('about')}>
                   About Us
                 </a>
               </li>
               <li className="mt-3">
-                <a href="#services" className="text-light text-decoration-none foot_txt">
+                <a href="#services" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('services')}>
                   Services
                 </a> 
               </li>
@@ -40,13 +43,14 @@ const Footer = () => {
                 <a
                   href="#contact-us"
                   className="text-light text-decoration-none foot_txt"
+                  onClick={() => scrollToSection('faq')}
                 >
-                  Contact Us
+                  Faq's
                 </a>
               </li>
               <li className="mt-3">
-                <a href="#blog" className="text-light text-decoration-none foot_txt">
-                  Blog
+                <a href="#blog" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('testimonials')}>
+                  Testimonials
                 </a>
               </li>
             </ul>
@@ -108,7 +112,7 @@ const Footer = () => {
         <hr className="border-light" />
         <Row className="align-items-center justify-content-between mb-5 credits">
           <Col md={6}>
-            <p className="mb-0">&copy; 2025 AMA</p>
+            <p className="mb-0">&copy; 2025 CredSettle</p>
           </Col>
           <Col md={6} className="socials">
             <FaTwitter className="me-3 text-light" />

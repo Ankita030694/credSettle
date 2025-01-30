@@ -41,6 +41,13 @@ h1 {
   background-color: #070030;
   border-color: #070030;
 }
+.get-started-btn1{
+  border-radius: 35px; /* Make the button rounded */
+  padding: 15px 30px;
+  font-size: 20px;
+  background-color: #070030;
+  border-color: #070030;
+}
 
 .hero-image {
   max-width: 100%;
@@ -255,5 +262,12 @@ h1 {
   .herox{
     display: flex;
     flex-direction: column;
+  }
+  .get-started-btn1 {
+    border-radius: 25px; /* Make the button rounded */
+    padding: 14.5px 14.5px;
+    font-size: 13px;
+    background-color: #070030;
+    border-color: #070030;
   }
 }

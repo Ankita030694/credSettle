@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./calculator.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Calculator = ({
   setwithCredSettle,
@@ -11,7 +12,7 @@ const Calculator = ({
   const [personalLoanDebt, setPersonalLoanDebt] = useState(0);
   const [missedPayment, setMissedPayment] = useState("yes");
   const [result, setResult] = useState(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const totalDebt = creditCardDebt + personalLoanDebt;
     const withoutCredSettle = totalDebt * 2.48;
@@ -28,6 +29,9 @@ const Calculator = ({
       savingsPercentage,
     });
   }, [creditCardDebt, personalLoanDebt]);
+  const handleRegisterClick = () => {
+    navigate("/form", { state: { creditCardDebt, personalLoanDebt } });
+  };
 
   return (
     <div style={{ fontFamily: "Arial", padding: "20px" }}>
@@ -87,27 +91,13 @@ const Calculator = ({
             <label className="form-check-label text-primary-color">No</label>
           </div>
         </div>
-        <Link to="/form">
-          <button className="btn btn-primary get-started-btn mt-4">
-            Register Now
-          </button>
-        </Link>
-
-
-        {/* <br /> */}
-        {/* <br /> */}
+        <button
+          className="btn btn-primary get-started-btn mt-4"
+          onClick={handleRegisterClick}
+        >
+          Register Now
+        </button>
       </div>
-
-      {/* {result && (
-        <div style={{ marginTop: '20px' }}>
-          <h2>Results</h2>
-          <p>Without CredSettle: ₹{result.withoutCredSettle.toLocaleString()}</p>
-          <p>With CredSettle: ₹{result.withCredSettle.toLocaleString()} or less</p>
-          <p>Total Savings: ₹{result.savings.toLocaleString()} or more</p>
-          <p>You can save up to 50% to 65%</p>
-          <p>Debt-Free in: 9 months</p>
-        </div>
-      )} */}
     </div>
   );
 };

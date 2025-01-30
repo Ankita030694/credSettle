@@ -11,6 +11,7 @@ import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
 import Graph from "./components/barChart/Graph";
 import Form from "./components/contact us/Form";
+
 function App() {
   return (
     

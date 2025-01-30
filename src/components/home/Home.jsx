@@ -60,7 +60,7 @@ const Home = () => {
           <div className="col-md-6 text-content1 bg-translucent w-full">
             <div className="calc_comp">
               <Calculator
-                setwithCredSettle={setwithCredSettle}
+                setwithCredSettle={setwithCredSettle} 
                 setwithoutCredSettle={setwithoutCredSettle}
                 result={result}
                 setResult={setResult}

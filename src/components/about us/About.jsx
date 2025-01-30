@@ -10,6 +10,7 @@ import image from "../../assets/images/Image.png";
 import video from "../../assets/videos/video.mp4";
 import affStrap from "../../assets/images/affStrap.png";
 import strap from "../../assets/images/strapw.png";
+import { Link } from "react-router-dom";
 
 const about = () => {
   const videoRef = useRef(null);
@@ -46,15 +47,15 @@ const about = () => {
             </p>
             {/* <h4 className="mt-5">Our Affiliations:</h4> */}
             <div className="marq_cont mt-5">
-            <h3 className="text-center">We work with guidelines of:</h3>
-            <div className="marquee-container1">
-              <div className="marquee-content1">
-                <img src={affStrap} alt="" /> 
-                {/* <img src={affStrap} alt="" /> */}
+              <h3 className="text-center">We work with guidelines of:</h3>
+              <div className="marquee-container1">
+                <div className="marquee-content1">
+                  <img src={affStrap} alt="" />
+                  {/* <img src={affStrap} alt="" /> */}
+                </div>
               </div>
             </div>
-            </div>
-            
+
             <h3 className="text-center">Our media coverages:</h3>
             <div className="marquee-container2">
               <div className="marquee-content2">
@@ -65,7 +66,7 @@ const about = () => {
           </div>
 
           {/* Second Column - Image */}
-          <div className="col-md-6 text-center vid_margin"> 
+          <div className="col-md-6 text-center vid_margin">
             <div onClick={handlePlayVideo}>
               <video
                 ref={videoRef}
@@ -121,9 +122,11 @@ const about = () => {
               protected, avoid harassment, and regain financial freedom with
               expert negotiation and professional guidance
             </p>
-            <button className="btn btn-primary get-started-btn">
-              Register Now
-            </button>
+            <Link to="/form">
+              <button className="btn btn-primary get-started-btn mt-4">
+                Register Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
