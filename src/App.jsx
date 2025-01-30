@@ -11,6 +11,8 @@ import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
 import Graph from "./components/barChart/Graph";
 import Form from "./components/contact us/Form";
+import Login from "./components/admin/login/Login";
+import Dashboard from "./components/admin/dashboard/dashboard";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           {/* <Route path="/" element={<ComingSoon />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
           {/* <Route path="/calc" element={<Calculator />} /> */}

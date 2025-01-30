@@ -1,0 +1,104 @@
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* Filter Section */
+  .filter-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .filter-label {
+    font-size: 16px;
+    color: #4A4A4A;
+    margin-right: 8px;
+  }
+  
+  .filter-input {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 16px;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .filter-input:focus {
+    border-color: #4C9DFE;
+  }
+  
+  .filter-button {
+    padding: 10px 20px;
+    background-color: #4C9DFE;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-button:hover {
+    background-color: #3776D4;
+  }
+  
+  /* Table Section */
+  .table-section {
+    overflow-x: auto;
+  }
+  
+  .table-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 14px;
+    font-size: 11px;
+    color: #4A4A4A;
+  }
+  
+  .data-table th {
+    background-color: #F2F2F2;
+    font-weight: 600;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background-color: #F9F9F9;
+  }
+  
+  .data-table tr:hover {
+    background-color: #F1F1F1;
+  }
+  
+  .data-row td {
+    color: #555;
+  }
+  
+  /* Delete Link */
+  .delete-link {
+    color: #FF4D4D;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .delete-link:hover {
+    color: #D22A2A;
+  }
+  

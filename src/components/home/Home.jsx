@@ -189,8 +189,8 @@ const Home = () => {
            
 
           </marquee> */}
-          <div className="marquee-container">
-            <div className="marquee-content">
+          <div className="marquee-container5">
+            <div className="marquee-content5">
               <img src={settLetters1} alt="" />
               <img src={settLetters2} alt="" />
             </div>

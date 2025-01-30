@@ -104,34 +104,57 @@ h1 {
 }
 .marquee-container {
   width: 100%;
+  /* overflow: hidden; */
   background-color: #040016;
   white-space: nowrap;
   position: relative;
   margin-top: 0px;
 }
-
-.bank_head {
+.bank_head{
   z-index: 2;
 }
-
 .marquee-content {
   display: inline-block;
   animation: marquee-scroll 10s linear infinite;
-  animation-play-state: paused; /* Initially paused */
 }
-
-.marquee-container:hover .marquee-content {
-  animation-play-state: running; /* Play the animation when hovered */
-}
-
 .marquee-content img {
   width: 100%;  /* Set the width of the image (adjust if needed) */
   height: auto; /* Maintain aspect ratio of the image */
 }
-
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee-container5 {
+  width: 100%;
+  background-color: #C0B3F7;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 0px;
+}
+
+.marquee-content5 {
+  display: inline-block;
+  animation: marquee-scroll1 10s linear infinite;
+  animation-play-state: paused; /* Initially paused */
+}
+
+.marquee-container5:hover .marquee-content5 {
+  animation-play-state: running; /* Play the animation when hovered */
+}
+
+.marquee-content5 img {
+  width: 100%;  /* Set the width of the image (adjust if needed) */
+  height: auto; /* Maintain aspect ratio of the image */
+}
+
+@keyframes marquee-scroll1 {
+  0% {
+    transform: translateX(-15%);
   }
   100% {
     transform: translateX(-100%);
