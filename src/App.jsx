@@ -12,7 +12,7 @@ import Calculator from "./components/calculator/Calculator";
 import Graph from "./components/barChart/Graph";
 import Form from "./components/contact us/Form";
 import Login from "./components/admin/login/Login";
-import Dashboard from "./components/admin/dashboard/dashboard";
+import Dashboard from "./components/admin/dashboard/Dashboard";
 
 function App() {
   return (
