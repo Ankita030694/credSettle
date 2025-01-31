@@ -34,7 +34,12 @@
   
   /* Other styles remain the same */
   
-  
+  .container7 {
+    background-color: white !important;
+    display: block !important;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
   /* Service Sections */
   .service-title {
     font-size: 1.8rem;
@@ -83,12 +88,8 @@
       display: block !important;
       padding-left: 20px;
       padding-right: 20px;
+      text-align: center;
     }
   }
-  .container7 {
-    background-color: white !important;
-    display: block !important;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
+
   
