@@ -203,20 +203,20 @@ const Home = () => {
         </div>
       </div>
       {/* <Banks/> */}
-      <div id="about">
+      <div>
         <About />
       </div>
 
-      <div id="services">
+      <div>
         <Services />
       </div>
-      <div id="faq">
+      <div>
         <Whyus />
       </div>
-      <div id="testimonials">
+      <div >
         <Testimonials />
       </div>
-      <div id="blog">
+      <div>
         <Blog />
       </div>
     </div>
