@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import "./Footer.css";
 import logo from "../../../assets/images/whitelogo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const scrollToSection = (id) => {
@@ -113,15 +114,17 @@ const Footer = () => {
             <p className="mt-4 foot_txt">
               Our support team is <br></br>here to help you 24/7
             </p>
-            <p className="mt-4 foot_txt">
-              <a className="text-white "href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
+            <p className="mt-4 foot_txt" >
+              <a className="text-white "href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9" style={{textDecoration: "none"}}>
               <FaMapMarkerAlt /> Location
               </a>
               
             </p>
-            <p className="mt-4 foot_txt">
+            <Link to = "/form" style={{textDecoration: "none"}}>
+            <p className="mt-4 foot_txt " style={{color: "white"}}>
               <FaPhone /> Register Now
             </p>
+            </Link>
           </Col>
         </Row>
 
