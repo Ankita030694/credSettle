@@ -16,6 +16,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import settLetters1 from "../../assets/images/1.png";
 import settLetters2 from "../../assets/images/2.png";
 import { styled } from "@mui/system";
+import Blog from "../blog/Blog";
 
 // import Banks from "../layout/banks";
 // import Graph from "../barChart/Graph"
@@ -214,6 +215,9 @@ const Home = () => {
       </div>
       <div id="testimonials">
         <Testimonials />
+      </div>
+      <div id="blog">
+        <Blog />
       </div>
     </div>
   );

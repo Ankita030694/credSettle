@@ -109,13 +109,14 @@ const services = () => {
               <div className="col-md-4">
                 <div className="card-container text-center">
                   <FaWallet className="card-icon" />
-                  <h3 className="card-title">Online Loan</h3>
+                  <h3 className="card-title">Anti-Harassement Services</h3>
                   <p className="card-text">
-                    Online application loans can quickly become overwhelming,
-                    with high interest rates and aggressive recovery tactics.
-                    Debt settlement helps reduce your outstanding balance, halt
-                    harassment from recovery agents, and provide a clear path to
-                    financial recovery and peace of mind
+                    Anti-harassment services are designed to protect individuals
+                    from aggressive debt collection tactics, providing a shield
+                    against relentless calls and threats. These services help
+                    stop harassment, restore peace of mind, and create a
+                    structured plan for managing debt, allowing individuals to
+                    regain control of their financial future.
                   </p>
                 </div>
               </div>
@@ -124,7 +125,7 @@ const services = () => {
               <div className="col-md-4">
                 <div className="card-container text-center">
                   <FaGlobe className="card-icon" />
-                  <h3 className="card-title">Credit Score Improvement</h3>
+                  <h3 className="card-title">Credit Score Builder</h3>
                   <p className="card-text">
                     Our program helps clients improve their credit score by
                     providing tailored strategies to strengthen their financial

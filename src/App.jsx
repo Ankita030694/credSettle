@@ -17,6 +17,7 @@ import AboutMain from "./components/about us/AboutMain";
 import ServicesMain from "./components/services/ServicesMain";
 import WhyusMain from "./components/Whyus/WhyusMain";
 import TestimonialsMain from "./components/testimonials/TestimonialsMain";
+import Blog from "./components/blog/Blog";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/services" element={<ServicesMain/>} />
           <Route path="/faq" element={<WhyusMain/>} />
           <Route path="/testimonials" element={<TestimonialsMain/>} />
+          <Route path="/blogs" element={<Blog/>} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
           {/* <Route path="/calc" element={<Calculator />} /> */}
