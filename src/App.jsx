@@ -5,7 +5,7 @@ import "@fontsource/urbanist/400-italic.css";
 import "./App.css";
 import ComingSoon from "./components/comingsoon/ComingSoon";
 import Navbar from "./components/layout/navbar/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
@@ -21,7 +21,7 @@ import TestimonialsMain from "./components/testimonials/TestimonialsMain";
 function App() {
   return (
     
-      <Router>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           {/* <Route path="/" element={<ComingSoon />} /> */}
@@ -39,7 +39,7 @@ function App() {
           {/* <Route path="/graph" element={<Graph />} /> */}
         </Routes>
         <Footer />
-      </Router>
+      </BrowserRouter>
     
   );
 }

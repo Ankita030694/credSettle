@@ -75,7 +75,7 @@ const Navbar = () => {
                       onClick={() => scrollToSection("testimonials")}
                       
                     >
-                      Testimonials
+                      Blogs
                     </a>
                   </li>
                   </Link>
