@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 // import ServicesMain from "./ServicesMain";
 const ServicesMain = () => {
   return (
-    <div>
+     <div>
           <div className="services container-fluid py-5 ">
             <div className="row align-items-center hero-container text-start">
               {/* First Column - Text Content */}
@@ -36,27 +36,31 @@ const ServicesMain = () => {
                 </p>
               </div>
             </div>
+    
             <div className="loan-cards-section pt-5">
               <div className="container1">
                 <div className="row justify-content-center py-5">
                   {/* Card 1 */}
                   <div className="col-md-4">
                     <div className="card-container text-center">
-                      <FaBriefcase className="card-icon" />
-                      <h3 className="card-title">Personal Loan</h3>
-                      <p className="card-text">
-                        We recognize that life’s financial challenges can be
-                        unpredictable. If you're having trouble with personal loan
-                        repayments, it’s important to know that settling your loan
-                        is possible. Unlike secured loans, personal loans are
-                        unsecured and can be negotiated with your lender
-                      </p>
+                      <Link to="/services/personalloan" style={{textDecoration: "none", color: "black"}}>
+                        <FaBriefcase className="card-icon" />
+                        <h3 className="card-title">Personal Loan</h3>
+                        <p className="card-text">
+                          We recognize that life’s financial challenges can be
+                          unpredictable. If you're having trouble with personal loan
+                          repayments, it’s important to know that settling your loan
+                          is possible. Unlike secured loans, personal loans are
+                          unsecured and can be negotiated with your lender
+                        </p>
+                      </Link>
                     </div>
                   </div>
     
                   {/* Card 2 */}
                   <div className="col-md-4">
                     <div className="card-container text-center">
+                    <Link to="/services/creditloan" style={{textDecoration: "none", color: "black"}}>
                       <FaWallet className="card-icon" />
                       <h3 className="card-title">Credit Card</h3>
                       <p className="card-text">
@@ -66,12 +70,14 @@ const ServicesMain = () => {
                         solution. It has the potential to reduce your debt, save you
                         money, and improve your long-term financial outlook
                       </p>
+                      </Link>
                     </div>
                   </div>
     
                   {/* Card 3 */}
                   <div className="col-md-4">
                     <div className="card-container text-center">
+                    <Link to="/services/businessloan" style={{textDecoration: "none", color: "black"}}>
                       <FaGlobe className="card-icon" />
                       <h3 className="card-title">Business Loan</h3>
                       <p className="card-text">
@@ -81,6 +87,7 @@ const ServicesMain = () => {
                         lowering interest costs, and easing cash flow, allowing your
                         business to regain stability and focus on growth
                       </p>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -88,6 +95,7 @@ const ServicesMain = () => {
                   {/* Card 1 */}
                   <div className="col-md-4">
                     <div className="card-container text-center">
+                    <Link to="/services/carloan" style={{textDecoration: "none", color: "black"}}>
                       <FaBriefcase className="card-icon" />
                       <h3 className="card-title">Car Loan</h3>
                       <p className="card-text">
@@ -97,21 +105,25 @@ const ServicesMain = () => {
                         payments, easing the fear of losing your asset while
                         restoring financial stability
                       </p>
+                      </Link>
                     </div>
                   </div>
     
                   {/* Card 2 */}
                   <div className="col-md-4">
                     <div className="card-container text-center">
+                    <Link to="/services/antiharassement" style={{textDecoration: "none", color: "black"}}>
                       <FaWallet className="card-icon" />
-                      <h3 className="card-title">Online Loan</h3>
+                      <h3 className="card-title">Anti-Harassement Services</h3>
                       <p className="card-text">
-                        Online application loans can quickly become overwhelming,
-                        with high interest rates and aggressive recovery tactics.
-                        Debt settlement helps reduce your outstanding balance, halt
-                        harassment from recovery agents, and provide a clear path to
-                        financial recovery and peace of mind
+                        Anti-harassment services are designed to protect individuals
+                        from aggressive debt collection tactics, providing a shield
+                        against relentless calls and threats. These services help
+                        stop harassment, restore peace of mind, and create a
+                        structured plan for managing debt, allowing individuals to
+                        regain control of their financial future.
                       </p>
+                      </Link>
                     </div>
                   </div>
     
@@ -119,7 +131,7 @@ const ServicesMain = () => {
                   <div className="col-md-4">
                     <div className="card-container text-center">
                       <FaGlobe className="card-icon" />
-                      <h3 className="card-title">Credit Score Improvement</h3>
+                      <h3 className="card-title">Credit Score Builder</h3>
                       <p className="card-text">
                         Our program helps clients improve their credit score by
                         providing tailored strategies to strengthen their financial
