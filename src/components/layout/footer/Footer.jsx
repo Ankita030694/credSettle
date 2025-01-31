@@ -30,16 +30,21 @@ const Footer = () => {
           <Col md={3} className="foot_col">
             <h5 className="mb-3 foot_head">Company</h5>
             <ul className="list-unstyled">
+              <Link to = "/about">
               <li className="mt-3">
                 <a href="#about-us" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('about')}>
                   About Us
                 </a>
               </li>
+              </Link>
+              <Link to = "/services">
               <li className="mt-3">
                 <a href="#services" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('services')}>
                   Services
                 </a> 
               </li>
+              </Link>
+              <Link to = "/faq">
               <li className="mt-3">
                 <a
                   href="#contact-us"
@@ -49,16 +54,20 @@ const Footer = () => {
                   Faq's
                 </a>
               </li>
+              </Link>
+              <Link to = "/testimonials">
               <li className="mt-3">
                 <a href="#blog" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('testimonials')}>
                   Testimonials
                 </a>
               </li>
+              </Link>
             </ul>
           </Col>
           <Col md={3} className="foot_col">
             <h5 className="mb-3 foot_head">Services</h5>
             <ul className="list-unstyled">
+              <Link to = "/services/personalloan">
               <li className="mt-3">
                 <a
                   href="#business-loan"
@@ -67,6 +76,8 @@ const Footer = () => {
                   Personal Loan
                 </a>
               </li>
+              </Link>
+              <Link to = "/services/creditloan">
               <li className="mt-3">
                 <a
                   href="#personal-loan"
@@ -75,6 +86,8 @@ const Footer = () => {
                   Credit Loan
                 </a>
               </li>
+              </Link>
+              <Link to = "/services/businessloan">
               <li className="mt-3">
                 <a
                   href="#financial-planning"
@@ -83,6 +96,8 @@ const Footer = () => {
                   Business Loan
                 </a>
               </li>
+              </Link>
+              <Link to = "/services/carloan">
               <li className="mt-3">
                 <a
                   href="#consultation"
@@ -91,14 +106,19 @@ const Footer = () => {
                   Car Loan
                 </a>
               </li>
+              </Link>
+              <Link to = "/services/antiharassement">
+
               <li className="mt-3">
                 <a
                   href="#consultation"
                   className="text-light text-decoration-none foot_txt"
                 >
-                  Online Loan
+                  Anti Harassement
                 </a>
               </li>
+              </Link>
+              <Link to = "/services/creditscore">
               <li className="mt-3">
                 <a
                   href="#consultation"
@@ -107,6 +127,7 @@ const Footer = () => {
                   Credit Score Improvement
                 </a>
               </li>
+              </Link>
             </ul>
           </Col>
           <Col md={3} className="foot_col">
