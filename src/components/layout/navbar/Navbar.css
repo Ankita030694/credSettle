@@ -18,7 +18,8 @@
     font-size: 16px; /* Optional: Adjust font size for links */
     /* margin: 0 10px; Add spacing between links÷÷ */
     margin-left: 10px;
-    font-weight: 500;
+    font-weight: 900;
+    font: bold;
   }
   .nav-link:hover{
     cursor: pointer;
