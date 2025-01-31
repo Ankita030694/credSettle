@@ -5,6 +5,7 @@ import serviceImage2 from "../../../assets/images/7.png";
 import banner from "../../../assets/images/banner.png"
 
 const Antiharassement = () => {
+    
   return (
     <div>
       <div>

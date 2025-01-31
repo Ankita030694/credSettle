@@ -135,6 +135,7 @@ const services = () => {
               {/* Card 3 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
+                  <Link to="/services/creditloan" style={{textDecoration: "none", color: "black" }}>
                   <FaGlobe className="card-icon" />
                   <h3 className="card-title">Credit Score Builder</h3>
                   <p className="card-text">
@@ -144,6 +145,7 @@ const services = () => {
                     creditworthiness, increasing your chances of securing loans
                     and better financial opportunities in the future
                   </p>
+                  </Link>
                 </div>
               </div>
             </div>

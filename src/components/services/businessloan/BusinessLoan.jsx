@@ -5,6 +5,7 @@ import serviceImage2 from "../../../assets/images/6.png";
 import banner from "../../../assets/images/banner.png"
 
 const BusinessLoan = () => {
+    
   return (
     <div>
       <div>

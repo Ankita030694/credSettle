@@ -35,41 +35,72 @@ const Navbar = () => {
                       <a className="nav-link">About Us</a>
                     </li>
                   </Link>
-                  
+
                   {/* Services Dropdown */}
-                  <li 
+                  <li
                     className="nav-item dropdown links"
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <a className="nav-link dropdown-toggle" href="#">
-                      Services
-                    </a>
+                    <Link to="/services" style={{textDecoration: "none"}}>
+                      <a className="nav-link dropdown-toggle" href="#">
+                        Services
+                      </a>
+                    </Link>
                     {dropdownOpen && (
                       <ul className="dropdown-menu show">
                         <li>
-                          <Link className="dropdown-item" to="/services/personalloan">Personal Loan</Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/services/personalloan"
+                          >
+                            Personal Loan
+                          </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" to="/services/creditloan">Credit Card</Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/services/creditloan"
+                          >
+                            Credit Card
+                          </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" to="/services/businessloan">Business Loan</Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/services/businessloan"
+                          >
+                            Business Loan
+                          </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" to="/services/carloan">Car Loan</Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/services/carloan"
+                          >
+                            Car Loan
+                          </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" to="/services/antiharassement">Anti Harassement</Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/services/antiharassement"
+                          >
+                            Anti Harassement
+                          </Link>
                         </li>
                         <li>
-                          <Link className="dropdown-item" to="/services/creditscore">Credit Score Builder</Link>
+                          <Link
+                            className="dropdown-item"
+                            to="/services/creditscore"
+                          >
+                            Credit Score Builder
+                          </Link>
                         </li>
-                        
                       </ul>
                     )}
                   </li>
-                  
+
                   <Link to="/faq" style={{ textDecoration: "none" }}>
                     <li className="nav-item links">
                       <a className="nav-link">FAQ'S</a>
