@@ -106,7 +106,7 @@ const Navbar = () => {
                       <a className="nav-link">FAQ'S</a>
                     </li>
                   </Link>
-                  <Link to="/testimonials" style={{ textDecoration: "none" }}>
+                  <Link to="/blogs" style={{ textDecoration: "none" }}>
                     <li className="nav-item links">
                       <a className="nav-link">Blogs</a>
                     </li>

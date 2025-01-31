@@ -55,10 +55,10 @@ const Footer = () => {
                 </a>
               </li>
               </Link>
-              <Link to = "/testimonials">
+              <Link to = "/blogs">
               <li className="mt-3">
                 <a href="#blog" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('testimonials')}>
-                  Testimonials
+                  Blogs
                 </a>
               </li>
               </Link>
