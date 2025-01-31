@@ -152,25 +152,33 @@ const Whyus = () => {
                 </Disclosure>
               </div>
             </div> */}
-            <div className="faq-section  py-5" style={{minWidth: "700px"}}>
-              <div className="faq-container mx-auto col-md-8 bg-light p-4 rounded shadow-sm">
+            <div className="faq-section py-5" 
+            // style={{ minWidth: "700px" }}
+            >
+              <div className="faq-container mx-auto col-12 col-md-8 bg-light p-4 rounded shadow-sm">
                 {faqs.map((faq, index) => (
                   <div key={index} className="faq-item border-bottom py-3">
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <DisclosureButton className="d-flex justify-content-between align-items-center w-100 bg-white p-3 border rounded" style={{textAlign: "left"}}>
+                          <DisclosureButton
+                            className="d-flex justify-content-between align-items-center w-100 bg-white p-3 border rounded"
+                            style={{ textAlign: "left" }}
+                          >
                             <span className="fw-bold text-dark">
                               {faq.question}
                             </span>
                             <ChevronDownIcon
                               className={`dropdown-icon ${
                                 open ? "rotate-180" : ""
-                              } transition-transform duration-300"`}
+                              } transition-transform duration-300`}
                               style={{ width: "24px", height: "24px" }}
                             />
                           </DisclosureButton>
-                          <DisclosurePanel className="text-secondary mt-2 px-3 small" style={{textAlign: "center"}}>
+                          <DisclosurePanel
+                            className="text-secondary mt-2 px-3 small"
+                            style={{ textAlign: "center" }}
+                          >
                             {faq.answer}
                           </DisclosurePanel>
                         </>
