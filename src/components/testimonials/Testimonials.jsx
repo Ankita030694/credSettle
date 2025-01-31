@@ -7,6 +7,7 @@ import elipse from "../../assets/images/Elipse.png";
 import image from "../../assets/images/Image.png";
 import "./Testimonials.css";
 import reviewCard from "../../assets/images/CardR.png";
+import reviewCard2 from "../../assets/images/reviewCard2.png";
 import reviews from "../../assets/images/reviews.png";
 import trustpilot from "../../assets/images/trustpilot.png";
 const Testimonials = () => {
@@ -43,7 +44,7 @@ const Testimonials = () => {
 
             <div className="testi_img">
               <img src={reviewCard} alt="" />
-              <img src={reviewCard} alt="" />
+              <img src={reviewCard2} alt="" />
               {/* <img src={reviewCard} alt="" /> */}
             </div>
             <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
