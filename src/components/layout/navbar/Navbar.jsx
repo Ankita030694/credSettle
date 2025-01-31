@@ -39,7 +39,7 @@ const Navbar = () => {
                   {/* Services Dropdown */}
                   <li
                     className="nav-item dropdown links"
-                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseEnter={() => setDropdownOpen(true)}    
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
                     <Link to="/services" style={{textDecoration: "none"}}>
