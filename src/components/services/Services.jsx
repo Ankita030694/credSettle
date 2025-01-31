@@ -41,27 +41,31 @@ const services = () => {
             </Link>
           </div>
         </div>
+
         <div className="loan-cards-section pt-5">
           <div className="container1">
             <div className="row justify-content-center py-5">
               {/* Card 1 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <FaBriefcase className="card-icon" />
-                  <h3 className="card-title">Personal Loan</h3>
-                  <p className="card-text">
-                    We recognize that life’s financial challenges can be
-                    unpredictable. If you're having trouble with personal loan
-                    repayments, it’s important to know that settling your loan
-                    is possible. Unlike secured loans, personal loans are
-                    unsecured and can be negotiated with your lender
-                  </p>
+                  <Link to="/services/personalloan" style={{textDecoration: "none", color: "black"}}>
+                    <FaBriefcase className="card-icon" />
+                    <h3 className="card-title">Personal Loan</h3>
+                    <p className="card-text">
+                      We recognize that life’s financial challenges can be
+                      unpredictable. If you're having trouble with personal loan
+                      repayments, it’s important to know that settling your loan
+                      is possible. Unlike secured loans, personal loans are
+                      unsecured and can be negotiated with your lender
+                    </p>
+                  </Link>
                 </div>
               </div>
 
               {/* Card 2 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
+                <Link to="/services/creditloan" style={{textDecoration: "none", color: "black"}}>
                   <FaWallet className="card-icon" />
                   <h3 className="card-title">Credit Card</h3>
                   <p className="card-text">
@@ -71,12 +75,14 @@ const services = () => {
                     solution. It has the potential to reduce your debt, save you
                     money, and improve your long-term financial outlook
                   </p>
+                  </Link>
                 </div>
               </div>
 
               {/* Card 3 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
+                <Link to="/services/businessloan" style={{textDecoration: "none", color: "black"}}>
                   <FaGlobe className="card-icon" />
                   <h3 className="card-title">Business Loan</h3>
                   <p className="card-text">
@@ -86,6 +92,7 @@ const services = () => {
                     lowering interest costs, and easing cash flow, allowing your
                     business to regain stability and focus on growth
                   </p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -93,6 +100,7 @@ const services = () => {
               {/* Card 1 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
+                <Link to="/services/carloan" style={{textDecoration: "none", color: "black"}}>
                   <FaBriefcase className="card-icon" />
                   <h3 className="card-title">Car Loan</h3>
                   <p className="card-text">
@@ -102,12 +110,14 @@ const services = () => {
                     payments, easing the fear of losing your asset while
                     restoring financial stability
                   </p>
+                  </Link>
                 </div>
               </div>
 
               {/* Card 2 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
+                <Link to="/services/antiharassement" style={{textDecoration: "none", color: "black"}}>
                   <FaWallet className="card-icon" />
                   <h3 className="card-title">Anti-Harassement Services</h3>
                   <p className="card-text">
@@ -118,6 +128,7 @@ const services = () => {
                     structured plan for managing debt, allowing individuals to
                     regain control of their financial future.
                   </p>
+                  </Link>
                 </div>
               </div>
 
