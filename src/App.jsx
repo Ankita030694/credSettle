@@ -24,7 +24,7 @@ import BusinessLoan from "./components/services/businessloan/BusinessLoan";
 import CarLoan from "./components/services/carloan/CarLoan";
 import Antiharassement from "./components/services/antiharassement/Antiharassement";
 import CreditScore from "./components/services/creditscore/CreditScore";
-import Sitemap from "../sitemap.xml"
+
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
           <Route path="/services/carloan" element={<CarLoan/>} />
           <Route path="/services/antiharassement" element={<Antiharassement/>} />
           <Route path="/services/creditscore" element={<CreditScore/>} />
-          <Route path="/sitemap.xml" element={<Sitemap/>} />
+
 
           {/* <Route path="/footer" element={<Footer />} /> */}
           {/* <Route path="/calc" element={<Calculator />} /> */}
