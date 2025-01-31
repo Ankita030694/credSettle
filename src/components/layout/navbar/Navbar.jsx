@@ -23,43 +23,62 @@ const Navbar = () => {
             <div className="col-4 text-center">
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav justify-content-center">
-                  <li className="nav-item links">
-                    <a className="nav-link active" aria-current="page" href="/">
-                      Home
-                    </a>
-                  </li>
-                  <li className="nav-item links">
-                    <a
-                      className="nav-link"
-                      onClick={() => scrollToSection("about")}
-                    >
-                      About Us
-                    </a>
-                  </li>
-                  <li className="nav-item links">
-                    <a
-                      className="nav-link"
-                      onClick={() => scrollToSection("services")}
-                    >
-                      Services
-                    </a>
-                  </li>
+                  <Link to="/" style={{textDecoration: "none"}}>
+                    <li className="nav-item links">
+                      <a
+                        className="nav-link active"
+                        aria-current="page"
+                        href="/"
+                        style={{textDecoration: "none"}}
+                      >
+                        Home
+                      </a>
+                    </li>
+                  </Link>
+                  <Link to="/about" style={{textDecoration: "none"}}>
+                    <li className="nav-item links">
+                      <a
+                        className="nav-link"
+                        // onClick={() => scrollToSection("about")}
+                        style={{textDecoration: "none"}}
+                      >
+                        About Us
+                      </a>
+                    </li>
+                  </Link>
+                  <Link to="/services" style={{textDecoration: "none"}}>
+                    <li className="nav-item links">
+                      <a
+                        className="nav-link"
+                        onClick={() => scrollToSection("services")}
+                        style={{textDecoration: "none"}}
+                      >
+                        Services
+                      </a>
+                    </li>
+                  </Link>
+                  <Link to = "faq" style={{textDecoration: "none"}}>
                   <li className="nav-item links">
                     <a
                       className="nav-link"
                       onClick={() => scrollToSection("faq")}
+                      style={{textDecoration: "none"}}
                     >
-                      Faq's
+                      FAQ'S
                     </a>
                   </li>
+                  </Link>
+                  <Link to = "testimonials" style={{textDecoration: "none"}}>
                   <li className="nav-item links">
                     <a
                       className="nav-link"
                       onClick={() => scrollToSection("testimonials")}
+                      
                     >
                       Testimonials
                     </a>
                   </li>
+                  </Link>
                 </ul>
               </div>
             </div>

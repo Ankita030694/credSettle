@@ -1,4 +1,4 @@
-/* Dashboard Container */
+
 .dashboard-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -7,7 +7,7 @@
     background-color: #f9f9f9;
   }
   
-  /* Filter Section */
+
   .filter-section {
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@
     background-color: #3776D4;
   }
   
-  /* Table Section */
+
   .table-section {
     overflow-x: auto;
   }
@@ -90,7 +90,7 @@
     color: #555;
   }
   
-  /* Delete Link */
+
   .delete-link {
     color: #FF4D4D;
     font-weight: bold;

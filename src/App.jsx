@@ -13,6 +13,10 @@ import Graph from "./components/barChart/Graph";
 import Form from "./components/contact us/Form";
 import Login from "./components/admin/login/Login";
 import Dashboard from "./components/admin/dashboard/Dashboard";
+import AboutMain from "./components/about us/AboutMain";
+import ServicesMain from "./components/services/ServicesMain";
+import WhyusMain from "./components/Whyus/WhyusMain";
+import TestimonialsMain from "./components/testimonials/TestimonialsMain";
 
 function App() {
   return (
@@ -25,6 +29,10 @@ function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/about" element={<AboutMain/>} />
+          <Route path="/services" element={<ServicesMain/>} />
+          <Route path="/faq" element={<WhyusMain/>} />
+          <Route path="/testimonials" element={<TestimonialsMain/>} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
           {/* <Route path="/calc" element={<Calculator />} /> */}

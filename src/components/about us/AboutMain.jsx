@@ -11,8 +11,7 @@ import video from "../../assets/videos/video.mp4";
 import affStrap from "../../assets/images/affStrap.png";
 import strap from "../../assets/images/strapw.png";
 import { Link } from "react-router-dom";
-
-const about = () => {
+const AboutMain = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const handlePlayVideo = () => {
@@ -122,16 +121,11 @@ const about = () => {
               protected, avoid harassment, and regain financial freedom with
               expert negotiation and professional guidance
             </p>
-            <Link to="/about">
-              <button className="btn btn-primary get-started-btn mt-4">
-                View More
-              </button>
-            </Link>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default about;
+export default AboutMain

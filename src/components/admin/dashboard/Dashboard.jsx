@@ -135,7 +135,7 @@ const Dashboard = () => {
                   <td>{person.canPay}</td>
                   <td>{person.queries}</td>
                   <td>
-                    <a href="#" className="delete-link" onClick={handleDelete}>Delete</a>
+                    <a href="" className="delete-link" onClick={handleDelete}>Delete</a>
                   </td>
                 </tr>
               ))}

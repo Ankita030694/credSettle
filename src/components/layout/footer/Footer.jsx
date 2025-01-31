@@ -63,7 +63,7 @@ const Footer = () => {
                   href="#business-loan"
                   className="text-light text-decoration-none foot_txt"
                 >
-                  Business Loan
+                  Personal Loan
                 </a>
               </li>
               <li className="mt-3">
@@ -71,7 +71,7 @@ const Footer = () => {
                   href="#personal-loan"
                   className="text-light text-decoration-none foot_txt"
                 >
-                  Personal Loan
+                  Credit Loan
                 </a>
               </li>
               <li className="mt-3">
@@ -79,7 +79,7 @@ const Footer = () => {
                   href="#financial-planning"
                   className="text-light text-decoration-none foot_txt"
                 >
-                  Financial Planning
+                  Business Loan
                 </a>
               </li>
               <li className="mt-3">
@@ -87,7 +87,23 @@ const Footer = () => {
                   href="#consultation"
                   className="text-light text-decoration-none foot_txt"
                 >
-                  Consultation
+                  Car Loan
+                </a>
+              </li>
+              <li className="mt-3">
+                <a
+                  href="#consultation"
+                  className="text-light text-decoration-none foot_txt"
+                >
+                  Online Loan
+                </a>
+              </li>
+              <li className="mt-3">
+                <a
+                  href="#consultation"
+                  className="text-light text-decoration-none foot_txt"
+                >
+                  Credit Score Improvement
                 </a>
               </li>
             </ul>
