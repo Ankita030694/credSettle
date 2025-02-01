@@ -13,6 +13,7 @@ import strap from "../../assets/images/strapw.png";
 import { Link } from "react-router-dom";
 
 const about = () => {
+  
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const handlePlayVideo = () => {

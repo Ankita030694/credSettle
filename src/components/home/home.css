@@ -113,6 +113,7 @@ h1 {
 .bank_head{
   z-index: 2;
   font-weight: bold;
+  
 }
 .marquee-content {
   display: inline-block;
