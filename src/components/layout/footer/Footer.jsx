@@ -27,13 +27,13 @@ const Footer = () => {
           <Col md={3} className="foot_col">
             <h5 className="mb-3 foot_head">Company</h5>
             <ul className="list-unstyled">
-              <Link to = "/about">
+              
               <li className="mt-3">
-                <a href="#about-us" className="text-light text-decoration-none foot_txt" >
+                <Link to = "/about" className="text-light text-decoration-none foot_txt">
                   About Us
-                </a>
+                  </Link>
               </li>
-              </Link>
+              
               <Link to = "/services">
               <li className="mt-3">
                 <a href="#services" className="text-light text-decoration-none foot_txt">

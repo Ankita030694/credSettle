@@ -1,106 +1,58 @@
-import React from "react";
-import "./Blog.css"; // You can add the styles in this CSS file
-import blogImage from "../../assets/images/Image.png"; // Replace with actual blog image
+import React, { useEffect, useState } from "react";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import { db } from "../../firebase";
+import "./Blog.css"; // Make sure your CSS is updated accordingly
+
+// Import fallback images (replace with your actual assets)
+import blogImage from "../../assets/images/Image.png";
 import elipse from "../../assets/images/Elipse.png";
 
 const Blog = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const blogCollection = collection(db, "blogs");
+        // Create a query that orders by 'created' descending and limits to 6 results
+        const q = query(blogCollection, orderBy("created", "desc"), limit(6));
+        const querySnapshot = await getDocs(q);
+        const blogsData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setBlogs(blogsData);
+      } catch (error) {
+        console.error("Error fetching blogs: ", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="blog-section container-fluid py-5">
-      <div className="elipse5 mb-4">
+      <div className="elipse5 mb-4 d-flex align-items-center">
         <h3>Blogs</h3>
-        <img className="about_icon" src={elipse} alt="" />
+        <img className="about_icon ms-3" src={elipse} alt="Elipse" />
       </div>
       <div className="row align-items-center">
-        {/* Blog Post 1 */}
-        <div className="col-md-4">
-          <div className="blog-card shadow-sm rounded">
-            <img src={blogImage} alt="Blog Title" className="blog-image" />
-            <div className="blog-content">
-              <h3 className="blog-title">Understanding Debt Settlement</h3>
-              <p className="blog-description">
-                Learn how debt settlement works and how it can help reduce your
-                outstanding debt. Discover tips and strategies to take control
-                of your financial future.
-              </p>
+        {blogs.map((blog) => (
+          <div className="col-md-4" key={blog.id}>
+            <div className="blog-card shadow-sm rounded">
+              <img
+                src={blog.image ? blog.image : blogImage}
+                alt={blog.title}
+                className="blog-image"
+              />
+              <div className="blog-content">
+                <h2 className="blog-title">{blog.title}</h2>
+                <h5>{blog.subtitle }</h5>
+                <p className="blog-description">{blog.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Blog Post 2 */}
-        <div className="col-md-4">
-          <div className="blog-card shadow-sm rounded">
-            <img src={blogImage} alt="Blog Title" className="blog-image" />
-            <div className="blog-content">
-              <h3 className="blog-title">Top 5 Tips for Financial Freedom</h3>
-              <p className="blog-description">
-                Explore the top five strategies for achieving financial freedom.
-                Learn how to manage your finances, save more, and eliminate debt
-                faster.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog Post 3 */}
-        <div className="col-md-4">
-          <div className="blog-card shadow-sm rounded">
-            <img src={blogImage} alt="Blog Title" className="blog-image" />
-            <div className="blog-content">
-              <h3 className="blog-title">The Importance of Credit Score</h3>
-              <p className="blog-description">
-                Understand why your credit score matters and how to improve it.
-                Get insights into maintaining a healthy credit score for
-                financial success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="row align-items-center">
-        {/* Blog Post 1 */}
-        <div className="col-md-4">
-          <div className="blog-card shadow-sm rounded">
-            <img src={blogImage} alt="Blog Title" className="blog-image" />
-            <div className="blog-content">
-              <h3 className="blog-title">Understanding Debt Settlement</h3>
-              <p className="blog-description">
-                Learn how debt settlement works and how it can help reduce your
-                outstanding debt. Discover tips and strategies to take control
-                of your financial future.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog Post 2 */}
-        <div className="col-md-4">
-          <div className="blog-card shadow-sm rounded">
-            <img src={blogImage} alt="Blog Title" className="blog-image" />
-            <div className="blog-content">
-              <h3 className="blog-title">Top 5 Tips for Financial Freedom</h3>
-              <p className="blog-description">
-                Explore the top five strategies for achieving financial freedom.
-                Learn how to manage your finances, save more, and eliminate debt
-                faster.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog Post 3 */}
-        <div className="col-md-4">
-          <div className="blog-card shadow-sm rounded">
-            <img src={blogImage} alt="Blog Title" className="blog-image" />
-            <div className="blog-content">
-              <h3 className="blog-title">The Importance of Credit Score</h3>
-              <p className="blog-description">
-                Understand why your credit score matters and how to improve it.
-                Get insights into maintaining a healthy credit score for
-                financial success.
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

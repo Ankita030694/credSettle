@@ -178,7 +178,7 @@ const Home = () => {
       <div className="strap1 container-fluid text-start mb-5">
         <div className="row align-items-center hero-container">
           <h3 className="bank_head text-black text-center mt-5">
-            Some successful letters of our clients:
+            Some Successful Letters Of Our Clients
           </h3>
           {/* <marquee
             behavior=""

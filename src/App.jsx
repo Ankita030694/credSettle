@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import "@fontsource/urbanist"; // Defaults to weight 400
 import "@fontsource/urbanist/400.css"; // Specify weight
 import "@fontsource/urbanist/400-italic.css"; 
 import "./App.css";
 import ComingSoon from "./components/comingsoon/ComingSoon";
 import Navbar from "./components/layout/navbar/Navbar";
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
@@ -24,11 +24,13 @@ import BusinessLoan from "./components/services/businessloan/BusinessLoan";
 import CarLoan from "./components/services/carloan/CarLoan";
 import Antiharassement from "./components/services/antiharassement/Antiharassement";
 import CreditScore from "./components/services/creditscore/CreditScore";
-
+import ScrollToTop from "./ScrollToTop";
+import Blogs from "./components/admin/blogs/Blogs";
+import AddNew from "./components/admin/blogs/AddNew";
 
 function App() {
   return (
-    
+    <div className="App">
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -37,6 +39,8 @@ function App() {
           <Route path="/form" element={<Form />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/blogs" element={<Blogs />} />
+          <Route path="/admin/addnew" element={<AddNew />} />
           <Route path="/about" element={<AboutMain/>} />
           <Route path="/services" element={<ServicesMain/>} />
           <Route path="/faq" element={<WhyusMain/>} />
@@ -48,15 +52,10 @@ function App() {
           <Route path="/services/carloan" element={<CarLoan/>} />
           <Route path="/services/antiharassement" element={<Antiharassement/>} />
           <Route path="/services/creditscore" element={<CreditScore/>} />
-
-
-          {/* <Route path="/footer" element={<Footer />} /> */}
-          {/* <Route path="/calc" element={<Calculator />} /> */}
-          {/* <Route path="/graph" element={<Graph />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
-    
+      </div>
   );
 }
 

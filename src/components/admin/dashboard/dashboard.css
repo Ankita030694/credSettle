@@ -11,7 +11,12 @@
   .filter-section {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
+    justify-content: space-between; /* Ensures items are spaced out */
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .logout-container {
+    margin-left: auto; /* Pushes the logout button to the right */
   }
   
   .filter-label {
@@ -93,6 +98,12 @@
 
   .delete-link {
     color: #FF4D4D;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .edit-link {
+    color: blueviolet;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;

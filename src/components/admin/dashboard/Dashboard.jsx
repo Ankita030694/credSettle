@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./dashboard.css";
 import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { db, auth } from "../../../firebase";
+import { Link, useNavigate } from "react-router-dom";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        navigate("/login"); // Redirect to login if not authenticated
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup the listener
+  }, [navigate]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -75,9 +87,18 @@ const Dashboard = () => {
 
     setFilteredData(filtered); // Update the filtered data
   };
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Firebase sign out
+      navigate("/login"); // Redirect to login after logout
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <div className="dashboard-container">
+       
       {/* Filter Section */}
       <div className="filter-section">
         <label className="filter-label">From:</label>
@@ -94,7 +115,23 @@ const Dashboard = () => {
           onChange={(e) => setToDate(e.target.value)}
           className="filter-input"
         />
-        <button className="filter-button" onClick={handleFilter}>Filter</button>
+        <button className="filter-button" onClick={handleFilter}>
+          Filter
+        </button>
+        <div className="logout-container mx-1">
+          <Link to = "/admin/blogs">
+        <button className="filter-button">
+          Blogs
+        </button>
+        </Link>
+      </div>
+        {/* Logout Button */}
+       <div className="logout-container mx-3">
+        <button className="filter-button" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
+     
       </div>
 
       {/* Table Section */}
@@ -120,7 +157,7 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-            {filteredData.map((person) => (
+              {filteredData.map((person) => (
                 <tr key={person.id} className="data-row">
                   <td>{new Date(person.created).toLocaleString()}</td>
                   <td>{person.name}</td>
@@ -135,7 +172,9 @@ const Dashboard = () => {
                   <td>{person.canPay}</td>
                   <td>{person.queries}</td>
                   <td>
-                    <a href="" className="delete-link" onClick={handleDelete}>Delete</a>
+                    <a href="" className="delete-link" onClick={handleDelete}>
+                      Delete
+                    </a>
                   </td>
                 </tr>
               ))}

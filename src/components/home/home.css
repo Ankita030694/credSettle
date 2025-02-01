@@ -67,7 +67,7 @@ h1 {
   opacity: 1 !important;
 }
 .strap{
-  height: 351px !important;
+  height: 265px !important;
   background-color: #040018;
   overflow: hidden;
 }
@@ -112,6 +112,7 @@ h1 {
 }
 .bank_head{
   z-index: 2;
+  font-weight: bold;
 }
 .marquee-content {
   display: inline-block;
@@ -120,6 +121,7 @@ h1 {
 .marquee-content img {
   width: 100%;  /* Set the width of the image (adjust if needed) */
   height: auto; /* Maintain aspect ratio of the image */
+  margin-top: -70px;
 }
 @keyframes marquee-scroll {
   0% {
