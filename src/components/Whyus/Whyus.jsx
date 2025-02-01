@@ -59,6 +59,11 @@ const Whyus = () => {
                 path to debt relief with transparent process
               </p>
             </div>
+            <Link to="/faq">
+              <button className="btn btn-primary get-started-btn mt-3">
+                Learn More
+              </button>
+            </Link>
 
             <div className="d-flex flex-column text-center align-items-center">
               {/* <div className="d-flex flex-row rate_txt  ">
@@ -72,11 +77,7 @@ const Whyus = () => {
             </div>
           </div>
           <div className="col-md-6 text-end why_btn">
-            <Link to="/faq">
-              <button className="btn btn-primary get-started-btn mb-3">
-                Learn More
-              </button>
-            </Link>
+            
 
             {/* <div className="d-flex flex-column mt-5 faq">
               <div className="py-2">
