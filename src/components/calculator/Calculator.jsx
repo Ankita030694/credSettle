@@ -65,7 +65,7 @@ const Calculator = ({
       {/* <br /> */}
       <br />
       <div className="switch-section">
-        <label>Missed any payments in last 30 days?</label>
+        <label><b>Missed any payments in last 30 days?</b></label>
         <br />
         <div className="missedEMI">
           <div className="form-check form-check-inline activeInput">

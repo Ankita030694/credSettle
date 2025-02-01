@@ -70,4 +70,22 @@ input[type="range"] {
     .calc_txt{
     margin-bottom: 2rem;
     }
+    .missedEMI{
+      overflow: hidden;
+    }
+    .missedEMI .form-check {
+      border: 1px solid #ccc;
+        border-top-color: rgb(204, 204, 204);
+        border-right-color: rgb(204, 204, 204);
+        border-bottom-color: rgb(204, 204, 204);
+        border-left-color: rgb(204, 204, 204);
+      border-radius: 8px;
+      width: 100%;
+      font-size: 14px;
+      padding: 5px 30px;
+      margin: 0;
+        margin-right: 0px;
+      margin-right: 10px !important;
+      cursor: pointer;
+    }
   }

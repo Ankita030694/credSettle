@@ -13,9 +13,6 @@ import logo from "../../../assets/images/whitelogo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-  };
   return (
     <footer className="text-light pt-4">
       <div className="footerCont">
@@ -32,14 +29,14 @@ const Footer = () => {
             <ul className="list-unstyled">
               <Link to = "/about">
               <li className="mt-3">
-                <a href="#about-us" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('about')}>
+                <a href="#about-us" className="text-light text-decoration-none foot_txt" >
                   About Us
                 </a>
               </li>
               </Link>
               <Link to = "/services">
               <li className="mt-3">
-                <a href="#services" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('services')}>
+                <a href="#services" className="text-light text-decoration-none foot_txt">
                   Services
                 </a> 
               </li>
@@ -49,7 +46,6 @@ const Footer = () => {
                 <a
                   href="#contact-us"
                   className="text-light text-decoration-none foot_txt"
-                  onClick={() => scrollToSection('faq')}
                 >
                   Faq's
                 </a>
@@ -57,7 +53,7 @@ const Footer = () => {
               </Link>
               <Link to = "/blogs">
               <li className="mt-3">
-                <a href="#blog" className="text-light text-decoration-none foot_txt" onClick={() => scrollToSection('testimonials')}>
+                <a href="#blog" className="text-light text-decoration-none foot_txt" >
                   Blogs
                 </a>
               </li>
