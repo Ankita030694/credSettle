@@ -91,7 +91,7 @@ const Form = () => {
         <h1>Contact Us</h1>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12 form_container form-group">
-            <label htmlFor="name" className="label">
+            <label htmlFor="name" className="label" style={{color: "white"}}>
               Name <span className="text-danger">*</span>
             </label>
             <input
@@ -107,7 +107,7 @@ const Form = () => {
           </div>
 
           <div className="col-md-12 form_container form-group">
-            <label htmlFor="number" className="label">
+            <label htmlFor="number" className="label" style={{color: "white"}}>
               Number <span className="text-danger">*</span>
             </label>
             <input

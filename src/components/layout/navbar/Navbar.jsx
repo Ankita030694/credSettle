@@ -23,10 +23,10 @@ const Navbar = () => {
             <div className="col-4 text-center d-none d-lg-block">
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav justify-content-center">
-                  <Link to="/" className="nav-item links">
+                  <Link to="/" className="nav-item links" style={{textDecoration: "none"}}>
                     <a className="nav-link active" href="/">Home</a>
                   </Link>
-                  <Link to="/about" className="nav-item links">
+                  <Link to="/about" className="nav-item links" style={{textDecoration: "none"}}>
                     <a className="nav-link">About Us</a>
                   </Link>
 
@@ -36,7 +36,7 @@ const Navbar = () => {
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <Link to="/services" className="nav-link dropdown-toggle">
+                    <Link to="/services" className="nav-link dropdown-toggle" style={{textDecoration: "none"}}>
                       Services
                     </Link>
                     {dropdownOpen && (
@@ -51,10 +51,10 @@ const Navbar = () => {
                     )}
                   </li>
 
-                  <Link to="/faq" className="nav-item links">
+                  <Link to="/faq" className="nav-item links" style={{textDecoration: "none"}}>
                     <a className="nav-link">FAQ'S</a>
                   </Link>
-                  <Link to="/blogs" className="nav-item links">
+                  <Link to="/blogs" className="nav-item links" style={{textDecoration: "none"}}>
                     <a className="nav-link">Blogs</a>
                   </Link>
                 </ul>
@@ -99,7 +99,7 @@ const Navbar = () => {
               <div className="offcanvas-body">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">Home</Link>
+                    <Link className="nav-link" to="/" >Home</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/about">About Us</Link>

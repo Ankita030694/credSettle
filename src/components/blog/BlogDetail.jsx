@@ -62,7 +62,10 @@ const BlogDetail = () => {
 
   // Function to generate a slug from the title
   const generateSlug = (title) => {
-    return title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
+    return title
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/[^\w-]+/g, "");
   };
 
   if (!blog) {
@@ -82,13 +85,19 @@ const BlogDetail = () => {
       >
         <h3 className="mt-3">{blog.subtitle}</h3>
       </Link>
+      <p>{blog.date}</p>
 
       {/* Render the blog description using dangerouslySetInnerHTML */}
       <div
         className="blog-description mt-5"
         dangerouslySetInnerHTML={{ __html: blog.description }}
-        style={{textAlign: "left"}}
+        style={{ textAlign: "left" }}
       />
+      <Link to="/form">
+        <button className="btn btn-primary get-started-btn1">
+          Register Now
+        </button>
+      </Link>
     </div>
   );
 };
