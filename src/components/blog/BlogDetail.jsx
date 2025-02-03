@@ -76,7 +76,7 @@ const BlogDetail = () => {
       </div>
       <h1 className="mt-5">{blog.title}</h1>
       <Link
-        to={`/blogs/${generateSlug(blog.title)}`}
+        to="/blogs"
         className="blog-link"
         style={{ textDecoration: "none" }}
       >

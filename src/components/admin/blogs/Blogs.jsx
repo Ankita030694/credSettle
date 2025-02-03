@@ -125,7 +125,7 @@ const Blogs = () => {
                   <td>{formatDate(blog.date)}</td>
                   <td>{blog.title}</td>
                   <td>{blog.subtitle}</td>
-                  <td>{truncateDescription(blog.description)}</td>
+                  <td><div className="blog-description mt-5" style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}></div></td>
                   <td><img src={blog.image} alt="" style={{width: "30%"}}/></td>
                   <td>
                     <button
