@@ -78,6 +78,7 @@ const AddNew = () => {
         </div>
         <div className="form-group">
           <label>Image URL:</label>
+          <small>The image size should be 1340 X 250</small>
           <input
             type="url"
             {...register("imageUrl", {
