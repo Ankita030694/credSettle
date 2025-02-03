@@ -98,7 +98,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-       
       {/* Filter Section */}
       <div className="filter-section">
         <label className="filter-label">From:</label>
@@ -119,19 +118,16 @@ const Dashboard = () => {
           Filter
         </button>
         <div className="logout-container mx-1">
-          <Link to = "/admin/blogs">
-        <button className="filter-button">
-          Blogs
-        </button>
-        </Link>
-      </div>
+          <Link to="/admin/blogs">
+            <button className="filter-button">Blogs</button>
+          </Link>
+        </div>
         {/* Logout Button */}
-       <div className="logout-container mx-3">
-        <button className="filter-button" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
-     
+        <div className="logout-container mx-3">
+          <button className="filter-button" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
       </div>
 
       {/* Table Section */}
@@ -172,7 +168,14 @@ const Dashboard = () => {
                   <td>{person.canPay}</td>
                   <td>{person.queries}</td>
                   <td>
-                    <a href="" className="delete-link" onClick={handleDelete}>
+                    <a
+                      href="#"
+                      className="delete-link"
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevent default link behavior
+                        handleDelete(person.id); // Pass the person.id to handleDelete
+                      }}
+                    >
                       Delete
                     </a>
                   </td>
