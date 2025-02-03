@@ -24,6 +24,10 @@
   .nav-link:hover{
     cursor: pointer;
   }
+  .custom-offcanvas {
+    display: none;
+  }
+  
 
   @media screen and (max-width: 767px){
     .navbar{
@@ -34,6 +38,36 @@
       height: 120px !important;
       object-fit: cover !important;
     }
+    /* Mobile menu background */
+.custom-offcanvas {
+  display: block;
+  background-color: #070030;
+  max-width: 50%;
+}
+
+/* Mobile menu text color */
+.custom-offcanvas .nav-link {
+  color: white !important;
+}
+
+/* Close button color */
+.btn-close {
+  filter: invert(1);
+}
+
+/* Make sure the dropdown items are visible */
+.custom-offcanvas .dropdown-menu {
+  background-color: #070030;
+}
+
+.custom-offcanvas .dropdown-item {
+  color: white;
+}
+
+.custom-offcanvas .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
    
   }
   @media screen and (max-width: 596px){
