@@ -29,6 +29,7 @@ const Blog = () => {
   const fetchBlogs = async (next = true) => {
     setLoading(true);
     try {
+
       const blogCollection = collection(db, "blogs");
       let q = lastVisible
         ? query(

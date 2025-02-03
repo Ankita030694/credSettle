@@ -44,11 +44,18 @@
   text-align: center;
 }
 
-.blog-detail .blog-image {
+.blog-image-container {
+  width: 100%;  /* Spread the image across the full width of the screen */
+  height: 60vh; /* Adjust the height to give it a rectangular shape */
+  overflow: hidden;  /* Hide any overflowed content if the image exceeds container bounds */
+  position: relative;
+}
+
+/* Blog image styling */
+.blog-image {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 10px;
+  height: 100%;
+  object-fit: cover;  /* This ensures the image covers the container area without distorting its aspect ratio */
 }
 
 /* Responsiveness */
