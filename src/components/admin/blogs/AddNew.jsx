@@ -24,6 +24,7 @@ const AddNew = () => {
         subtitle: data.subtitle,
         description: data.description, // Save rich HTML content
         date: data.date,
+        image: data.imageUrl,
         created: Date.now(),
       });
 
@@ -75,7 +76,24 @@ const AddNew = () => {
             <p className="error-message">{errors.subtitle.message}</p>
           )}
         </div>
-
+        <div className="form-group">
+          <label>Image URL:</label>
+          <input
+            type="url"
+            {...register("imageUrl", {
+              required: "Image URL is required",
+              pattern: {
+                value: /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))/i,
+                message: "Enter a valid image URL",
+              },
+            })}
+            className="form-input"
+            placeholder="https://example.com/image.jpg"
+          />
+          {errors.imageUrl && (
+            <p className="error-message">{errors.imageUrl.message}</p>
+          )}
+        </div>
         <div className="form-group">
           <label>Description:</label>
           <Controller

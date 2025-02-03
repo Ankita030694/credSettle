@@ -126,7 +126,7 @@ const Blogs = () => {
                   <td>{blog.title}</td>
                   <td>{blog.subtitle}</td>
                   <td>{truncateDescription(blog.description)}</td>
-                  <td>IMAGE</td>
+                  <td><img src={blog.image} alt="" style={{width: "30%"}}/></td>
                   <td>
                     <button
                       onClick={() => setEditingBlog(blog)}
