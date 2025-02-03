@@ -35,7 +35,7 @@ const BlogDetail = () => {
   return (
     <div className="blog-detail">
       <div className="container-fluid blog-image">
-      <img src={banner} alt=""
+      <img src={blog.image} alt=""
        style={{width: "100%", height: "100%"}}/>
       </div>
       <h1 className="mt-5">{blog.title}</h1>

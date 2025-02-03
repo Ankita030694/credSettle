@@ -1,44 +1,47 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { collection, addDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../../../firebase'; // Import Firebase storage instance
-import './AddNew.css'; // Import the CSS file
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { collection, addDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { db, storage } from "../../../firebase"; // Import Firebase storage instance
+import "./AddNew.css"; // Import the CSS file
 
 const AddNew = () => {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = async (data) => {
-
     try {
       // Check if there's an image to upload
-    //   let imageUrl = '';
-    //   if (data.image && data.image[0]) {
-    //     const imageRef = ref(storage, `blogs/${data.image[0].name}`);
-    //     // Upload image to Firebase Storage
-    //     const uploadResult = await uploadBytes(imageRef, data.image[0]);
-    //     imageUrl = await getDownloadURL(uploadResult.ref); // Get the image URL after upload
-    //   }
+      //   let imageUrl = '';
+      //   if (data.image && data.image[0]) {
+      //     const imageRef = ref(storage, `blogs/${data.image[0].name}`);
+      //     // Upload image to Firebase Storage
+      //     const uploadResult = await uploadBytes(imageRef, data.image[0]);
+      //     imageUrl = await getDownloadURL(uploadResult.ref); // Get the image URL after upload
+      //   }
 
       // Add the form data to Firestore under the 'blogs' collection
-      const docRef = await addDoc(collection(db, 'blogs'), {
+      const docRef = await addDoc(collection(db, "blogs"), {
         title: data.title,
         subtitle: data.subtitle,
         description: data.description,
         date: data.date,
-        // image: imageUrl,
+        image: data.imageUrl,
         created: Date.now(),
       });
 
-      console.log('Blog added with ID: ', docRef.id);
-      alert('Blog submitted successfully!');
-      navigate('/admin/blogs'); // Redirect after submission
+      console.log("Blog added with ID: ", docRef.id);
+      alert("Blog submitted successfully!");
+      navigate("/admin/blogs"); // Redirect after submission
     } catch (error) {
-      console.error('Error submitting blog: ', error);
-      alert('Failed to submit blog!');
+      console.error("Error submitting blog: ", error);
+      alert("Failed to submit blog!");
     }
   };
 
@@ -48,54 +51,75 @@ const AddNew = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="blog-form">
         <div className="form-group">
           <label>Date:</label>
-          <input 
-            type="date" 
-            {...register('date', { required: 'Date is required' })} 
+          <input
+            type="date"
+            {...register("date", { required: "Date is required" })}
             className="form-input"
           />
-          {errors.date && <p className="error-message">{errors.date.message}</p>}
+          {errors.date && (
+            <p className="error-message">{errors.date.message}</p>
+          )}
         </div>
 
         <div className="form-group">
           <label>Title:</label>
-          <input 
-            type="text" 
-            {...register('title', { required: 'Title is required' })} 
+          <input
+            type="text"
+            {...register("title", { required: "Title is required" })}
             className="form-input"
           />
-          {errors.title && <p className="error-message">{errors.title.message}</p>}
+          {errors.title && (
+            <p className="error-message">{errors.title.message}</p>
+          )}
         </div>
 
         <div className="form-group">
           <label>Sub-Title:</label>
-          <input 
-            type="text" 
-            {...register('subtitle', { required: 'Sub-Title is required' })} 
+          <input
+            type="text"
+            {...register("subtitle", { required: "Sub-Title is required" })}
             className="form-input"
           />
-          {errors.subtitle && <p className="error-message">{errors.subtitle.message}</p>}
+          {errors.subtitle && (
+            <p className="error-message">{errors.subtitle.message}</p>
+          )}
         </div>
 
         <div className="form-group">
           <label>Description:</label>
-          <textarea 
-            {...register('description', { required: 'Description is required' })} 
+          <textarea
+            {...register("description", {
+              required: "Description is required",
+            })}
             className="form-input"
           />
-          {errors.description && <p className="error-message">{errors.description.message}</p>}
+          {errors.description && (
+            <p className="error-message">{errors.description.message}</p>
+          )}
         </div>
 
-        {/* <div className="form-group">
-          <label>Blog Image:</label>
-          <input 
-            type="file" 
-            {...register('image')} 
-            accept="image/*" 
-            className="file-input"
+        <div className="form-group">
+          <label>Image URL:</label>
+          <input
+            type="url"
+            {...register("imageUrl", {
+              required: "Image URL is required",
+              pattern: {
+                value: /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))/i,
+                message: "Enter a valid image URL",
+              },
+            })}
+            className="form-input"
+            placeholder="https://example.com/image.jpg"
           />
-        </div> */}
+          {errors.imageUrl && (
+            <p className="error-message">{errors.imageUrl.message}</p>
+          )}
+        </div>
 
-        <button type="submit" className="submit-button">Add Blog</button>
+        <button type="submit" className="submit-button">
+          Add Blog
+        </button>
       </form>
     </div>
   );

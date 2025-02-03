@@ -82,7 +82,15 @@ const Blogs = () => {
       alert("Failed to update blog!");
     }
   };
-
+ // Helper function to truncate the blog description to 40 words
+ const truncateDescription = (description, wordLimit = 40) => {
+  if (!description) return "";
+  const words = description.split(" ");
+  if (words.length <= wordLimit) {
+    return description;
+  }
+  return words.slice(0, wordLimit).join(" ") + "...";
+};
   return (
     <div className="dashboard-container">
       {/* Filter Section */}
@@ -117,7 +125,7 @@ const Blogs = () => {
                   <td>{formatDate(blog.date)}</td>
                   <td>{blog.title}</td>
                   <td>{blog.subtitle}</td>
-                  <td>{blog.description}</td>
+                  <td>{truncateDescription(blog.description)}</td>
                   <td>IMAGE</td>
                   <td>
                     <button

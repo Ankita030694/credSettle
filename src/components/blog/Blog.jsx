@@ -77,6 +77,15 @@ const Blog = () => {
   const generateSlug = (title) => {
     return title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
   };
+  // Helper function to truncate the blog description to 40 words
+  const truncateDescription = (description, wordLimit = 40) => {
+    if (!description) return "";
+    const words = description.split(" ");
+    if (words.length <= wordLimit) {
+      return description;
+    }
+    return words.slice(0, wordLimit).join(" ") + "...";
+  };
 
   return (
     <div className="blog-section container-fluid p-5">
@@ -91,16 +100,21 @@ const Blog = () => {
           {blogs.map((blog) => (
             <div className="col-md-4" key={blog.id}>
               <div className="blog-card shadow-sm rounded">
-                <Link to={`/blogs/${generateSlug(blog.title)}`} className="blog-link">
+                <Link to={`/blogs/${generateSlug(blog.title)}`} className="blog-link" style={{textDecoration: "none"}}>
                   <img
-                    src={blog.image ? blog.image : blogImage}
+                    src={blog.image || blogImage}
                     alt={blog.title}
                     className="blog-image"
+                    // If the image fails to load, fallback to the default image
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = blogImage;
+                    }}
                   />
                   <div className="blog-content">
-                    <h2 className="blog-title">{blog.title}</h2>
+                    <h2 className="blog-title" >{blog.title}</h2>
                     <h5>{blog.subtitle}</h5>
-                    <p className="blog-description">{blog.description}</p>
+                    <p className="blog-description">{truncateDescription(blog.description)}</p>
                   </div>
                 </Link>
               </div>
@@ -113,7 +127,11 @@ const Blog = () => {
           Previous
         </button>
         <span className="px-3">Page {page}</span>
-        <button className="btn btn-primary" onClick={handleNext} disabled={blogs.length < blogsPerPage}>
+        <button
+          className="btn btn-primary"
+          onClick={handleNext}
+          disabled={blogs.length < blogsPerPage}
+        >
           Next
         </button>
       </div>
