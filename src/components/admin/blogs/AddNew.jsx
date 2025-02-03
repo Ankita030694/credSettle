@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import ReactQuill from "react-quill"; // Import React Quill
+import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { collection, addDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { db, storage } from "../../../firebase"; // Import Firebase storage instance
+import { db } from "../../../firebase"; // Import Firebase instance
 import "./AddNew.css"; // Import the CSS file
 
 const AddNew = () => {
@@ -11,28 +12,18 @@ const AddNew = () => {
 
   const {
     register,
+    control, // Controller from react-hook-form
     handleSubmit,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
     try {
-      // Check if there's an image to upload
-      //   let imageUrl = '';
-      //   if (data.image && data.image[0]) {
-      //     const imageRef = ref(storage, `blogs/${data.image[0].name}`);
-      //     // Upload image to Firebase Storage
-      //     const uploadResult = await uploadBytes(imageRef, data.image[0]);
-      //     imageUrl = await getDownloadURL(uploadResult.ref); // Get the image URL after upload
-      //   }
-
-      // Add the form data to Firestore under the 'blogs' collection
       const docRef = await addDoc(collection(db, "blogs"), {
         title: data.title,
         subtitle: data.subtitle,
-        description: data.description,
+        description: data.description, // Save rich HTML content
         date: data.date,
-        image: data.imageUrl,
         created: Date.now(),
       });
 
@@ -87,35 +78,21 @@ const AddNew = () => {
 
         <div className="form-group">
           <label>Description:</label>
-          <div
-            {...register("description", {
-              required: "Description is required",
-            })}
-            className="form-input"
-            contentEditable
-            placeholder="Enter description here..."
+          <Controller
+            name="description"
+            control={control}
+            rules={{ required: "Description is required" }}
+            render={({ field }) => (
+              <ReactQuill
+                {...field} // bind quill to react-hook-form
+                theme="snow"
+                className="form-input"
+                placeholder="Write your description here"
+              />
+            )}
           />
           {errors.description && (
             <p className="error-message">{errors.description.message}</p>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label>Image URL:</label>
-          <input
-            type="url"
-            {...register("imageUrl", {
-              required: "Image URL is required",
-              pattern: {
-                value: /(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))/i,
-                message: "Enter a valid image URL",
-              },
-            })}
-            className="form-input"
-            placeholder="https://example.com/image.jpg"
-          />
-          {errors.imageUrl && (
-            <p className="error-message">{errors.imageUrl.message}</p>
           )}
         </div>
 

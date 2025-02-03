@@ -4,7 +4,6 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./Blog.css";
 import banner from "../../assets/images/bgImage.png";
-// import blogImage from "../../../assets/images/Image.png";
 
 const BlogDetail = () => {
   const { slug } = useParams(); // Get the slug from the URL
@@ -21,7 +20,7 @@ const BlogDetail = () => {
           ...doc.data(),
         }));
 
-        console.log("Fetched Blogs:", blogs); // Debugging - check if blogs are fetched in production
+        console.log("Fetched Blogs:", blogs); // Debugging - check if blogs are fetched
 
         // Function to normalize slugs
         const formatSlug = (title) =>
@@ -60,8 +59,9 @@ const BlogDetail = () => {
 
     fetchBlog();
   }, [slug]);
-   // Function to generate a slug from the title
-   const generateSlug = (title) => {
+
+  // Function to generate a slug from the title
+  const generateSlug = (title) => {
     return title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
   };
 
@@ -82,8 +82,13 @@ const BlogDetail = () => {
       >
         <h3 className="mt-3">{blog.subtitle}</h3>
       </Link>
-      {/* <img src={blog.image || blogImage} alt={blog.title} className="blog-image" /> */}
-      <p className="mt-5">{blog.description}</p>
+
+      {/* Render the blog description using dangerouslySetInnerHTML */}
+      <div
+        className="blog-description mt-5"
+        dangerouslySetInnerHTML={{ __html: blog.description }}
+        style={{textAlign: "left"}}
+      />
     </div>
   );
 };
