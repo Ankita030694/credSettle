@@ -29,7 +29,6 @@ const Blog = () => {
   const fetchBlogs = async (next = true) => {
     setLoading(true);
     try {
-
       const blogCollection = collection(db, "blogs");
       let q = lastVisible
         ? query(
@@ -76,7 +75,10 @@ const Blog = () => {
 
   // Function to generate a slug from the title
   const generateSlug = (title) => {
-    return title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
+    return title
+      .toLowerCase()
+      .replace(/ /g, "-")
+      .replace(/[^\w-]+/g, "");
   };
   // Helper function to truncate the blog description to 40 words
   const truncateDescription = (description, wordLimit = 30) => {
@@ -101,7 +103,11 @@ const Blog = () => {
           {blogs.map((blog) => (
             <div className="col-md-4" key={blog.id}>
               <div className="blog-card shadow-sm rounded">
-                <Link to={`/blogs/${generateSlug(blog.title)}`} className="blog-link" style={{textDecoration: "none"}}>
+                <Link
+                  to={`/blogs/${generateSlug(blog.title)}`}
+                  className="blog-link"
+                  style={{ textDecoration: "none" }}
+                >
                   <img
                     src={blog.image || blogImage}
                     alt={blog.title}
@@ -114,9 +120,15 @@ const Blog = () => {
                   />
                   <div className="blog-content">
                     <p>{blog.date}</p>
-                    <h2 className="blog-title" >{blog.title}</h2>
+                    <h2 className="blog-title">{blog.title}</h2>
                     <h5>{blog.subtitle}</h5>
-                    <div className="blog-description mt-2" style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}></div>
+                    <div
+                      className="blog-description mt-2"
+                      style={{ textAlign: "left" }}
+                      dangerouslySetInnerHTML={{
+                        __html: truncateDescription(blog.description),
+                      }}
+                    ></div>
                   </div>
                 </Link>
               </div>
@@ -124,8 +136,21 @@ const Blog = () => {
           ))}
         </div>
       )}
+
+      <div className="text-center">
+        <Link to="/form">
+          <button className="btn btn-primary get-started-btn1">
+            Register Now
+          </button>
+        </Link>
+      </div>
+
       <div className="pagination-controls d-flex justify-content-center mt-4 align-items-center">
-        <button className="btn btn-primary me-2" onClick={handlePrev} disabled={page === 1}>
+        <button
+          className="btn btn-primary me-2"
+          onClick={handlePrev}
+          disabled={page === 1}
+        >
           Previous
         </button>
         <span className="px-3">Page {page}</span>

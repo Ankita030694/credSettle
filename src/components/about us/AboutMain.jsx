@@ -124,6 +124,11 @@ const AboutMain = () => {
               protected, avoid harassment, and regain financial freedom with
               expert negotiation and professional guidance
             </p>
+            <Link to="/services">
+              <button className="btn btn-primary get-started-btn mt-4">
+                Know About Our Services
+              </button>
+            </Link>
           </div>
         </div>
       </div>

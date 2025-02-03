@@ -34,6 +34,11 @@ const ServicesMain = () => {
               reduce harassment, and handle recovery agents, ensuring a
               stress-free path to financial freedom
             </p>
+            <Link to="/faq">
+              <button className="btn btn-primary get-started-btn serv_btn">
+                Frequently Asked Questions
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -147,7 +152,10 @@ const ServicesMain = () => {
               {/* Card 3 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link to="/services/creditloan" style={{textDecoration: "none", color: "black" }}>
+                  <Link
+                    to="/services/creditloan"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
                     <FaGlobe className="card-icon" />
                     <h3 className="card-title">Credit Score Builder</h3>
                     <p className="card-text">
