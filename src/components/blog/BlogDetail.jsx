@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
-import "./BlogDetail.css";
-import blogImage from "../../../assets/images/Image.png";
+import { db } from "../../firebase";
+import "./Blog.css";
+import banner from "../../assets/images/bgImage.png"
+// import blogImage from "../../../assets/images/Image.png";
 
 const BlogDetail = () => {
   const { slug } = useParams(); // Get the slug from the URL
@@ -33,10 +34,14 @@ const BlogDetail = () => {
 
   return (
     <div className="blog-detail">
-      <h1>{blog.title}</h1>
-      <h3>{blog.subtitle}</h3>
-      <img src={blog.image || blogImage} alt={blog.title} className="blog-image" />
-      <p>{blog.description}</p>
+      <div className="container-fluid blog-image">
+      <img src={banner} alt=""
+       style={{width: "100%", height: "100%"}}/>
+      </div>
+      <h1 className="mt-5">{blog.title}</h1>
+      <h3 className="mt-3">{blog.subtitle}</h3>
+      {/* <img src={blog.image || blogImage} alt={blog.title} className="blog-image" /> */}
+      <p className="mt-5">{blog.description}</p>
     </div>
   );
 };

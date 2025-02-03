@@ -38,6 +38,18 @@
 .blog-section .col-md-4 {
   margin-bottom: 30px;
 }
+.blog-detail {
+  max-width: 100%;
+  padding: 50px;
+  text-align: center;
+}
+
+.blog-detail .blog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
 
 /* Responsiveness */
 @media (max-width: 768px) {

@@ -27,6 +27,7 @@ import CreditScore from "./components/services/creditscore/CreditScore";
 import ScrollToTop from "./ScrollToTop";
 import Blogs from "./components/admin/blogs/Blogs";
 import AddNew from "./components/admin/blogs/AddNew";
+import BlogDetail from "./components/blog/BlogDetail";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path="/faq" element={<WhyusMain/>} />
           <Route path="/testimonials" element={<TestimonialsMain/>} />
           <Route path="/blogs" element={<Blog/>} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/services/personalloan" element={<PersonalLoan/>} />
           <Route path="/services/creditloan" element={<CreditLoan/>} />
           <Route path="/services/businessloan" element={<BusinessLoan/>} />
