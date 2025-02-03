@@ -79,7 +79,7 @@ const Blog = () => {
     return title.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
   };
   // Helper function to truncate the blog description to 40 words
-  const truncateDescription = (description, wordLimit = 40) => {
+  const truncateDescription = (description, wordLimit = 30) => {
     if (!description) return "";
     const words = description.split(" ");
     if (words.length <= wordLimit) {
@@ -115,7 +115,7 @@ const Blog = () => {
                   <div className="blog-content">
                     <h2 className="blog-title" >{blog.title}</h2>
                     <h5>{blog.subtitle}</h5>
-                    <p className="blog-description">{truncateDescription(blog.description)}</p>
+                    <div className="blog-description mt-2" style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}></div>
                   </div>
                 </Link>
               </div>

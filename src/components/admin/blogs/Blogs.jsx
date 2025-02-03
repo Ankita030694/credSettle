@@ -83,7 +83,7 @@ const Blogs = () => {
     }
   };
  // Helper function to truncate the blog description to 40 words
- const truncateDescription = (description, wordLimit = 40) => {
+ const truncateDescription = (description, wordLimit = 20) => {
   if (!description) return "";
   const words = description.split(" ");
   if (words.length <= wordLimit) {
@@ -125,7 +125,7 @@ const Blogs = () => {
                   <td>{formatDate(blog.date)}</td>
                   <td>{blog.title}</td>
                   <td>{blog.subtitle}</td>
-                  <td><div className="blog-description mt-5" style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}></div></td>
+                  <td><div className="blog-description " style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}></div></td>
                   <td><img src={blog.image} alt="" style={{width: "30%"}}/></td>
                   <td>
                     <button
@@ -194,6 +194,7 @@ const Blogs = () => {
                   defaultValue={editingBlog.description}
                   required
                   className="form-input"
+                  rows={10}
                 />
               </div>
               <div className="modal-actions">
