@@ -87,11 +87,13 @@ const AddNew = () => {
 
         <div className="form-group">
           <label>Description:</label>
-          <textarea
+          <div
             {...register("description", {
               required: "Description is required",
             })}
             className="form-input"
+            contentEditable
+            placeholder="Enter description here..."
           />
           {errors.description && (
             <p className="error-message">{errors.description.message}</p>
