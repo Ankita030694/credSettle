@@ -12,6 +12,8 @@ import {
   endAt,
 } from "firebase/firestore";
 import { db } from "../../firebase";
+import Skeleton from "react-loading-skeleton"; // Import Skeleton loader
+import "react-loading-skeleton/dist/skeleton.css"; // Import styles for skeleton
 import "./Blog.css";
 
 // Import fallback images
@@ -61,13 +63,11 @@ const Blog = () => {
       }));
 
       if (direction === "next" && querySnapshot.docs.length > 0) {
-        // Save the last DocumentSnapshot for the current page.
         setPageCursors((prev) => [
           ...prev,
           querySnapshot.docs[querySnapshot.docs.length - 1],
         ]);
       } else if (direction === "prev") {
-        // Remove the last cursor when moving back.
         setPageCursors((prev) => prev.slice(0, prev.length - 1));
       }
 
@@ -116,7 +116,21 @@ const Blog = () => {
         <img className="about_icon ms-3" src={elipse} alt="Elipse" />
       </div>
       {loading ? (
-        <p>Loading blogs...</p>
+        <div className="row align-items-center">
+          {/* Render skeleton loaders */}
+          {Array.from({ length: blogsPerPage }).map((_, index) => (
+            <div className="col-md-4" key={index}>
+              <div className="blog-card shadow-sm rounded">
+                <Skeleton height={200} />
+                <div className="blog-content">
+                  <Skeleton height={25} width="60%" />
+                  <Skeleton height={20} width="80%" />
+                  <Skeleton count={3} height={15} width="90%" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="row align-items-center">
           {blogs.map((blog) => (

@@ -12,6 +12,8 @@
   border-radius: 8px; /* Rounded corners */
   background-color: #fff;
   overflow: hidden; /* Prevent overflow */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 .blog-card img {
   width: 100%;
