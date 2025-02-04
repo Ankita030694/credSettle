@@ -59,11 +59,11 @@ const WhyusMain = () => {
                    path to debt relief with transparent process
                  </p>
                </div>
-               <Link to="/blogs">
+               <a href="/blogs">
               <button className="btn btn-primary get-started-btn mt-3">
-                View Blogs
+                Learn More
               </button>
-            </Link>
+            </a>
    
                <div className="d-flex flex-column text-center align-items-center">
                  {/* <div className="d-flex flex-row rate_txt  ">
