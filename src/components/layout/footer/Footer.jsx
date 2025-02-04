@@ -28,110 +28,112 @@ const Footer = () => {
           <Col md={3} className="foot_col">
             <h5 className="mb-3 foot_head">Company</h5>
             <ul className="list-unstyled">
-              <li className="mt-3">
-                <Link
-                  to="/about"
-                  className="text-light text-decoration-none foot_txt"
-                >
-                  About Us
-                </Link>
-              </li>
-
-              <Link to="/services">
+            {/* <Link to="/about"> */}
                 <li className="mt-3">
                   <a
-                    href="#services"
+                    href="/about"
+                    className="text-light text-decoration-none foot_txt"
+                  >
+                    About
+                  </a>
+                </li>
+              {/* </Link> */}
+
+              {/* <Link to="/services"> */}
+                <li className="mt-3">
+                  <a
+                    href="/services"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Services
                   </a>
                 </li>
-              </Link>
-              <Link to="/faq">
+              {/* </Link> */}
+              {/* <Link to="/faq"> */}
                 <li className="mt-3">
                   <a
-                    href="#contact-us"
+                    href="/faq"
                     className="text-light text-decoration-none foot_txt"
                   >
-                    Faq's
+                    FAQ'S
                   </a>
                 </li>
-              </Link>
-              <Link to="/blogs">
+              {/* </Link> */}
+              {/* <Link to="/blogs"> */}
                 <li className="mt-3">
                   <a
-                    href="#blog"
+                    href="/blogs"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Blogs
                   </a>
                 </li>
-              </Link>
+              {/* </Link> */}
             </ul>
           </Col>
           <Col md={3} className="foot_col">
             <h5 className="mb-3 foot_head">Services</h5>
             <ul className="list-unstyled">
-              <Link to="/services/personalloan">
+              {/* <Link to="/services/personalloan"> */}
                 <li className="mt-3">
                   <a
-                    href="#business-loan"
+                    href="/services/personalloan"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Personal Loan
                   </a>
                 </li>
-              </Link>
-              <Link to="/services/creditloan">
+              {/* </Link> */}
+              {/* <Link to="/services/creditloan"> */}
                 <li className="mt-3">
                   <a
-                    href="#personal-loan"
+                    href="/services/creditloan"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Credit Loan
                   </a>
                 </li>
-              </Link>
-              <Link to="/services/businessloan">
+              {/* </Link> */}
+              {/* <Link to="/services/businessloan"> */}
                 <li className="mt-3">
                   <a
-                    href="#financial-planning"
+                    href="/services/businessloan"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Business Loan
                   </a>
                 </li>
-              </Link>
-              <Link to="/services/carloan">
+              {/* </Link> */}
+              {/* <Link to="/services/carloan"> */}
                 <li className="mt-3">
                   <a
-                    href="#consultation"
+                    href="/services/carloan"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Car Loan
                   </a>
                 </li>
-              </Link>
-              <Link to="/services/antiharassement">
+              {/* </Link> */}
+              {/* <Link to="/services/antiharassement"> */}
                 <li className="mt-3">
                   <a
-                    href="#consultation"
+                    href="/services/antiharassement"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Anti Harassement
                   </a>
                 </li>
-              </Link>
-              <Link to="/services/creditscore">
+              {/* </Link> */}
+              {/* <Link to="/services/creditscore"> */}
                 <li className="mt-3">
                   <a
-                    href="#consultation"
+                    href="/services/creditscore"
                     className="text-light text-decoration-none foot_txt"
                   >
                     Credit Score Improvement
                   </a>
                 </li>
-              </Link>
+              {/* </Link> */}
             </ul>
           </Col>
           <Col md={3} className="foot_col">
@@ -148,11 +150,14 @@ const Footer = () => {
                 <FaMapMarkerAlt /> Location
               </a>
             </p>
-            <Link to="/form" style={{ textDecoration: "none" }}>
-              <p className="mt-4 foot_txt " style={{ color: "white" }}>
+            {/* <Link to="/form" style={{ textDecoration: "none" }}> */}
+            <a href="/form">
+            <p className="mt-4 foot_txt " style={{ color: "white" }}>
                 <FaPhone /> Register Now
               </p>
-            </Link>
+            </a>
+             
+            {/* </Link> */}
           </Col>
         </Row>
 

@@ -23,12 +23,20 @@ const Navbar = () => {
             <div className="col-4 text-center d-none d-lg-block">
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav justify-content-center">
-                  <Link to="/" className="nav-item links" style={{textDecoration: "none"}}>
-                    <a className="nav-link active" href="/">Home</a>
-                  </Link>
-                  <Link to="/about" className="nav-item links" style={{textDecoration: "none"}}>
-                    <a className="nav-link">About Us</a>
-                  </Link>
+                  {/* <Link to="/" className="nav-item links" style={{textDecoration: "none"}}> */}
+                  <li className="nav-item dropdown links">
+                    <a className="nav-link active" href="/">
+                      Home
+                    </a>
+                  </li>
+                  {/* </Link> */}
+                  {/* <Link to="/about" className="nav-item links" style={{textDecoration: "none"}}> */}
+                  <li className="nav-item dropdown links">
+                    <a className="nav-link" href="/about">
+                      About Us
+                    </a>
+                  </li>
+                  {/* </Link> */}
 
                   {/* Services Dropdown */}
                   <li
@@ -36,27 +44,75 @@ const Navbar = () => {
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <Link to="/services" className="nav-link dropdown-toggle" style={{textDecoration: "none"}}>
+                    <a href="/services" className="nav-link">
                       Services
-                    </Link>
+                    </a>
+
                     {dropdownOpen && (
                       <ul className="dropdown-menu show">
-                        <li><Link className="dropdown-item" to="/services/personalloan">Personal Loan</Link></li>
-                        <li><Link className="dropdown-item" to="/services/creditloan">Credit Card</Link></li>
-                        <li><Link className="dropdown-item" to="/services/businessloan">Business Loan</Link></li>
-                        <li><Link className="dropdown-item" to="/services/carloan">Car Loan</Link></li>
-                        <li><Link className="dropdown-item" to="/services/antiharassement">Anti Harassment</Link></li>
-                        <li><Link className="dropdown-item" to="/services/creditscore">Credit Score Builder</Link></li>
+                        <li>
+                          <a
+                            className="dropdown-item"
+                            href="/services/personalloan"
+                          >
+                            Personal Loan
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className="dropdown-item"
+                            href="/services/creditloan"
+                          >
+                            Credit Card
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className="dropdown-item"
+                            href="/services/businessloan"
+                          >
+                            Business Loan
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="/services/carloan">
+                            Car Loan
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className="dropdown-item"
+                            href="/services/antiharassement"
+                          >
+                            Anti Harassment
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className="dropdown-item"
+                            href="/services/creditscore"
+                          >
+                            Credit Score Builder
+                          </a>
+                        </li>
                       </ul>
                     )}
                   </li>
 
-                  <Link to="/faq" className="nav-item links" style={{textDecoration: "none"}}>
-                    <a className="nav-link">FAQ'S</a>
-                  </Link>
-                  <Link to="/blogs" className="nav-item links" style={{textDecoration: "none"}}>
-                    <a className="nav-link">Blogs</a>
-                  </Link>
+                  {/* <Link to="/faq" className="nav-item links" style={{textDecoration: "none"}}> */}
+                  <li className="nav-item dropdown links">
+                    <a className="nav-link" href="/faq">
+                      FAQ'S
+                    </a>
+                  </li>
+                  {/* </Link> */}
+                  {/* <Link to="/blogs" className="nav-item links" style={{textDecoration: "none"}}> */}
+                  <li className="nav-item dropdown links">
+                    <a className="nav-link" href="/blogs">
+                      Blogs
+                    </a>
+                  </li>
+                  {/* </Link> */}
                 </ul>
               </div>
             </div>
@@ -64,7 +120,9 @@ const Navbar = () => {
             {/* Third Column - Get Started Button (Desktop Only) */}
             <div className="col-4 text-end d-none d-lg-block">
               <Link to="/form">
-                <button className="btn btn-primary get-started-btn1">Register Now</button>
+                <button className="btn btn-primary get-started-btn1">
+                  Register Now
+                </button>
               </Link>
             </div>
 
@@ -99,40 +157,89 @@ const Navbar = () => {
               <div className="offcanvas-body">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/" >Home</Link>
+                    <Link className="nav-link" to="/">
+                      Home
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/about">About Us</Link>
+                    <Link className="nav-link" to="/about">
+                      About Us
+                    </Link>
                   </li>
 
                   {/* Services Dropdown */}
                   <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      data-bs-toggle="dropdown"
+                    >
                       Services
                     </a>
                     <ul className="dropdown-menu">
-                      <li><Link className="dropdown-item" to="/services/personalloan">Personal Loan</Link></li>
-                      <li><Link className="dropdown-item" to="/services/creditloan">Credit Card</Link></li>
-                      <li><Link className="dropdown-item" to="/services/businessloan">Business Loan</Link></li>
-                      <li><Link className="dropdown-item" to="/services/carloan">Car Loan</Link></li>
-                      <li><Link className="dropdown-item" to="/services/antiharassement">Anti Harassment</Link></li>
-                      <li><Link className="dropdown-item" to="/services/creditscore">Credit Score Builder</Link></li>
+                      <li>
+                        <Link
+                          className="dropdown-item"
+                          to="/services/personalloan"
+                        >
+                          Personal Loan
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="dropdown-item"
+                          to="/services/creditloan"
+                        >
+                          Credit Card
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="dropdown-item"
+                          to="/services/businessloan"
+                        >
+                          Business Loan
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/services/carloan">
+                          Car Loan
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="dropdown-item"
+                          to="/services/antiharassement"
+                        >
+                          Anti Harassment
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="dropdown-item"
+                          to="/services/creditscore"
+                        >
+                          Credit Score Builder
+                        </Link>
+                      </li>
                     </ul>
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/faq">FAQ's</Link>
+                    <Link className="nav-link" to="/faq">
+                      FAQ's
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/blogs">Blogs</Link>
+                    <Link className="nav-link" to="/blogs">
+                      Blogs
+                    </Link>
                   </li>
 
                   {/* Register Now Button inside Mobile Menu */}
-                 
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       </nav>
