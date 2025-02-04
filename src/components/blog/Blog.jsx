@@ -151,7 +151,7 @@ const Blog = () => {
           onClick={handlePrev}
           disabled={page === 1}
         >
-          Previous
+          Prev  
         </button>
         <span className="px-3">Page {page}</span>
         <button
