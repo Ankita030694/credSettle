@@ -121,7 +121,7 @@ const Blog = () => {
                   <div className="blog-content">
                     <p>{blog.date}</p>
                     <h2 className="blog-title">{blog.title}</h2>
-                    <h5>{blog.subtitle}</h5>
+                    <h5>{blog.subtitle.split("|").slice(0, 3).join(" | ")}</h5>
                     <div
                       className="blog-description mt-2"
                       style={{ textAlign: "left" }}
