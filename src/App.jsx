@@ -29,7 +29,7 @@ import Blogs from "./components/admin/blogs/Blogs";
 import AddNew from "./components/admin/blogs/AddNew";
 import BlogDetail from "./components/blog/BlogDetail";
 import TermsCondition from "./components/termscondition/TermsCondition";
-import PrivacyPolicy from "./components/privacyPolicy/privacypolicy";
+import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy";
 
 function App() {
   return (
