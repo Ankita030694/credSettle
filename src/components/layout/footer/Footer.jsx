@@ -156,7 +156,7 @@ const Footer = () => {
                 <FaPhone /> Register Now
               </p>
             </a>
-            <a href="/t&c">
+            <a href="/termscondition">
               <p className="mt-4 foot_txt " style={{ color: "white" }}>
                 Terms & Conditions
               </p>

@@ -5,7 +5,7 @@ import "@fontsource/urbanist/400-italic.css";
 import "./App.css";
 import ComingSoon from "./components/comingsoon/ComingSoon";
 import Navbar from "./components/layout/navbar/Navbar";
-import { BrowserRouter as Router, Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/footer/Footer";
 import Calculator from "./components/calculator/Calculator";
@@ -34,11 +34,11 @@ import PrivacyPolicy from "./components/privacyPolicy/privacypolicy";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <Routes>
           {/* <Route path="/" element={<ComingSoon />} /> */}
-          <Route path="/" element={<Home />} />  
+          <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
@@ -57,10 +57,10 @@ function App() {
           <Route path="/services/antiharassement" element={<Antiharassement/>} />
           <Route path="/services/creditscore" element={<CreditScore/>} />
           <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
-          <Route path="/t&c" element={<TermsCondition/>} />
+          <Route path="/termscondition" element={<TermsCondition/>} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </Router>
       </div>
   );
 }
