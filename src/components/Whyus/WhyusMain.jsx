@@ -64,7 +64,6 @@ const WhyusMain = () => {
                 Learn More
               </button>
             </a>
-   
                <div className="d-flex flex-column text-center align-items-center">
                  {/* <div className="d-flex flex-row rate_txt  ">
                    <h1>4.5</h1> <p className="rate_text_sec">/5</p>
