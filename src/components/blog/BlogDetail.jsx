@@ -71,6 +71,13 @@ const BlogDetail = () => {
   if (!blog) {
     return <p>Loading...</p>;
   }
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, "0"); // Ensures two digits
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // getMonth() is zero-indexed
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
 
   return (
     <div className="blog-detail">
@@ -85,7 +92,7 @@ const BlogDetail = () => {
       >
         <h3 className="mt-3">{blog.subtitle}</h3>
       </Link>
-      <p>{blog.date}</p>
+      <p>{formatDate(blog.date)}</p>
 
       {/* Render the blog description using dangerouslySetInnerHTML */}
       <div
