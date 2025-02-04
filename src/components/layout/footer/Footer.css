@@ -36,6 +36,9 @@ footer{
   .me-3{
     font-size: 25px;
   }
+  .disclaimer{
+    font-size: 10px;
+  }
 @media screen and (max-width: 767px) {
    .footerCont{
     align-items: center;

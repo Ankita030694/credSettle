@@ -13,7 +13,6 @@ import strap from "../../assets/images/strapw.png";
 import { Link } from "react-router-dom";
 
 const about = () => {
-  
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const handlePlayVideo = () => {
@@ -118,10 +117,14 @@ const about = () => {
               </div>
             </div>
 
-            <p className="mt-5 mb-5">
+            <p className="mt-5 ">
               Settle your loans for 50% or less! Save big, stay legally
               protected, avoid harassment, and regain financial freedom with
               expert negotiation and professional guidance
+            </p>
+            <h5> <b>We assist our clients in:</b>-</h5>
+            <p style={{marginTop: "-20px", letterSpacing: "1px", fontWeight: "100"}}>
+              <br /> Loan Settlement in India <b style={{fontWeight: "900", color: "blue"}}>|</b> Debt Relief Services <b style={{fontWeight: "900", color: "blue"}}>|</b> Personal Loan Settlement <b style={{fontWeight: "900", color: "blue"}}>|</b> Credit Card Debt Settlement <b style={{fontWeight: "900", color: "blue"}}>|</b> Unsecured Loan Resolution <b style={{fontWeight: "900", color: "blue"}}>|</b> Recovery Agent Harassment Help <b style={{fontWeight: "900", color: "blue"}}>|</b> Credit Score Improvement Services <b style={{fontWeight: "900", color: "blue"}}>|</b> Debt Consolidation Options <b style={{fontWeight: "900", color: "blue"}}>|</b> Financial Planning and Debt Management <b style={{fontWeight: "900", color: "blue"}}>|</b> Legal Assistance for Loan Settlement
             </p>
             <Link to="/about">
               <button className="btn btn-primary get-started-btn mt-4">
