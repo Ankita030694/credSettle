@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /admin/dashboard
-Disallow: /admin/blogs
-Disallow: /admin/addnew
+Disallow: 
 
 Sitemap: https://www.credsettle.com/sitemap.xml
