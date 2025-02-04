@@ -46,7 +46,11 @@ const Blog = () => {
               startAfter(cursor),
               limit(blogsPerPage)
             )
-          : query(blogCollection, orderBy("created", "desc"), limit(blogsPerPage));
+          : query(
+              blogCollection,
+              orderBy("created", "desc"),
+              limit(blogsPerPage)
+            );
       } else if (direction === "prev") {
         q = query(
           blogCollection,
@@ -108,6 +112,13 @@ const Blog = () => {
     }
     return words.slice(0, wordLimit).join(" ") + "...";
   };
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, "0"); // Ensures two digits
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // getMonth() is zero-indexed
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
 
   return (
     <div className="blog-section container-fluid p-5">
@@ -151,7 +162,7 @@ const Blog = () => {
                     }}
                   />
                   <div className="blog-content">
-                    <p>{blog.date}</p>
+                    <p>{formatDate(blog.date)}</p>
                     <h2 className="blog-title">{blog.title}</h2>
                     <h5>{blog.subtitle.split("|").slice(0, 3).join(" | ")}</h5>
                     <div
