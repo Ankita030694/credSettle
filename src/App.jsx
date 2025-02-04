@@ -38,7 +38,7 @@ function App() {
         <Navbar />
         <Routes>
           {/* <Route path="/" element={<ComingSoon />} /> */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />  
           <Route path="/form" element={<Form />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
