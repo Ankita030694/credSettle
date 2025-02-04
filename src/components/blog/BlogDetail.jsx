@@ -93,6 +93,7 @@ const BlogDetail = () => {
         <h3 className="mt-3">{blog.subtitle}</h3>
       </Link>
       <p>{formatDate(blog.date)}</p>
+      
 
       {/* Render the blog description using dangerouslySetInnerHTML */}
       <div
