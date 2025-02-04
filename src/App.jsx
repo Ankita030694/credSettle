@@ -28,8 +28,8 @@ import ScrollToTop from "./ScrollToTop";
 import Blogs from "./components/admin/blogs/Blogs";
 import AddNew from "./components/admin/blogs/AddNew";
 import BlogDetail from "./components/blog/BlogDetail";
-import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy"
 import TermsCondition from "./components/termscondition/TermsCondition";
+import PrivacyPolicy from "./components/privacyPolicy/privacypolicy";
 
 function App() {
   return (
