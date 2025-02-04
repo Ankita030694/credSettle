@@ -28,6 +28,8 @@ import ScrollToTop from "./ScrollToTop";
 import Blogs from "./components/admin/blogs/Blogs";
 import AddNew from "./components/admin/blogs/AddNew";
 import BlogDetail from "./components/blog/BlogDetail";
+import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy"
+import TermsCondition from "./components/termscondition/TermsCondition";
 
 function App() {
   return (
@@ -54,6 +56,8 @@ function App() {
           <Route path="/services/carloan" element={<CarLoan/>} />
           <Route path="/services/antiharassement" element={<Antiharassement/>} />
           <Route path="/services/creditscore" element={<CreditScore/>} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
+          <Route path="/t&c" element={<TermsCondition/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

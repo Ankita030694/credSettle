@@ -156,6 +156,16 @@ const Footer = () => {
                 <FaPhone /> Register Now
               </p>
             </a>
+            <a href="/termsandcondition">
+              <p className="mt-4 foot_txt " style={{ color: "white" }}>
+                Terms & Conditions
+              </p>
+            </a>
+            <a href="/privacypolicy">
+              <p className="mt-4 foot_txt " style={{ color: "white" }}>
+                 Privacy Policy
+              </p>
+            </a>
 
             {/* </Link> */}
           </Col>
