@@ -7,6 +7,9 @@ import {
   orderBy,
   limit,
   startAfter,
+  endBefore,
+  limitToLast,
+  endAt,
 } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./Blog.css";
@@ -17,7 +20,8 @@ import elipse from "../../assets/images/Elipse.png";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
-  const [lastVisible, setLastVisible] = useState(null);
+  // Store DocumentSnapshots as cursors
+  const [pageCursors, setPageCursors] = useState([null]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const blogsPerPage = 3;
@@ -26,22 +30,29 @@ const Blog = () => {
     fetchBlogs();
   }, []);
 
-  const fetchBlogs = async (next = true) => {
+  const fetchBlogs = async (cursor = null, direction = "next") => {
     setLoading(true);
     try {
       const blogCollection = collection(db, "blogs");
-      let q = lastVisible
-        ? query(
-            blogCollection,
-            orderBy("created", "desc"),
-            startAfter(lastVisible),
-            limit(blogsPerPage)
-          )
-        : query(
-            blogCollection,
-            orderBy("created", "desc"),
-            limit(blogsPerPage)
-          );
+      let q;
+
+      if (direction === "next") {
+        q = cursor
+          ? query(
+              blogCollection,
+              orderBy("created", "desc"),
+              startAfter(cursor),
+              limit(blogsPerPage)
+            )
+          : query(blogCollection, orderBy("created", "desc"), limit(blogsPerPage));
+      } else if (direction === "prev") {
+        q = query(
+          blogCollection,
+          orderBy("created", "desc"),
+          endAt(cursor),
+          limitToLast(blogsPerPage)
+        );
+      }
 
       const querySnapshot = await getDocs(q);
       const blogsData = querySnapshot.docs.map((doc) => ({
@@ -49,28 +60,35 @@ const Blog = () => {
         ...doc.data(),
       }));
 
-      if (blogsData.length > 0) {
-        setLastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      if (direction === "next" && querySnapshot.docs.length > 0) {
+        // Save the last DocumentSnapshot for the current page.
+        setPageCursors((prev) => [
+          ...prev,
+          querySnapshot.docs[querySnapshot.docs.length - 1],
+        ]);
+      } else if (direction === "prev") {
+        // Remove the last cursor when moving back.
+        setPageCursors((prev) => prev.slice(0, prev.length - 1));
       }
 
       setBlogs(blogsData);
-      setLoading(false);
     } catch (error) {
       console.error("Error fetching blogs: ", error);
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   const handleNext = () => {
+    const currentCursor = pageCursors[pageCursors.length - 1];
+    fetchBlogs(currentCursor, "next");
     setPage((prev) => prev + 1);
-    fetchBlogs(true);
   };
 
   const handlePrev = () => {
-    if (page > 1) {
-      setPage((prev) => prev - 1);
-      fetchBlogs(false);
-    }
+    if (page === 1) return;
+    const prevCursor = pageCursors[pageCursors.length - 2];
+    fetchBlogs(prevCursor, "prev");
+    setPage((prev) => prev - 1);
   };
 
   // Function to generate a slug from the title
@@ -80,7 +98,8 @@ const Blog = () => {
       .replace(/ /g, "-")
       .replace(/[^\w-]+/g, "");
   };
-  // Helper function to truncate the blog description to 40 words
+
+  // Helper function to truncate the blog description to 30 words
   const truncateDescription = (description, wordLimit = 30) => {
     if (!description) return "";
     const words = description.split(" ");
@@ -112,7 +131,6 @@ const Blog = () => {
                     src={blog.image || blogImage}
                     alt={blog.title}
                     className="blog-image"
-                    // If the image fails to load, fallback to the default image
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = blogImage;
@@ -151,7 +169,7 @@ const Blog = () => {
           onClick={handlePrev}
           disabled={page === 1}
         >
-          Prev  
+          Prev
         </button>
         <span className="px-3">Page {page}</span>
         <button
