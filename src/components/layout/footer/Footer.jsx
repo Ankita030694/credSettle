@@ -3,11 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import {
   FaMapMarkerAlt,
   FaPhone,
-  FaTwitter,
   FaInstagram,
   FaFacebook,
   FaLinkedin,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import "./Footer.css";
 import logo from "../../../assets/images/whitelogo.png";
 import { Link } from "react-router-dom";
@@ -163,7 +163,7 @@ const Footer = () => {
             </a>
             <a href="/privacypolicy">
               <p className="mt-4 foot_txt " style={{ color: "white" }}>
-                 Privacy Policy
+                Privacy Policy
               </p>
             </a>
 
@@ -174,13 +174,22 @@ const Footer = () => {
         <hr className="border-light" />
         <Row className="align-items-center justify-content-between mb-5 credits">
           <Col md={6}>
-            <p className="mb-0">&copy; 2025 CredSettle</p> 
+            <p className="mb-0">&copy; 2025 CredSettle</p>
           </Col>
           <Col md={6} className="socials">
-            <FaTwitter className="me-3 text-light" />
-            <FaInstagram className="me-3 text-light" />
+            <a href="https://x.com/Credsettle">
+              <FaXTwitter className="me-3 text-light" />
+            </a>
+
+            <a href="https://www.instagram.com/credsettle/">
+              <FaInstagram className="me-3 text-light" />
+            </a>
+            <a href="https://www.facebook.com/share/12DnnQSV4iP/?mibextid=wwXIfr">
             <FaFacebook className="me-3 text-light" />
-            <FaLinkedin className="me-3 text-light" />
+            </a>
+            <a href="https://www.linkedin.com/company/credsettle">
+              <FaLinkedin className="me-3 text-light" />
+            </a>
           </Col>
         </Row>
         <Row className="align-items-start justify-content-between mb-5 credits disclaimer container-fluid">
