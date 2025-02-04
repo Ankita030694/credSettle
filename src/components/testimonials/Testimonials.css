@@ -44,10 +44,10 @@
       margin-top: 0px;
     }
     .testi_img1{
-      max-width: 300px;
+      max-width: auto;
       display: flex;
       flex-direction: row;
-      justify-content:space-around;
+      justify-content:center;
 
       /* margin-left: -30px; */
     }
