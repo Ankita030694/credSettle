@@ -39,11 +39,12 @@ const about = () => {
               EMPOWERING LIVES, BUILDING FUTURES
             </h1>
             <p className="mt-5">
-              We specialize in debt settlement, helping individuals and
+              We specialize in debt settlement services, helping individuals and
               businesses reduce their financial burdens. Our expert team
-              negotiates with creditors to secure affordable repayment plans,
-              offering tailored solutions to achieve financial freedom and
-              restore peace of mind.
+              negotiates with creditors to secure affordable loan settlement
+              plans for personal loans, credit card debt settlement, and
+              business loan settlement. We provide tailored solutions to achieve
+              financial freedom and restore peace of mind.
             </p>
             {/* <h4 className="mt-5">Our Affiliations:</h4> */}
             <div className="marq_cont mt-5">
@@ -122,9 +123,35 @@ const about = () => {
               protected, avoid harassment, and regain financial freedom with
               expert negotiation and professional guidance
             </p>
-            <h5> <b>We assist our clients in:</b>-</h5>
-            <p style={{marginTop: "-20px", letterSpacing: "1px", fontWeight: "100"}}>
-              <br /> Loan Settlement in India <b style={{fontWeight: "900", color: "blue"}}>|</b> Debt Relief Services <b style={{fontWeight: "900", color: "blue"}}>|</b> Personal Loan Settlement <b style={{fontWeight: "900", color: "blue"}}>|</b> Credit Card Debt Settlement <b style={{fontWeight: "900", color: "blue"}}>|</b> Unsecured Loan Resolution <b style={{fontWeight: "900", color: "blue"}}>|</b> Recovery Agent Harassment Help <b style={{fontWeight: "900", color: "blue"}}>|</b> Credit Score Improvement Services <b style={{fontWeight: "900", color: "blue"}}>|</b> Debt Consolidation Options <b style={{fontWeight: "900", color: "blue"}}>|</b> Financial Planning and Debt Management <b style={{fontWeight: "900", color: "blue"}}>|</b> Legal Assistance for Loan Settlement
+            <h5>
+              {" "}
+              <b>We assist our clients in:</b>-
+            </h5>
+            <p
+              style={{
+                marginTop: "-20px",
+                letterSpacing: "1px",
+                fontWeight: "100",
+              }}
+            >
+              <br /> Loan Settlement in India{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Debt Relief
+              Services <b style={{ fontWeight: "900", color: "blue" }}>|</b>{" "}
+              Personal Loan Settlement{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Credit Card
+              Debt Settlement{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Unsecured
+              Loan Resolution{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Recovery
+              Agent Harassment Help{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Credit Score
+              Improvement Services{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Debt
+              Consolidation Options{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Financial
+              Planning and Debt Management{" "}
+              <b style={{ fontWeight: "900", color: "blue" }}>|</b> Legal
+              Assistance for Loan Settlement
             </p>
             <Link to="/about">
               <button className="btn btn-primary get-started-btn mt-4">

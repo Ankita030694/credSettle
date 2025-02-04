@@ -25,8 +25,8 @@ const Footer = () => {
               agents in India.
             </p>
           </Col>
-          <Col md={3} className="foot_col">
-            <h5 className="mb-3 foot_head">Company</h5>
+          <Col md={3} className="foot_col company_col">
+            <h5 className="mb-3 foot_head" style={{fontWeight: "900"}}>Company</h5>
             <ul className="list-unstyled">
               {/* <Link to="/about"> */}
               <li className="mt-3">
@@ -72,7 +72,7 @@ const Footer = () => {
             </ul>
           </Col>
           <Col md={3} className="foot_col">
-            <h5 className="mb-3 foot_head">Services</h5>
+            <h5 className="mb-3 foot_head" style={{fontWeight: "900"}}>Services</h5>
             <ul className="list-unstyled">
               {/* <Link to="/services/personalloan"> */}
               <li className="mt-3">
@@ -137,7 +137,7 @@ const Footer = () => {
             </ul>
           </Col>
           <Col md={3} className="foot_col">
-            <h5 className="mb-3 foot_head">Contact Us</h5>
+            <h5 className="mb-3 foot_head" style={{fontWeight: "900"}}>Contact Us</h5>
             <p className="mt-4 foot_txt">
               Our support team is <br></br>here to help you 24/7
             </p>
