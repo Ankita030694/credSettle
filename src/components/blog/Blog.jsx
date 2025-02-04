@@ -20,7 +20,7 @@ const Blog = () => {
   const [lastVisible, setLastVisible] = useState(null);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const blogsPerPage = 6;
+  const blogsPerPage = 3;
 
   useEffect(() => {
     fetchBlogs();
