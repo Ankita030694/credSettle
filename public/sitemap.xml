@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://www.credsettle.com/</loc>
-  <loc>https://www.credsettle.com/services</loc>
-  <loc>https://www.credsettle.com/form</loc>
-  <loc>https://www.credsettle.com/about</loc>
-  <loc>https://www.credsettle.com/faq</loc>
-  <loc>https://www.credsettle.com/blogs</loc>
-  <loc>https://www.credsettle.com/services/personalloan</loc>
-  <loc>https://www.credsettle.com/services/creditloan</loc>
-  <loc>https://www.credsettle.com/services/businessloan</loc>
-  <loc>https://www.credsettle.com/services/carloan</loc>
-  <loc>https://www.credsettle.com/services/antiharassement</loc>
-  <loc>https://www.credsettle.com/services/creditscore</loc>
-  <lastmod>2025-01-31T12:41:13+00:00</lastmod>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.credsettle.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/form</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/faq</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/blogs</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/blogs/:slug</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services/personalloan</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services/creditloan</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services/businessloan</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services/carloan</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services/antiharassement</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/services/creditscore</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/privacypolicy</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.credsettle.com/termscondition</loc>
+    <priority>0.5</priority>
+  </url>
 </urlset>
