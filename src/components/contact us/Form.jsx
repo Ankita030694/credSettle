@@ -6,12 +6,13 @@ import strap from "../../assets/images/strapw.png";
 import turndown from "../../assets/images/turn-down.png";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const Form = () => {
   const location = useLocation();
   const { state } = location;
   const creditCardDebt = state?.creditCardDebt || 0;
   const personalLoanDebt = state?.personalLoanDebt || 0;
+  const navigate = useNavigate();
 
   const[error, setError] = useState();
   const {
@@ -29,11 +30,11 @@ const Form = () => {
     try {
       await addDoc(collection(db, "Form"), data);
       console.log("Data Submitted!", data);
-      alert("SUBMITTED!");
+      navigate("/thanks");
     } catch (error) {
       console.error("Error Submitting form:", error);
       alert("Failed to submit the form!");
-    }
+    } 
   };
 
   const handleNameInput = (e) => {

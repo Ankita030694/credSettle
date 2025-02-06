@@ -119,11 +119,11 @@ const Navbar = () => {
 
             {/* Third Column - Get Started Button (Desktop Only) */}
             <div className="col-4 text-end d-none d-lg-block">
-              <Link to="/form">
+              <a href="/form">
                 <button className="btn btn-primary get-started-btn1">
                   Register Now
                 </button>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile View - Burger Menu */}

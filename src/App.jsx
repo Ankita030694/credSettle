@@ -30,6 +30,8 @@ import AddNew from "./components/admin/blogs/AddNew";
 import BlogDetail from "./components/blog/BlogDetail";
 import TermsCondition from "./components/termscondition/TermsCondition";
 import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy";
+import NotFound from "./components/notFound/NotFound";
+import Thanks from "./components/thanks/Thanks";
 
 function App() {
   return (
@@ -58,6 +60,8 @@ function App() {
           <Route path="/services/creditscore" element={<CreditScore/>} />
           <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
           <Route path="/termscondition" element={<TermsCondition/>} />
+          <Route path="/thanks" element={<Thanks/>}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>
