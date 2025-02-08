@@ -16,7 +16,6 @@ const BASE_URL = "https://www.credsettle.com";
 const staticRoutes = [
     "/",
     "/form",
-    "/login",
     "/about",
     "/services",
     "/faq",
