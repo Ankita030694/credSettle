@@ -1,67 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://www.credsettle.com/</loc>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/form</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/about</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/faq</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/testimonials</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/blogs</loc>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services/personalloan</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services/creditloan</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services/businessloan</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services/carloan</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services/antiharassement</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/services/creditscore</loc>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/privacypolicy</loc>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/termscondition</loc>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://www.credsettle.com/thanks</loc>
-        <priority>0.5</priority>
-    </url>
-</urlset>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://www.credsettle.com/</loc></url>
+<url><loc>https://www.credsettle.com/form</loc></url>
+<url><loc>https://www.credsettle.com/login</loc></url>
+<url><loc>https://www.credsettle.com/about</loc></url>
+<url><loc>https://www.credsettle.com/services</loc></url>
+<url><loc>https://www.credsettle.com/faq</loc></url>
+<url><loc>https://www.credsettle.com/testimonials</loc></url>
+<url><loc>https://www.credsettle.com/blogs</loc></url>
+<url><loc>https://www.credsettle.com/services/personalloan</loc></url>
+<url><loc>https://www.credsettle.com/services/creditloan</loc></url>
+<url><loc>https://www.credsettle.com/services/businessloan</loc></url>
+<url><loc>https://www.credsettle.com/services/carloan</loc></url>
+<url><loc>https://www.credsettle.com/services/antiharassement</loc></url>
+<url><loc>https://www.credsettle.com/services/creditscore</loc></url>
+<url><loc>https://www.credsettle.com/privacypolicy</loc></url>
+<url><loc>https://www.credsettle.com/termscondition</loc></url>
+<url><loc>https://www.credsettle.com/thanks</loc></url>
+<url><loc>https://www.credsettle.com/blogs/how-to-negotiate-a-loan-settlement-without-affecting-your-cibil-score</loc></url>
+<url><loc>https://www.credsettle.com/blogs/aggressive-debt-collectors-know-your-rights</loc></url>
+<url><loc>https://www.credsettle.com/blogs/harassment-of-loan-borrowers-by-bank-agents-causes-resentment</loc></url>
+<url><loc>https://www.credsettle.com/blogs/how-secure-are-loan-settlement-companies</loc></url>
+<url><loc>https://www.credsettle.com/blogs/latest-developments-in-debt-settlement-regulations-in-india</loc></url>
+<url><loc>https://www.credsettle.com/blogs/a-complete-guide-to-loan-settlement-in-india-how-to-become-debt-free</loc></url>
+<url><loc>https://www.credsettle.com/blogs/how-lawyer-and-expert-panels-efficiently-handle-multi-bank-loan-settlements</loc></url>
+<url><loc>https://www.credsettle.com/blogs/car-loan-settlement-process-a-comprehensive-guide</loc></url>
+<url><loc>https://www.credsettle.com/blogs/how-to-negotiate-a-credit-card-settlement-in-india-a-step-by-step-guide</loc></url>
+<url><loc>https://www.credsettle.com/blogs/cibil-score-after-loan-settlement-how-to-improve-it</loc></url>
+<url><loc>https://www.credsettle.com/blogs/recovery-agents-gone-rogue-unveiling-the-limits-they-break-and-your-rbi-backed-defences</loc></url>
+    </urlset>

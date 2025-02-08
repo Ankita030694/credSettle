@@ -24,4 +24,4 @@ export const database = getDatabase(app); // Export Realtime Database
 const storage = getStorage(app);
 
 // Export collection method to use it in your app
-export { getFirestore,collection, storage };
+export { getFirestore,collection, storage, app };
