@@ -16,18 +16,24 @@ const Testimonials = () => {
       <div className="testimonials container-fluid text-black py-5">
         <div className="row align-items-center hero-container text-start">
           <div className="col-md-6 text-content testim_cont marg">
-            <div className="elipse mb-4">
+            <div className="elipse mt-5">
               <h3>Testimonials</h3>
               <img className="about_icon" src={elipse} alt="" />
             </div>
-            <h1 className="tagline2 text-black">
+            <h1 className="tagline2 text-black mt-3">
               What our <br />
               Clients Say
             </h1>
+            
             <div className="testi_img1 mt-5">
               <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"><img src={reviews} alt="" className="reviews_png1" /></a>
               <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"><img src={trustpilot} alt="" className="trustpilot_png1" /></a>
             </div>
+            <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
+            <button className="btn btn-primary get-started-btn mt-5">
+              View More
+            </button>
+            </a>
 
             {/* <p className="">
               To view more testimonials click view more
@@ -47,11 +53,7 @@ const Testimonials = () => {
               <img src={reviewCard2} alt="" />
               {/* <img src={reviewCard} alt="" /> */}
             </div>
-            <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
-            <button className="btn btn-primary get-started-btn mt-5">
-              View More
-            </button>
-            </a>
+           
           </div>
         </div>
       </div>

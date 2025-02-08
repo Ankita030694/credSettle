@@ -85,13 +85,13 @@ const BlogDetail = () => {
         <img src={blog.image} alt="" className="blog-image" />
       </div>
       <h1 className="mt-5">{blog.title}</h1>
-      <Link
-        to="/blogs"
+      <a
+        href="/blogs"
         className="blog-link"
         style={{ textDecoration: "none" }}
       >
         <h3 className="mt-3">{blog.subtitle}</h3>
-      </Link>
+      </a>
       <p>{formatDate(blog.date)}</p> 
 
 
@@ -101,11 +101,11 @@ const BlogDetail = () => {
         dangerouslySetInnerHTML={{ __html: blog.description }}
         style={{ textAlign: "left" }}
       />
-      <Link to="/form">
+      <a to="/form">
         <button className="btn btn-primary get-started-btn1">
           Register Now
         </button>
-      </Link>
+      </a>
     </div>
   );
 };

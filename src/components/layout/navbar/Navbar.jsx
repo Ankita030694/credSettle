@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState('home');
+
+  // A helper function to update the active nav item.
+  const handleNavClick = (navItem) => {
+    setActiveNav(navItem);
+  };
 
   return (
     <div className="bg-body-tertiary">
@@ -14,9 +20,9 @@ const Navbar = () => {
           <div className="row w-100 align-items-center justify-content-between">
             {/* First Column - Logo */}
             <div className="col-4 text-start">
-              <Link className="navbar-brand" to="/">
+              <a className="navbar-brand" to="/">
                 <img className="nav-logo" src={logo} alt="LOGO" />
-              </Link>
+              </a>
             </div>
 
             {/* Second Column - Navigation Links (Desktop View) */}
@@ -25,7 +31,7 @@ const Navbar = () => {
                 <ul className="navbar-nav justify-content-center">
                   {/* <Link to="/" className="nav-item links" style={{textDecoration: "none"}}> */}
                   <li className="nav-item dropdown links">
-                    <a className="nav-link active" href="/">
+                    <a className="nav-link" href="/">
                       Home
                     </a>
                   </li>

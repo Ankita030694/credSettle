@@ -21,7 +21,11 @@
     "@mui/material": "^6.4.1",
     "@mui/x-charts": "^7.24.0",
     "bootstrap": "^5.3.3",
+    "express": "^4.21.2",
     "firebase": "^11.2.0",
+    "firebase-admin": "^13.1.0",
+    "fs": "^0.0.1-security",
+    "graphql-request": "^7.1.2",
     "headlessui": "^0.0.0",
     "heroicons": "^2.2.0",
     "react": "^18.3.1",
@@ -33,7 +37,9 @@
     "react-quill": "^2.0.0",
     "react-router-dom": "^7.1.1",
     "react-slick": "^0.30.3",
-    "swiper": "^11.2.2"
+    "sitemap": "^8.0.0",
+    "swiper": "^11.2.2",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

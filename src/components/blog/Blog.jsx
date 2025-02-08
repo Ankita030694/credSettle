@@ -147,8 +147,16 @@ const Blog = () => {
           {blogs.map((blog) => (
             <div className="col-md-4" key={blog.id}>
               <div className="blog-card shadow-sm rounded">
-                <a
-                  href={`/blogs/${generateSlug(blog.title)}`}
+                <Link
+                  to={{
+                    pathname: `/blogs/${generateSlug(blog.title)}`,
+                    state: {
+                      fetchBlogs,
+                      page,
+                      setPage,
+                      pageCursors,
+                    },
+                  }}
                   className="blog-link"
                   style={{ textDecoration: "none" }}
                 >
@@ -173,7 +181,7 @@ const Blog = () => {
                       }}
                     ></div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -181,11 +189,11 @@ const Blog = () => {
       )}
 
       <div className="text-center">
-        <Link to="/form">
+        <a to="/form">
           <button className="btn btn-primary get-started-btn1">
             Register Now
           </button>
-        </Link>
+        </a>
       </div>
 
       <div className="pagination-controls d-flex justify-content-center mt-4 align-items-center">
