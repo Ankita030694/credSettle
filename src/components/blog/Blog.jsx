@@ -147,8 +147,8 @@ const Blog = () => {
           {blogs.map((blog) => (
             <div className="col-md-4" key={blog.id}>
               <div className="blog-card shadow-sm rounded">
-                <Link
-                  to={`/blogs/${generateSlug(blog.title)}`}
+                <a
+                  href={`/blogs/${generateSlug(blog.title)}`}
                   className="blog-link"
                   style={{ textDecoration: "none" }}
                 >
@@ -173,7 +173,7 @@ const Blog = () => {
                       }}
                     ></div>
                   </div>
-                </Link>
+                </a>
               </div>
             </div>
           ))}
