@@ -109,7 +109,7 @@ const Home = () => {
               <div className="result1">
                 <p>Settlement Amount</p>
                 <div className="result2">
-                  ₹{savings?.toLocaleString()} or more
+                  ₹{savings?.toLocaleString()} or less
                 </div>
               </div>
               <div className="result1">
