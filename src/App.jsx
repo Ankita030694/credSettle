@@ -32,6 +32,7 @@ import TermsCondition from "./components/termscondition/TermsCondition";
 import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy";
 import NotFound from "./components/notFound/NotFound";
 import Thanks from "./components/thanks/Thanks";
+import Contact from "./components/contact us/Contact";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/admin/blogs" element={<Blogs />} />
           <Route path="/admin/addnew" element={<AddNew />} />
           <Route path="/about" element={<AboutMain/>} />
+          <Route path="/contact" element={<Contact/>} />
           <Route path="/services" element={<ServicesMain/>} />
           <Route path="/faq" element={<WhyusMain/>} />
           <Route path="/testimonials" element={<TestimonialsMain/>} />

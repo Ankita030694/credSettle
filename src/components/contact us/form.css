@@ -9,7 +9,17 @@
   text-align: center;
   color: white;
 }
+.blog-image-container1{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.contact_heading{
+  font-size: 65px;
+  /* text-decoration: underline; */
 
+}
 .form-container {
   width: 100%;
   display: flex;
@@ -80,5 +90,9 @@ html {
   }
   .turnDown{
     display: none;
+}
+.contact_heading{
+  font-size: 40px;
+  /* text-decoration: underline; */
 }
 }

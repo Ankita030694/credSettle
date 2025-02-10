@@ -51,7 +51,7 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li className="nav-item dropdown links">
-                    <a className="nav-link" href="/about">
+                    <a className="nav-link" href="/contact">
                       Contact
                     </a>
                   </li>
@@ -278,7 +278,7 @@ const Navbar = () => {
                   <li className="nav-item">
                     <a
                       className="nav-link"
-                      href="/blogs"
+                      href="/contact"
                       onClick={closeOffcanvas}
                     >
                       Contact
