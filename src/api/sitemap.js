@@ -1,5 +1,8 @@
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { app } from "../firebase.js"; // Import Firebase config
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+const fs = require("fs");
 
 const db = getFirestore(app);
 
@@ -12,6 +15,10 @@ const generateSlug = (title) => {
 const staticRoutes = [
     "/",
     "/form",
+    "/login",
+    "/admin/dashboard",
+    "/admin/blogs",
+    "/admin/addnew",
     "/about",
     "/services",
     "/faq",
