@@ -6,6 +6,7 @@ import "./Blogs.css"
 
 const Blogs = () => {
   const [data, setData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [editingBlog, setEditingBlog] = useState(null); // Blog to be edited
 
   // Format date as dd/mm/yyyy
@@ -18,22 +19,28 @@ const Blogs = () => {
   };
 
   // Fetch blogs from Firestore
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const blogCollection = collection(db, "blogs");
-        const querySnapshot = await getDocs(blogCollection);
-        const fetchedData = querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setData(fetchedData);
-      } catch (error) {
-        console.error("Error fetching documents: ", error);
-      }
-    };
-    fetchData();
-  }, []);
+ // Fetch blogs from Firestore and sort by date
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const blogCollection = collection(db, "blogs");
+      const querySnapshot = await getDocs(blogCollection);
+      const fetchedData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      // Sort by date (assuming 'date' is in 'yyyy-mm-dd' format)
+      const sortedData = fetchedData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      setData(sortedData);
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    }
+  };
+  fetchData();
+}, []);
+
 
   // Delete blog
   const handleDelete = async (blogId) => {
@@ -82,6 +89,10 @@ const Blogs = () => {
       alert("Failed to update blog!");
     }
   };
+  const filteredBlogs = data.filter((blog) =>
+    blog.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
  // Helper function to truncate the blog description to 40 words
  const truncateDescription = (description, wordLimit = 20) => {
   if (!description) return "";
@@ -98,6 +109,15 @@ const Blogs = () => {
         <div className="blogsadmin">
           <h1>Blogs</h1>
         </div>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search by Title..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+        </div>
         <div className="logout-container mx-1">
           <Link to="/admin/addnew">
             <button className="filter-button">Add New</button>
@@ -108,7 +128,7 @@ const Blogs = () => {
       {/* Table Section */}
       <div className="table-section">
         <div className="table-wrapper">
-          <table className="data-table">
+        <table className="data-table">
             <thead>
               <tr>
                 <th>Date</th>
@@ -120,17 +140,29 @@ const Blogs = () => {
               </tr>
             </thead>
             <tbody>
-              {data.map((blog) => (
+              {filteredBlogs.map((blog) => (
                 <tr key={blog.id} className="data-row">
                   <td>{formatDate(blog.date)}</td>
-                  <td>{blog.title}</td>
+                  <td><h4>{blog.title}</h4></td>
                   <td>{blog.subtitle}</td>
-                  <td><div className="blog-description " style={{textAlign: "left"}} dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}></div></td>
-                  <td><img src={blog.image} alt="" style={{width: "30%"}}/></td>
+                  <td>
+                    <div
+                      className="blog-description"
+                      style={{ textAlign: "left" }}
+                      dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}
+                    ></div>
+                  </td>
+                  <td><img src={blog.image} alt="" style={{ width: "30%" }} /></td>
                   <td>
                     <button
                       onClick={() => setEditingBlog(blog)}
-                      style={{ textDecoration: "none", color: "blueviolet", background: "none", border: "none", cursor: "pointer" }}
+                      style={{
+                        textDecoration: "none",
+                        color: "blueviolet",
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
                     >
                       Edit
                     </button>
@@ -139,7 +171,12 @@ const Blogs = () => {
                     <button
                       onClick={() => handleDelete(blog.id)}
                       className="delete-link"
-                      style={{ background: "none", border: "none", color: "red", cursor: "pointer" }}
+                      style={{
+                        background: "none",
+                        border: "none",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
                     >
                       Delete
                     </button>
@@ -148,6 +185,7 @@ const Blogs = () => {
               ))}
             </tbody>
           </table>
+          {filteredBlogs.length === 0 && <p className="no-results">No blogs found</p>}
         </div>
       </div>
 
