@@ -117,6 +117,18 @@ const Antiharassement = () => {
                 className="service-image img-fluid"
               />
             </div>
+            <div className="d-flex flex-direction-row">
+              <a href="/form" className="m-1">
+                <button className="btn btn-primary get-started-btn1">
+                  Register Now
+                </button>
+              </a>
+              <a href="/services/antiharassement" className="m-1">
+                <button className="btn btn-primary get-started-btn1">
+                  Credit Score Builder Service
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
