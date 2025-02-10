@@ -44,7 +44,7 @@ const WhyusMain = () => {
   return (
     <div>
       <div className="whyus container-fluid py-5 bg-white">
-        <div className="row align-items-center hero-container text-start">
+        <div className="row align-items-center hero-container1 text-start">
           <div className="col-md-6 text-content about_cont">
             <div className="elipse mb-4">
               <h3>FAQ'S</h3>
@@ -154,7 +154,7 @@ const WhyusMain = () => {
                    </Disclosure>
                  </div>
                </div> */}
-            <div className="faq-section  py-5" style={{ minWidth: "700px" }}>
+            <div className="faq-section  py-5">
               <div className="faq-container mx-auto col-md-8 bg-light p-4 rounded shadow-sm">
                 {faqs.map((faq, index) => (
                   <div key={index} className="faq-item border-bottom py-3">

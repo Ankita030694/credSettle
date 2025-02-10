@@ -59,14 +59,22 @@
     min-width: 100%;
     padding: 20px;
   }
+  .hero-container1{
+    margin-left: 120px;
+    margin-right: 120px;
+  }
   
   @media (max-width: 768px) {
     .faq-container {
       padding: 15px;
-      max-width: 400px;
+      max-width: 100%;
     }
     .faq-item {
       padding: 15px;
     }
+    .hero-container1{
+        margin-left: 5px;
+        margin-right: 5px;
+      }
   }
   

@@ -53,8 +53,8 @@ h1 {
   max-width: 100%;
 }
 .hero-container {
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 .heroc-container {
   margin-left: 230px;
@@ -325,6 +325,14 @@ h1 {
     font-size: 13px;
     background-color: #070030;
     border-color: #070030;
+  }
+  .get-started-btn2 {
+    border-radius: 25px; /* Make the button rounded */
+    padding: 14.5px 14.5px;
+    font-size: 13px;
+    background-color: white;
+    border-color: #070030;
+    color: #070030;
   }
   .strap1{
     display: none;

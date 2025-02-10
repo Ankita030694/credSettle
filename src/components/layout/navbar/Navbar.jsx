@@ -6,13 +6,21 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState('home');
+  const [activeNav, setActiveNav] = useState("home");
 
   // A helper function to update the active nav item.
   const handleNavClick = (navItem) => {
     setActiveNav(navItem);
   };
-
+  const closeOffcanvas = () => {
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (mobileMenu) {
+      const bsOffcanvas = Offcanvas.getInstance(mobileMenu);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+      }
+    }
+  };
   return (
     <div className="bg-body-tertiary">
       <nav className="navbar navbar-expand-lg">
@@ -40,6 +48,11 @@ const Navbar = () => {
                   <li className="nav-item dropdown links">
                     <a className="nav-link" href="/about">
                       About Us
+                    </a>
+                  </li>
+                  <li className="nav-item dropdown links">
+                    <a className="nav-link" href="/about">
+                      Contact
                     </a>
                   </li>
                   {/* </Link> */}
@@ -163,14 +176,18 @@ const Navbar = () => {
               <div className="offcanvas-body">
                 <ul className="navbar-nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">
+                    <a className="nav-link" href="/" onClick={closeOffcanvas}>
                       Home
-                    </Link>
+                    </a>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/about">
+                    <a
+                      className="nav-link"
+                      href="/about"
+                      onClick={closeOffcanvas}
+                    >
                       About Us
-                    </Link>
+                    </a>
                   </li>
 
                   {/* Services Dropdown */}
@@ -184,62 +201,95 @@ const Navbar = () => {
                     </a>
                     <ul className="dropdown-menu">
                       <li>
-                        <Link
+                        <a
                           className="dropdown-item"
-                          to="/services/personalloan"
+                          href="/services/personalloan"
+                          onClick={closeOffcanvas}
                         >
                           Personal Loan
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
+                        <a
                           className="dropdown-item"
-                          to="/services/creditloan"
+                          href="/services/creditloan"
+                          onClick={closeOffcanvas}
                         >
                           Credit Card
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
+                        <a
                           className="dropdown-item"
-                          to="/services/businessloan"
+                          href="/services/businessloan"
+                          onClick={closeOffcanvas}
                         >
                           Business Loan
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link className="dropdown-item" to="/services/carloan">
-                          Car Loan
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
+                        <a
                           className="dropdown-item"
-                          to="/services/antiharassement"
+                          href="/services/carloan"
+                          onClick={closeOffcanvas}
+                        >
+                          Car Loan
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href="/services/antiharassement"
+                          onClick={closeOffcanvas}
                         >
                           Anti Harassment
-                        </Link>
+                        </a>
                       </li>
                       <li>
-                        <Link
+                        <a
                           className="dropdown-item"
-                          to="/services/creditscore"
+                          href="/services/creditscore"
+                          onClick={closeOffcanvas}
                         >
                           Credit Score Builder
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </li>
 
                   <li className="nav-item">
-                    <Link className="nav-link" to="/faq">
+                    <a
+                      className="nav-link"
+                      href="/faq"
+                      onClick={closeOffcanvas}
+                    >
                       FAQ's
-                    </Link>
+                    </a>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/blogs">
+                    <a
+                      className="nav-link"
+                      href="/blogs"
+                      onClick={closeOffcanvas}
+                    >
                       Blogs
-                    </Link>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a
+                      className="nav-link"
+                      href="/blogs"
+                      onClick={closeOffcanvas}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li className="nav-item text-center mt-5">
+                    <a href="/form">
+                      <button className="btn btn-primary get-started-btn2">
+                        Register Now
+                      </button>
+                    </a>
                   </li>
 
                   {/* Register Now Button inside Mobile Menu */}

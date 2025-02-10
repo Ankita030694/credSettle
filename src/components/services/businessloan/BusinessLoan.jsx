@@ -128,7 +128,7 @@ const BusinessLoan = () => {
                 className="service-image img-fluid"
               />
             </div>
-            <div className="d-flex flex-direction-row">
+            <div className="d-flex flex-direction-row align-items-center justify-content-center mt-5">
               <a href="/form" className="m-1">
                 <button className="btn btn-primary get-started-btn1">
                   Register Now
