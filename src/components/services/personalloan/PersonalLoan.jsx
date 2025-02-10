@@ -2,8 +2,7 @@ import React from "react";
 import "./personalloan.css";
 import serviceImage1 from "../../../assets/images/services1.png";
 import serviceImage2 from "../../../assets/images/7.png";
-import banner from "../../../assets/images/banner.png"
-
+import banner from "../../../assets/images/banner.png";
 
 const PersonalLoan = () => {
   return (
@@ -116,6 +115,20 @@ const PersonalLoan = () => {
               className="service-image img-fluid"
             />
           </div>
+          <div className="d-flex flex-direction-row">
+          <a href="/form" className="m-1">
+            <button className="btn btn-primary get-started-btn1">
+              Register Now
+            </button>
+          </a>
+          <a href="/services/creditloan" className="m-1">
+            <button className="btn btn-primary get-started-btn1">
+              Credit Card Service
+            </button>
+          </a>
+          </div>
+          
+          
         </div>
       </div>
     </div>

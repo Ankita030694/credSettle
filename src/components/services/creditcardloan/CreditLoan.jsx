@@ -128,6 +128,18 @@ const CreditLoan = () => {
                 className="service-image img-fluid"
               />
             </div>
+            <div className="d-flex flex-direction-row">
+              <a href="/form" className="m-1">
+                <button className="btn btn-primary get-started-btn1">
+                  Register Now
+                </button>
+              </a>
+              <a href="/services/businessloan" className="m-1">
+                <button className="btn btn-primary get-started-btn1">
+                  Business Loan Service
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

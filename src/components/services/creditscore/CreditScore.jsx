@@ -2,7 +2,7 @@ import React from "react";
 import "../personalloan/personalloan.css";
 import serviceImage1 from "../../../assets/images/7.png";
 import serviceImage2 from "../../../assets/images/3.png";
-import banner from "../../../assets/images/banner.png"
+import banner from "../../../assets/images/banner.png";
 const CreditScore = () => {
   return (
     <div>
@@ -111,6 +111,18 @@ const CreditScore = () => {
                 alt="Debt Settlement Service"
                 className="service-image img-fluid"
               />
+            </div>
+            <div className="d-flex flex-direction-row">
+              <a href="/form" className="m-1">
+                <button className="btn btn-primary get-started-btn1">
+                  Register Now
+                </button>
+              </a>
+              <a href="/services/personalloan" className="m-1">
+                <button className="btn btn-primary get-started-btn1">
+                  Personal Loan Service
+                </button>
+              </a>
             </div>
           </div>
         </div>

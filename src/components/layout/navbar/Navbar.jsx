@@ -20,7 +20,7 @@ const Navbar = () => {
           <div className="row w-100 align-items-center justify-content-between">
             {/* First Column - Logo */}
             <div className="col-4 text-start">
-              <a className="navbar-brand" to="/">
+              <a className="navbar-brand" href="/">
                 <img className="nav-logo" src={logo} alt="LOGO" />
               </a>
             </div>
