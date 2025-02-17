@@ -154,8 +154,8 @@ const Footer = () => {
               </p>
             </a>
             <a href="/termscondition">
-              <p className="mt-4 foot_txt " style={{ color: "white" }}>
-                Terms & Conditions
+              <p className="mt-4 foot_txt " style={{ color: "white" }}> 
+                Terms & Conditions 
               </p>
             </a>
             <a href="/privacypolicy">
@@ -189,7 +189,7 @@ const Footer = () => {
             </a>
           </Col>
         </Row>
-        <Row className="align-items-start justify-content-between mb-5 credits disclaimer container-fluid">
+        <Row className="align-items-center justify-content-center mb-5 credits disclaimer container-fluid">
           <p>
             Disclaimer: Loan Settlement is at the discretion of the lenders and
             only they can issue settlement letters. We provide legal support and
