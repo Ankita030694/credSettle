@@ -35,7 +35,7 @@ const Calculator = ({
 
   return (
     <div style={{ fontFamily: "Arial", padding: "20px" }}>
-      <h1 className="calc_head">DEBT FREE, STRESS FREE</h1>
+      <h1 className="calc_head">SETTLE IT, FORGET IT</h1>
       <p className="calc_txt">
         This tool will help you calculate how much you can save with{" "}
         <span className="sub_txt">CredSettle</span>

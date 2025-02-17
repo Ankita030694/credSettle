@@ -139,9 +139,6 @@ const Footer = () => {
           <Col md={3} className="foot_col">
             <h5 className="mb-3 foot_head" style={{fontWeight: "900"}}>Contact Us</h5>
             <p className="mt-4 foot_txt">
-              Our support team is <br></br>here to help you 24/7
-            </p>
-            <p className="mt-4 foot_txt">
               <a
                 className="text-white "
                 href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"
