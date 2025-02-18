@@ -28,8 +28,17 @@ const Home = () => {
   // const [loading, setLoading] = useState(true);
   // if (withCredSettle > 0) {
   //   setLoading(false);
-  
+
   // }
+  const formatIndianNumber = (num) => {
+    if (num === undefined || num === null || isNaN(num)) {
+      return "0"; // Return a default value or an empty string
+    }
+    return num.toLocaleString("en-IN");
+  };
+  const formattedWithCredSettle = formatIndianNumber(withCredSettle);
+  const formattedWithoutCredSettle = formatIndianNumber(withoutCredSettle);
+
   return (
     <div>
       <div className="hero container-fluid">
@@ -61,7 +70,7 @@ const Home = () => {
           <div className="col-md-6 text-content1 bg-translucent w-full">
             <div className="calc_comp">
               <Calculator
-                setwithCredSettle={setwithCredSettle} 
+                setwithCredSettle={setwithCredSettle}
                 setwithoutCredSettle={setwithoutCredSettle}
                 result={result}
                 setResult={setResult}
@@ -71,40 +80,42 @@ const Home = () => {
           </div>
 
           {/* Second Column - Details */}
-          <div className="col-md-6 bg-white pb-2 text-center w-full graphCont">
-            <div className="graph_sub_cont">
-              <BarChart
-              className="custom-barchart"
-                series={[
-                  {
-                    data: [withCredSettle, withoutCredSettle],
-                    color: "white",
-                    mark: {
+          <div className="col-md-6 bg-white pb-2 text-center w-full graphCont relative">
+            <div className="graph_sub_cont relative">
+              <div className="bar-chart-container relative">
+                <div className="bar-values">
+                  <p className="bar-value">{formattedWithCredSettle}</p>
+                </div>
+                <div className="bar-values1">
+                  <p className="bar-value">{formattedWithoutCredSettle}</p>
+                </div>
+
+                <BarChart
+                  className="custom-barchart"
+                  series={[
+                    {
                       data: [withCredSettle, withoutCredSettle],
+                      color: "white",
                     },
-                    // color: (d, i) => (i === 0 ? "#FFFFFF" : "#FFFFFF"),
-                  },
-                ]}
-                height={290}
-                width={400}
-                // barWidth={5}
-                leftAxis={null}
-                xAxis={[
-                  {
-                    data: ["With CredSettle", "Without CredSettle"],
-                    scaleType: "band",
-                    // valueFormatter: () => "",
-                  },
-                ]}
-                barLabel="value"
-                yAxis={[
-                  {
-                    valueFormatter: () => "",
-                  },
-                ]}
-                margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
-              />
+                  ]}
+                  height={290}
+                  width={400}
+                  xAxis={[
+                    {
+                      data: ["With CredSettle", "Without CredSettle"],
+                      scaleType: "band",
+                    },
+                  ]}
+                  yAxis={[
+                    {
+                      valueFormatter: () => "",
+                    },
+                  ]}
+                  margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+                />
+              </div>
             </div>
+
             <div className="results">
               <div className="result1">
                 <p>Settlement Amount</p>
@@ -117,32 +128,12 @@ const Home = () => {
                 <div className="result2">9 Months</div>
               </div>
             </div>
+
             <div className="helper_cont">
-              <div className="debt_content">You can save upto</div>
-              <span> </span>
+              <div className="debt_content">You can save up to</div>
               <span className="debt-helper-text-style">50%*</span>
-              <span> </span>
               <span> on your debt</span>
-              
             </div>
-            {/* <div className="btns d-flex gap-2 mx-4">
-              <button className="btn btn-primary get-started-btn">2004</button>
-              <button className="btn btn-warning text-dark">
-                <span className="me-1">Insert</span>
-                <i className="bi bi-arrow-up-right"></i>
-              </button>
-            </div> */}
-
-            {/* <h2 className="my-5 mx-4">
-              Take the first step toward a<br /> debt-free future! Calculate
-              your settlement amount and the time it will take to achieve
-              financial freedom today
-            </h2> */}
-
-            {/* <hr className="my-3 mx-4" /> */}
-
-            {/* <img className="reviews_png" src={reviews} alt="" /> */}
-            {/* <img className="trustpilot_png" src={trustpilot} alt="" /> */}
           </div>
         </div>
       </div>
@@ -213,7 +204,7 @@ const Home = () => {
       <div>
         <Whyus />
       </div>
-      <div >
+      <div>
         <Testimonials />
       </div>
       <div>
