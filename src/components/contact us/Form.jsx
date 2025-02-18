@@ -90,6 +90,7 @@ const Form = () => {
       <div className="col-md-4 row1">
         {" "}
         <h1>Contact Us</h1>
+        <strong className="text-danger">We Do Not Provide Any Kind Of Loan*</strong>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12 form_container form-group">
             <label htmlFor="name" className="label" style={{color: "white"}}>
@@ -339,7 +340,7 @@ const Form = () => {
 
           <div className="col-md-12 text-center">
             <button className="btn btn-primary get-started-btn mt-4">
-              Register Now
+              SUBMIT
             </button>
           </div>
         </form>
