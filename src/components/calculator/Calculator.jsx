@@ -19,7 +19,7 @@ const Calculator = ({
     const withCredSettle = totalDebt * 0.5;
     setwithCredSettle(withCredSettle);
     setwithoutCredSettle(withoutCredSettle);
-    const savings = totalDebt - withCredSettle;
+    const savings = withoutCredSettle - withCredSettle;
     setSavings(savings);
     const savingsPercentage = ((savings / withoutCredSettle) * 100).toFixed(2);
     setResult({

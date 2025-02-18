@@ -358,7 +358,7 @@ h1 {
 .bar-values {
   top: 84%;
   left: 0;
-  width: 50%; /* Adjust to fit within bar */
+  width: 64%; /* Adjust to fit within bar */
   transform: translateY(-50%);
 }
 
