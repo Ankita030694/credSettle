@@ -34,10 +34,13 @@ const Dashboard = () => {
           id: doc.id,
           ...doc.data(),
         }));
-
+        // Sort by 'created' field in descending order
+        const sortedData = fetchedData.sort(
+          (a, b) => new Date(b.created) - new Date(a.created)
+        );
         // Store the fetched data in the state
-        setData(fetchedData);
-        setFilteredData(fetchedData);
+        setData(sortedData);
+        setFilteredData(sortedData);
       } catch (error) {
         console.error("Error fetching documents: ", error);
       }

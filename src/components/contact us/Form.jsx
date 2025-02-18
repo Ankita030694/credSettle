@@ -14,7 +14,9 @@ const Form = () => {
   const personalLoanDebt = state?.personalLoanDebt || 0;
   const navigate = useNavigate();
 
-  const[error, setError] = useState();
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -23,8 +25,12 @@ const Form = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    if (loading) return;
+    setLoading(true);
     const today = new Date();
-    const formattedDate = `${String(today.getDate()).padStart(2, "0")}-${String(today.getMonth() + 1).padStart(2, "0")}-${today.getFullYear()}`;
+    const formattedDate = `${String(today.getDate()).padStart(2, "0")}-${String(
+      today.getMonth() + 1
+    ).padStart(2, "0")}-${today.getFullYear()}`;
     data["created"] = Date.now();
     data["date"] = formattedDate;
     try {
@@ -34,7 +40,9 @@ const Form = () => {
     } catch (error) {
       console.error("Error Submitting form:", error);
       alert("Failed to submit the form!");
-    } 
+    } finally {
+      setTimeout(() => setLoading(false), 10000); // Enable button after 10 seconds
+    }
   };
 
   const handleNameInput = (e) => {
@@ -90,10 +98,12 @@ const Form = () => {
       <div className="col-md-6 row1">
         {" "}
         <h1>Contact Us</h1>
-        <strong className="text-danger">We Do Not Provide Any Kind Of Loan*</strong>
+        <strong className="text-danger">
+          We Do Not Provide Any Kind Of Loan*
+        </strong>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12 form_container form-group">
-            <label htmlFor="name" className="label" style={{color: "white"}}>
+            <label htmlFor="name" className="label" style={{ color: "white" }}>
               Name <span className="text-danger">*</span>
             </label>
             <input
@@ -109,7 +119,11 @@ const Form = () => {
           </div>
 
           <div className="col-md-12 form_container form-group">
-            <label htmlFor="number" className="label" style={{color: "white"}}>
+            <label
+              htmlFor="number"
+              className="label"
+              style={{ color: "white" }}
+            >
               Number <span className="text-danger">*</span>
             </label>
             <input
@@ -339,8 +353,11 @@ const Form = () => {
           </div>
 
           <div className="col-md-12 text-center">
-            <button className="btn btn-primary get-started-btn mt-4">
-              SUBMIT
+            <button
+              className="btn btn-primary get-started-btn mt-4"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "SUBMIT"}
             </button>
           </div>
         </form>
