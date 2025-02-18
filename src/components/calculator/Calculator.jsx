@@ -14,7 +14,6 @@ const Calculator = ({
   const [result, setResult] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
-    const totalDebt = creditCardDebt + personalLoanDebt;
     const withoutCredSettle = totalDebt * 2.48;
     const withCredSettle = totalDebt * 0.5;
     setwithCredSettle(withCredSettle);
@@ -32,7 +31,13 @@ const Calculator = ({
   const handleRegisterClick = () => {
     navigate("/form", { state: { creditCardDebt, personalLoanDebt } });
   };
-
+  const totalDebt = creditCardDebt + personalLoanDebt;
+  const formatIndianNumber = (num) => {
+    if (num === undefined || num === null || isNaN(num)) {
+      return "0"; // Return a default value or an empty string
+    }
+    return num.toLocaleString("en-IN");
+  };
   return (
     <div style={{ fontFamily: "Arial", padding: "20px" }}>
       <h1 className="calc_head">SETTLE IT, FORGET IT</h1>
@@ -65,21 +70,14 @@ const Calculator = ({
       {/* <br /> */}
       <br />
       <div className="switch-section">
-        <label><b>Missed any payments in last 30 days?</b></label>
+        <label style={{fontSize: "20px", fontWeight: "100"}}><b>TOTAL DEBT</b></label>
         <br />
         <div className="missedEMI">
-          <div className="form-check form-check-inline activeInput">
-            <input
-              id="yes"
-              type="radio"
-              value="yes"
-              checked={missedPayment === "yes"}
-              onChange={() => setMissedPayment("yes")}
-              className="form-check-input"
-            />
-            <label className="form-check-label text-primary-color">Yes</label>
-          </div>
-          <div className="form-check form-check-inline activeInput">
+          {/* <div className="form-check form-check-inline activeInput text-center"> */}
+
+            <label className="form-check-label text-primary-colo sub_txt container-fluid" style={{fontSize: "20px"}}>₹{formatIndianNumber(totalDebt)}</label>
+          {/* </div> */}
+          {/* <div className="form-check form-check-inline activeInput">
             <input
               id="no"
               type="radio"
@@ -89,7 +87,7 @@ const Calculator = ({
               className="form-check-input"
             />
             <label className="form-check-label text-primary-color">No</label>
-          </div>
+          </div> */}
         </div>
         <button
           className="btn btn-primary get-started-btn mt-4"

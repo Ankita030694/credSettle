@@ -84,10 +84,10 @@ const Home = () => {
             <div className="graph_sub_cont relative">
               <div className="bar-chart-container relative">
                 <div className="bar-values">
-                  <p className="bar-value">{formattedWithCredSettle}</p>
+                  <p className="bar-value">₹{formattedWithCredSettle}</p>
                 </div>
                 <div className="bar-values1">
-                  <p className="bar-value">{formattedWithoutCredSettle}</p>
+                  <p className="bar-value">₹{formattedWithoutCredSettle}</p>
                 </div>
 
                 <BarChart
