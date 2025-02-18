@@ -34,7 +34,7 @@ const Navbar = () => {
             </div>
 
             {/* Second Column - Navigation Links (Desktop View) */}
-            <div className="col-4 text-center d-none d-lg-block">
+            <div className="col-5 text-center d-none d-lg-block">
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav justify-content-center">
                   {/* <Link to="/" className="nav-item links" style={{textDecoration: "none"}}> */}
@@ -137,7 +137,7 @@ const Navbar = () => {
             </div>
 
             {/* Third Column - Get Started Button (Desktop Only) */}
-            <div className="col-4 text-end d-none d-lg-block">
+            <div className="col-3 text-end d-none d-lg-block">
               <a href="/form">
                 <button className="btn btn-primary get-started-btn1">
                   Register Now

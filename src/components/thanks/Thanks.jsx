@@ -4,7 +4,7 @@ const Thanks = () => {
   return (
     <div
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh", backgroundColor: "#f8f9fa" }}
+      style={{ minHeight: "70vh", backgroundColor: "#f8f9fa" }}
     >
       <div className="card shadow-lg" style={{ maxWidth: "500px", width: "100%" }}>
         <div className="card-body text-center">
