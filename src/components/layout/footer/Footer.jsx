@@ -148,17 +148,17 @@ const Footer = () => {
               </a>
             </p>
             {/* <Link to="/form" style={{ textDecoration: "none" }}> */}
-            <a href="/form">
+            <a href="/form" style={{ textDecoration: "none" }}>
               <p className="mt-4 foot_txt " style={{ color: "white" }}>
-                <FaPhone /> Register Now
+              <FaPhone style={{ transform: "scaleX(-1)" }} /> Register Now
               </p>
             </a>
-            <a href="/termscondition">
+            <a href="/termscondition" style={{ textDecoration: "none" }}>
               <p className="mt-4 foot_txt " style={{ color: "white" }}> 
                 Terms & Conditions 
               </p>
             </a>
-            <a href="/privacypolicy">
+            <a href="/privacypolicy" style={{ textDecoration: "none" }}>
               <p className="mt-4 foot_txt " style={{ color: "white" }}>
                 Privacy Policy
               </p>

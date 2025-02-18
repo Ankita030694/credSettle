@@ -101,7 +101,7 @@ const BlogDetail = () => {
         dangerouslySetInnerHTML={{ __html: blog.description }}
         style={{ textAlign: "left" }}
       />
-      <a to="/form">
+      <a href="/form">
         <button className="btn btn-primary get-started-btn1">
           Register Now
         </button>
