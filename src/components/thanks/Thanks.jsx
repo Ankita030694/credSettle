@@ -1,15 +1,14 @@
 import React from "react";
 import affStrap from "../../assets/images/affStrap.png";
 import strap from "../../assets/images/strapw.png";
-import "./Thanks.css"
+import "./Thanks.css";
 import {
   FaMapMarkerAlt,
   FaPhone,
   FaInstagram,
   FaFacebook,
   FaLinkedin,
-  
-} from "react-icons/fa";  
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const Thanks = () => {
   return (
@@ -36,14 +35,29 @@ const Thanks = () => {
         <a href="/" className="btn btn-primary get-started-btn1">
           Go to Homepage
         </a>
+        <div className="row2">
+          <a href="https://x.com/Credsettle">
+            <FaXTwitter className="me-3 text-dark" />
+          </a>
+
+          <a href="https://www.instagram.com/credsettle/">
+            <FaInstagram className="me-3 text-dark" />
+          </a>
+          <a href="https://www.facebook.com/share/12DnnQSV4iP/?mibextid=wwXIfr">
+            <FaFacebook className="me-3 text-dark" />
+          </a>
+          <a href="https://www.linkedin.com/company/credsettle">
+            <FaLinkedin className="me-3 text-dark" />
+          </a>
+        </div>
         <div className="row">
-          <div className="col-md-2" style={{marginRight: "70px"}}></div>
+          <div className="col-md-2" style={{ marginRight: "70px" }}></div>
           <div className="col-md-8 mt-5 aff_Cont">
             <div>
               <h3 className="text-center">We work with guidelines of:</h3>
               <div className="marquee-container1">
                 <div className="marquee-content1">
-                  <img src={affStrap} alt="" style={{width: "100%"}}/>
+                  <img src={affStrap} alt="" style={{ width: "100%" }} />
                 </div>
               </div>
             </div>
@@ -51,28 +65,12 @@ const Thanks = () => {
               <h3 className="text-center">Our media coverages:</h3>
               <div className="marquee-container2">
                 <div className="marquee-content2">
-                  <img src={strap} alt="" style={{width: "60%"}}/>
+                  <img src={strap} alt="" style={{ width: "60%" }} />
                 </div>
               </div>
             </div>
           </div>
           <div className="col-md-2"></div>
-
-        </div>
-        <div className="row1" style={{marginTop: "-100px"}}>
-          <a href="https://x.com/Credsettle">
-                        <FaXTwitter className="me-3 text-light" />
-                      </a>
-          
-                      <a href="https://www.instagram.com/credsettle/">
-                        <FaInstagram className="me-3 text-light" />
-                      </a>
-                      <a href="https://www.facebook.com/share/12DnnQSV4iP/?mibextid=wwXIfr">
-                      <FaFacebook className="me-3 text-light" />
-                      </a>
-                      <a href="https://www.linkedin.com/company/credsettle">
-                        <FaLinkedin className="me-3 text-light" />
-                      </a>
         </div>
       </div>
       {/* </div> */}
