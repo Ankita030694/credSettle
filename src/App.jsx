@@ -33,6 +33,8 @@ import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy";
 import NotFound from "./components/notFound/NotFound";
 import Thanks from "./components/thanks/Thanks";
 import Contact from "./components/contact us/Contact";
+import { Analytics } from "@vercel/analytics/react";
+
 
 function App() {
   return (
@@ -67,6 +69,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      <Analytics />
       </div>
   );
 }
