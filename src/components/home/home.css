@@ -246,12 +246,12 @@ h1 {
   font-weight: 700;
 }
 .custom-barchart rect:nth-child(1) {
-  fill: #5e7ae2 !important;  /* Make the first bar white */
+  fill: #5e7ae2 !important;  /* Make the first bar according to the theme */
   /* color: white; */
 }
 
 .custom-barchart rect:nth-child(2) {
-  fill: rgb(245, 56, 39) !important;  /* Make the second bar black */
+  fill: rgb(245, 56, 39) !important;  /* Make the second bar red */
 }
 .custom-barchart rect {
   rx: 8px !important;  /* Radius for rounded corners */

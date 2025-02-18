@@ -78,7 +78,7 @@ const Form = () => {
   };
   return (
     <div className="text-center row">
-      <div className="col-md-4 mt-5">
+      <div className="col-md-6 mt-5">
         {" "}
         <div className="text-center text-black p-3">
           <h1 className="tagline1">
@@ -87,7 +87,7 @@ const Form = () => {
           <img src={turndown} alt="" className="turnDown" />
         </div>
       </div>
-      <div className="col-md-4 row1">
+      <div className="col-md-6 row1">
         {" "}
         <h1>Contact Us</h1>
         <strong className="text-danger">We Do Not Provide Any Kind Of Loan*</strong>
@@ -345,7 +345,7 @@ const Form = () => {
           </div>
         </form>
       </div>
-      <div className="col-md-4 mt-5 aff_Cont">
+      {/* <div className="col-md-4 mt-5 aff_Cont">
         <h3 className="text-center">We work with guidelines of:</h3>
         <div className="marquee-container1">
           <div className="marquee-content1">
@@ -359,7 +359,7 @@ const Form = () => {
             <img src={strap} alt="" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

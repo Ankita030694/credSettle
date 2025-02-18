@@ -99,7 +99,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       {/* Filter Section */}
-      <div className="filter-section">
+      <div className="filter-section mb-5">
         <label className="filter-label">From:</label>
         <input
           type="date"
