@@ -72,8 +72,8 @@ const about = () => {
               <video
                 ref={videoRef}
                 src={video}
-                width="700"
-                height="577"
+                // width="700"
+                // height="577"
                 controls
                 autoPlay
                 loop

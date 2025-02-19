@@ -13,14 +13,17 @@
     background-color: #070030;
 
   }
+  .navbar-expand-lg .navbar-nav .nav-link{
+    padding: 0;
+  }
   
   .links .nav-link {
-    font-size: 19px; /* Optional: Adjust font size for links */
-    /* margin: 0 10px; Add spacing between links÷÷ */
+    font-size: clamp(14px, 1.2vw, 19px);
+    margin: 0 10px;
     margin-left: 10px;
     font-weight: 900;
-    font: bold;
   }
+  
   .nav-link:hover{
     cursor: pointer;
   }
