@@ -36,6 +36,22 @@ const Form = () => {
     try {
       await addDoc(collection(db, "Form"), data);
       console.log("Data Submitted!", data);
+      if (window.fbq) {
+        fbq('track', 'Lead', { 
+          name: data.name,
+          email: data.email,
+          date: data.number,
+          number: data.date,
+          city: data.city,
+          employmentStatus : data.employmentStatus,
+          monthlyIncome : data.monthlyIncome,
+          harassment : data.harassment,
+          creditCardDues : data.creditCardDues ,
+          personalLoanDues : data.personalLoanDues ,
+          canPay : data.canPay ,
+          queries : data.queries ,
+        });
+      }
       navigate("/thanks");
     } catch (error) {
       console.error("Error Submitting form:", error);
