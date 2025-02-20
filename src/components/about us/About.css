@@ -107,7 +107,7 @@
 .marquee-content2 img {
   width: auto; /* Adjust width automatically */
   height: 100%; /* Make sure it fits inside the container */
-  max-height: 7.5vh; /* Adjusts height relative to viewport height */
+  max-height: 8vh; /* Adjusts height relative to viewport height */
 }
 
 /* Adjust max-height dynamically based on screen size */

@@ -13,7 +13,7 @@ import strap from "../../assets/images/strapw.png";
 import midday from "../../assets/banks/midday.jpg";
 import medium from "../../assets/banks/Medium.png";
 import mint from "../../assets/banks/mint.jpg";
-import yourstory from "../../assets/banks/media4.svg";
+import yourstory from "../../assets/banks/media4.png";
 import { Link } from "react-router-dom";
 
 const about = () => {
@@ -66,10 +66,16 @@ const about = () => {
                 <a href="https://medium.com/@credsettle">
                   <img src={medium} alt="" className="backshots" />
                 </a>
+                <a href="https://www.mid-day.com/">
+                  <img src={midday} alt="" className="backshots" />
+                </a>
+                <a href="https://yourstory.com/">
+                  <img src={yourstory} alt="" className="backshots" />
+                </a>
+                <a href="https://www.livemint.com/">
+                  <img src={mint} alt="" className="backshots" />
+                </a>
 
-                <img src={midday} alt="" className="backshots" />
-                <img src={mint} alt="" className="backshots" />
-                <img src={yourstory} alt="" className="backshots" />
                 {/* <img src={strap} alt="Media Strap" /> */}
               </div>
             </div>
