@@ -118,9 +118,9 @@ const Home = () => {
 
             <div className="results">
               <div className="result1">
-                <p>With Us You Will Save</p>
+                <p>Your Settlement Amount:</p>
                 <div className="result2">
-                  ₹{formatIndianNumber(savings)} or more
+                  ₹{formatIndianNumber(withCredSettle)} or more
                 </div>
               </div>
               <div className="result1">
