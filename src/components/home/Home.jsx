@@ -120,7 +120,7 @@ const Home = () => {
               <div className="result1">
                 <p>With Us You Will Save</p>
                 <div className="result2">
-                  ₹{savings?.toLocaleString()} or more
+                  ₹{formatIndianNumber(savings)} or more
                 </div>
               </div>
               <div className="result1">

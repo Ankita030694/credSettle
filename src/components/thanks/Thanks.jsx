@@ -65,7 +65,9 @@ const Thanks = () => {
               <h3 className="text-center">Our media coverages:</h3>
               <div className="marquee-container2">
                 <div className="marquee-content2">
-                  <img src={strap} alt="" style={{ width: "60%" }} />
+                  <a href="https://medium.com/@credsettle">
+                    <img src={strap} alt="" style={{ width: "60%" }} />
+                  </a>
                 </div>
               </div>
             </div>
