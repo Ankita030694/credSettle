@@ -60,8 +60,9 @@ const about = () => {
             <h3 className="text-center">Our media coverages:</h3>
             <div className="marquee-container2">
               <div className="marquee-content2">
-                <img src={strap} alt="" />
-                {/* <img src={strap} alt="" /> */}
+                <a href="https://medium.com/@credsettle">
+                  <img src={strap} alt="Media Strap" />
+                </a>
               </div>
             </div>
           </div>
