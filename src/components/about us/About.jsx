@@ -10,6 +10,10 @@ import image from "../../assets/images/Image.png";
 import video from "../../assets/videos/video.mp4";
 import affStrap from "../../assets/images/affStrap.png";
 import strap from "../../assets/images/strapw.png";
+import midday from "../../assets/banks/midday.jpg";
+import medium from "../../assets/banks/Medium.png";
+import mint from "../../assets/banks/mint.jpg";
+import yourstory from "../../assets/banks/media4.svg";
 import { Link } from "react-router-dom";
 
 const about = () => {
@@ -52,7 +56,6 @@ const about = () => {
               <div className="marquee-container1">
                 <div className="marquee-content1">
                   <img src={affStrap} alt="" />
-                  {/* <img src={affStrap} alt="" /> */}
                 </div>
               </div>
             </div>
@@ -61,8 +64,13 @@ const about = () => {
             <div className="marquee-container2">
               <div className="marquee-content2">
                 <a href="https://medium.com/@credsettle">
-                  <img src={strap} alt="Media Strap" />
+                  <img src={medium} alt="" className="backshots" />
                 </a>
+
+                <img src={midday} alt="" className="backshots" />
+                <img src={mint} alt="" className="backshots" />
+                <img src={yourstory} alt="" className="backshots" />
+                {/* <img src={strap} alt="Media Strap" /> */}
               </div>
             </div>
           </div>
