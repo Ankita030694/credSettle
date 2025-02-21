@@ -10,6 +10,10 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import midday from "../../assets/banks/midday.jpg";
+import medium from "../../assets/banks/Medium.png";
+import mint from "../../assets/banks/mint.jpg";
+import yourstory from "../../assets/banks/media4.png";
 const Thanks = () => {
   return (
     <div
@@ -51,29 +55,40 @@ const Thanks = () => {
           </a>
         </div>
         <div className="row">
-          <div className="col-md-2" style={{ marginRight: "70px" }}></div>
-          <div className="col-md-8 mt-5 aff_Cont">
+          <div className="col-md-6">
             <div>
               <h3 className="text-center">We work with guidelines of:</h3>
               <div className="marquee-container1">
                 <div className="marquee-content1">
-                  <img src={affStrap} alt="" style={{ width: "100%" }} />
+                  <img src={affStrap} alt="" style={{ width: "50%" }} />
                 </div>
               </div>
             </div>
-            <div>
-              <h3 className="text-center">Our media coverages:</h3>
-              <div className="marquee-container2">
-                <div className="marquee-content2">
-                  <a href="https://medium.com/@credsettle">
-                    <img src={strap} alt="" style={{ width: "60%" }} />
-                  </a>
+            </div>
+            <div className="col-md-6 aff_Cont">
+              <div>
+                <h3 className="text-center">Our media coverages:</h3>
+                <div className="marquee-container2">
+                  <div className="marquee-content2">
+                    <a href="https://medium.com/@credsettle">
+                      <img src={medium} alt="" className="backshots" />
+                    </a>
+                    <a href="https://www.mid-day.com/">
+                      <img src={midday} alt="" className="backshots" />
+                    </a>
+                    <a href="https://yourstory.com/">
+                      <img src={yourstory} alt="" className="backshots" />
+                    </a>
+                    <a href="https://www.livemint.com/">
+                      <img src={mint} alt="" className="backshots" />
+                    </a>
+
+                    {/* <img src={strap} alt="Media Strap" /> */}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-md-2"></div>
-        </div>
       </div>
       {/* </div> */}
     </div>
