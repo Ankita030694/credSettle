@@ -25,40 +25,35 @@ const Blog = () => {
   // Store DocumentSnapshots as cursors
   const [pageCursors, setPageCursors] = useState([null]);
   const [loading, setLoading] = useState(false);
+  const [totalBlogs, setTotalBlogs] = useState(0);
   const [page, setPage] = useState(1);
   const blogsPerPage = 3;
 
   useEffect(() => {
+    fetchTotalBlogs();
     fetchBlogs();
   }, []);
+  const fetchTotalBlogs = async () => {
+    const snapshot = await getDocs(collection(db, "blogs"));
+    setTotalBlogs(snapshot.size);
+  };
 
-  const fetchBlogs = async (cursor = null, direction = "next") => {
+  const fetchBlogs = async (cursor = null, pageNumber = 1) => {
     setLoading(true);
     try {
       const blogCollection = collection(db, "blogs");
-      let q;
-
-      if (direction === "next") {
-        q = cursor
-          ? query(
-              blogCollection,
-              orderBy("created", "desc"),
-              startAfter(cursor),
-              limit(blogsPerPage)
-            )
-          : query(
-              blogCollection,
-              orderBy("created", "desc"),
-              limit(blogsPerPage)
-            );
-      } else if (direction === "prev") {
-        q = query(
-          blogCollection,
-          orderBy("created", "desc"),
-          endAt(cursor),
-          limitToLast(blogsPerPage)
-        );
-      }
+      let q = cursor
+        ? query(
+            blogCollection,
+            orderBy("created", "desc"),
+            startAfter(cursor),
+            limit(blogsPerPage)
+          )
+        : query(
+            blogCollection,
+            orderBy("created", "desc"),
+            limit(blogsPerPage)
+          );
 
       const querySnapshot = await getDocs(q);
       const blogsData = querySnapshot.docs.map((doc) => ({
@@ -66,22 +61,34 @@ const Blog = () => {
         ...doc.data(),
       }));
 
-      if (direction === "next" && querySnapshot.docs.length > 0) {
-        setPageCursors((prev) => [
-          ...prev,
-          querySnapshot.docs[querySnapshot.docs.length - 1],
-        ]);
-      } else if (direction === "prev") {
-        setPageCursors((prev) => prev.slice(0, prev.length - 1));
-      }
-
       setBlogs(blogsData);
+      setPage(pageNumber);
+
+      // Store cursor for pagination
+      if (querySnapshot.docs.length > 0) {
+        setPageCursors((prev) => {
+          const updatedCursors = [...prev];
+          updatedCursors[pageNumber - 1] =
+            querySnapshot.docs[querySnapshot.docs.length - 1];
+          return updatedCursors;
+        });
+      }
     } catch (error) {
       console.error("Error fetching blogs: ", error);
     }
     setLoading(false);
   };
-
+  const handlePageClick = (pageNumber) => {
+    const cursor = pageCursors[pageNumber - 2] || null; // Get the cursor of the previous page
+    fetchBlogs(cursor, pageNumber);
+  };
+  // Calculate total pages
+  const totalPages = Math.ceil(totalBlogs / blogsPerPage);
+  // Calculate the range of visible pages
+  const visiblePages = [];
+  for (let i = Math.max(1, page - 2); i <= Math.min(totalPages, page + 2); i++) {
+    visiblePages.push(i);
+  }
   const handleNext = () => {
     const currentCursor = pageCursors[pageCursors.length - 1];
     fetchBlogs(currentCursor, "next");
@@ -196,22 +203,19 @@ const Blog = () => {
         </a>
       </div>
 
+      {/* Pagination Controls */}
       <div className="pagination-controls d-flex justify-content-center mt-4 align-items-center">
-        <button
-          className="btn btn-primary me-2"
-          onClick={handlePrev}
-          disabled={page === 1}
-        >
-          Prev
-        </button>
-        <span className="px-3">Page {page}</span>
-        <button
-          className="btn btn-primary"
-          onClick={handleNext}
-          disabled={blogs.length < blogsPerPage}
-        >
-          Next
-        </button>
+        {visiblePages.map((pageNum) => (
+          <button
+            key={pageNum}
+            className={`btn mx-1 ${
+              page === pageNum ? "btn-primary" : "btn-outline-primary"
+            }`}
+            onClick={() => handlePageClick(pageNum)}
+          >
+            {pageNum}
+          </button>
+        ))}
       </div>
     </div>
   );
