@@ -18,7 +18,7 @@ const Testimonials = () => {
           <div className="col-md-6 text-content testim_cont marg">
             <div className="elipse mt-5">
               <h3>Testimonials</h3>
-              <img className="about_icon" src={elipse} alt="" />
+              <img className="about_icon" src={elipse} alt="elipse" />
             </div>
             <h1 className="tagline2 text-black mt-3">
               What our <br />
@@ -26,8 +26,8 @@ const Testimonials = () => {
             </h1>
             
             <div className="testi_img1 mt-5">
-              <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"><img src={reviews} alt="" className="reviews_png1" /></a>
-              <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"><img src={trustpilot} alt="" className="trustpilot_png1" /></a>
+              <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"><img src={reviews} alt="reviews" className="reviews_png1" /></a>
+              <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9"><img src={trustpilot} alt="trustpilot" className="trustpilot_png1" /></a>
             </div>
             <a href="https://maps.app.goo.gl/NNM5pZCHRfrj3Fwy9">
             <button className="btn btn-primary get-started-btn mt-5">
@@ -49,8 +49,8 @@ const Testimonials = () => {
             </div>
 
             <div className="testi_img">
-              <img src={reviewCard} alt="" />
-              <img src={reviewCard2} alt="" />
+              <img src={reviewCard} alt="reviewcard1" />
+              <img src={reviewCard2} alt="reviewcard2" />
               {/* <img src={reviewCard} alt="" /> */}
             </div>
            

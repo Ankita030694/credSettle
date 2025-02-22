@@ -36,7 +36,7 @@ const about = () => {
           <div className="col-md-6 text-content about_cont">
             <div className="elipse mb-4">
               <h3>About Us</h3>
-              <img className="about_icon" src={elipse} alt="" />
+              <img className="about_icon" src={elipse} alt="icon" />
             </div>
 
             <h1 className="tagline2 text-black">
@@ -55,7 +55,7 @@ const about = () => {
               <h3 className="text-center">We work with guidelines of:</h3>
               <div className="marquee-container1">
                 <div className="marquee-content1">
-                  <img src={affStrap} alt="" />
+                  <img src={affStrap} alt="affiliationstrap" />
                 </div>
               </div>
             </div>
@@ -64,16 +64,16 @@ const about = () => {
             <div className="marquee-container2">
               <div className="marquee-content2">
                 <a href="https://medium.com/@credsettle">
-                  <img src={medium} alt="" className="backshots" />
+                  <img src={medium} alt="medium" className="backshots" />
                 </a>
                 <a href="https://www.mid-day.com/">
-                  <img src={midday} alt="" className="backshots" />
+                  <img src={midday} alt="midday" className="backshots" />
                 </a>
                 <a href="https://yourstory.com/">
-                  <img src={yourstory} alt="" className="backshots" />
+                  <img src={yourstory} alt="yourstory" className="backshots" />
                 </a>
                 <a href="https://www.livemint.com/">
-                  <img src={mint} alt="" className="backshots" />
+                  <img src={mint} alt="mint" className="backshots" />
                 </a>
 
                 {/* <img src={strap} alt="Media Strap" /> */}

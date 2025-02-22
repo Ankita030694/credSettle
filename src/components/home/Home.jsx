@@ -155,8 +155,8 @@ const Home = () => {
           </marquee> */}
           <div className="marquee-container">
             <div className="marquee-content">
-              <img src={strap} alt="" />
-              <img src={strap} alt="" />
+              <img src={strap} alt="strap" />
+              <img src={strap} alt="strap" />
             </div>
           </div>
 
@@ -183,8 +183,8 @@ const Home = () => {
           </marquee> */}
           <div className="marquee-container5">
             <div className="marquee-content5">
-              <img src={settLetters1} alt="" />
-              <img src={settLetters2} alt="" />
+              <img src={settLetters1} alt="letters" />
+              <img src={settLetters2} alt="letters" />
             </div>
           </div>
           {/* <div className="col-md-3 text-white">PERSONAL LOAN</div>

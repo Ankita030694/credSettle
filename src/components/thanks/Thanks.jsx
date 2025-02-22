@@ -60,7 +60,7 @@ const Thanks = () => {
               <h3 className="text-center">We work with guidelines of:</h3>
               <div className="marquee-container1">
                 <div className="marquee-content1">
-                  <img src={affStrap} alt="" style={{ width: "50%" }} />
+                  <img src={affStrap} alt="affilitaionstrap" style={{ width: "50%" }} />
                 </div>
               </div>
             </div>
@@ -71,16 +71,16 @@ const Thanks = () => {
                 <div className="marquee-container2">
                   <div className="marquee-content2">
                     <a href="https://medium.com/@credsettle">
-                      <img src={medium} alt="" className="backshots" />
+                      <img src={medium} alt="medium" className="backshots" />
                     </a>
                     <a href="https://www.mid-day.com/">
-                      <img src={midday} alt="" className="backshots" />
+                      <img src={midday} alt="midday" className="backshots" />
                     </a>
                     <a href="https://yourstory.com/">
-                      <img src={yourstory} alt="" className="backshots" />
+                      <img src={yourstory} alt="yourstory" className="backshots" />
                     </a>
                     <a href="https://www.livemint.com/">
-                      <img src={mint} alt="" className="backshots" />
+                      <img src={mint} alt="mint" className="backshots" />
                     </a>
 
                     {/* <img src={strap} alt="Media Strap" /> */}

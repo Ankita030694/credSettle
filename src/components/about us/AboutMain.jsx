@@ -34,7 +34,7 @@ const AboutMain = () => {
           <div className="col-md-6 text-content about_cont">
             <div className="elipse mb-4">
               <h3>About Us</h3>
-              <img className="about_icon" src={elipse} alt="" />
+              <img className="about_icon" src={elipse} alt="elipse" />
             </div>
 
             <h1 className="tagline2 text-black">
@@ -53,7 +53,7 @@ const AboutMain = () => {
               <h3 className="text-center">We work with guidelines of:</h3>
               <div className="marquee-container1">
                 <div className="marquee-content1">
-                  <img src={affStrap} alt="" />
+                  <img src={affStrap} alt="affiliationstrap" />
                   {/* <img src={affStrap} alt="" /> */}
                 </div>
               </div>
@@ -62,7 +62,7 @@ const AboutMain = () => {
             <h3 className="text-center">Our media coverages:</h3>
             <div className="marquee-container2">
               <div className="marquee-content2">
-                <img src={strap} alt="" />
+                <img src={strap} alt="strap" />
                 {/* <img src={strap} alt="" /> */}
               </div>
             </div>

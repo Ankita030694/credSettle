@@ -219,7 +219,7 @@ const Blogs = () => {
                     ></div>
                   </td>
                   <td>
-                    <img src={blog.image} alt="" style={{ width: "30%" }} />
+                    <img src={blog.image} alt="Blog-Image" style={{ width: "30%" }} />
                   </td>
                   <td>
                     <button

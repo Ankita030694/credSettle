@@ -18,7 +18,7 @@ const services = () => {
           <div className="col-md-6 text-content about_cont">
             <div className="elipse mb-4">
               <h3>Our Services</h3>
-              <img className="about_icon" src={elipse} alt="" />
+              <img className="about_icon" src={elipse} alt="elipse" />
             </div>
 
             <h1 className="tagline2 text-black">

@@ -92,7 +92,7 @@ const Form = () => {
           <h1 className="tagline1">
             SETTLE YOUR LOANS AND STOP YOUR HARASSEMENT IN 24 HOURS
           </h1>
-          <img src={turndown} alt="" className="turnDown" />
+          <img src={turndown} alt="turndown" className="turnDown" />
         </div>
       </div>
       <div className="col-md-6 row1">
