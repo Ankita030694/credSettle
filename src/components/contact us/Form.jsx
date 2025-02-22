@@ -99,12 +99,12 @@ const Form = () => {
         {" "}
         <h1>Contact Us</h1>
         <strong className="text-danger">
-          We Do Not Provide Any Kind Of Loan*
+          *We Do Not Provide Any Kind Of Loan
         </strong>
         <form action="" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-md-12 form_container form-group">
             <label htmlFor="name" className="label" style={{ color: "white" }}>
-              Name <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Name 
             </label>
             <input
               type="text"
@@ -124,7 +124,7 @@ const Form = () => {
               className="label"
               style={{ color: "white" }}
             >
-              Number <span className="text-danger">*</span>
+             <span className="text-danger">*</span>Number
             </label>
             <input
               type="text"
@@ -140,7 +140,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="email" className="label">
-              Email ID <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Email ID 
             </label>
             <input
               type="text"
@@ -157,7 +157,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="city" className="label">
-              City <span className="text-danger">*</span>
+            <span className="text-danger">*</span>City 
             </label>
             <select
               className="form-control"
@@ -185,7 +185,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="employmentStatus" className="label">
-              Employment Status <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Employment Status 
             </label>
             <select
               className="form-control"
@@ -212,7 +212,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="monthlyIncome" className="label">
-              Monthly Income <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Monthly Income 
             </label>
             <select
               className="form-control"
@@ -240,7 +240,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="harassment" className="label">
-              Facing Harassment? <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Facing Harassment? 
             </label>
             <select
               className="form-control"
@@ -262,7 +262,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="creditCardDues" className="label">
-              Total Credit Card Dues? <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Total Credit Card Dues? 
             </label>
             <select
               className="form-control"
@@ -291,7 +291,7 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="personalLoanDues" className="label">
-              Total Personal Loan Dues? <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Total Personal Loan Dues? 
             </label>
             <select
               className="form-control"
@@ -320,8 +320,8 @@ const Form = () => {
 
           <div className="col-md-12 form_container">
             <label htmlFor="canPay" className="label">
-              Can you pay 2,000 to 5,000 to start the process?{" "}
-              <span className="text-danger">*</span>
+            <span className="text-danger">*</span>Can you pay 2,000 to 5,000 to start the process?{" "}
+              
             </label>
             <select
               className="form-control"
