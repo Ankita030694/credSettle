@@ -14,6 +14,12 @@ import midday from "../../assets/banks/midday.jpg";
 import medium from "../../assets/banks/Medium.png";
 import mint from "../../assets/banks/mint.jpg";
 import yourstory from "../../assets/banks/media4.png";
+import msme from "../../assets/banks/msme.png"
+import nhrc from "../../assets/banks/nhrc.png"
+import barcouncil from "../../assets/banks/barcouncil.png"
+import trai from "../../assets/banks/trai.jpg"
+import bcsbi from "../../assets/banks/bcsbi.jpg"
+import mlj from "../../assets/banks/mlj.png"
 const Thanks = () => {
   return (
     <div
@@ -54,15 +60,34 @@ const Thanks = () => {
             <FaLinkedin className="me-3 text-dark" />
           </a>
         </div>
-        <div className="row">
+        <div className="row mx-5">
           <div className="col-md-6">
             <div>
               <h3 className="text-center">We work with guidelines of:</h3>
-              <div className="marquee-container1">
-                <div className="marquee-content1">
-                  <img src={affStrap} alt="affilitaionstrap" style={{ width: "50%" }} />
-                </div>
-              </div>
+                          <div className="marquee-container2">
+                            <div className="marquee-content2">
+                              <a href="https://msme.gov.in/">
+                                <img src={msme} alt="msme" className="backshots" />
+                              </a>
+                              <a href="https://nhrc.nic.in/">
+                                <img src={nhrc} alt="nhrc" className="backshots" />
+                              </a>
+                              <a href="https://www.barcouncilofindia.org/home">
+                                <img src={barcouncil} alt="barcouncil" className="backshots" />
+                              </a>
+                              <a href="http://www.trai.gov.in/">
+                                <img src={trai} alt="trai" className="backshots" />
+                              </a>
+                              <a href="https://www.iba.org.in/index.html">
+                                <img src={bcsbi} alt="bcsbi" className="backshots" />
+                              </a>
+                              <a href="https://lawmin.gov.in/">
+                                <img src={mlj} alt="mlj" className="backshots" />
+                              </a>
+              
+                              {/* <img src={strap} alt="Media Strap" /> */}
+                            </div>
+                          </div>
             </div>
             </div>
             <div className="col-md-6 aff_Cont">
