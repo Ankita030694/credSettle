@@ -107,25 +107,25 @@
 .marquee-content2 img {
   width: auto; /* Adjust width automatically */
   height: 100%; /* Make sure it fits inside the container */
-  max-height: 8vh; /* Adjusts height relative to viewport height */
+  max-height: 15vh; /* Adjusts height relative to viewport height */
 }
 
 /* Adjust max-height dynamically based on screen size */
 @media (max-width: 1024px) {
   .marquee-content2 img {
-    max-height: 6vh; /* Reduce size for smaller screens */
+    max-height: 15vh; /* Reduce size for smaller screens */
   }
 }
 
 @media (max-width: 768px) {
   .marquee-content2 img {
-    max-height: 5vh;
+    max-height: 15vh;
   }
 }
 
 @media (max-width: 480px) {
   .marquee-content2 img {
-    max-height: 4vh;
+    max-height: 15vh;
   }
 }
 
