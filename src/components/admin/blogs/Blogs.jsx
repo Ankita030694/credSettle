@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { collection, getDocs, doc, deleteDoc, updateDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../../../firebase";
-import "./Blogs.css"
+import "./Blogs.css";
 
 const Blogs = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [editingBlog, setEditingBlog] = useState(null); // Blog to be edited
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const entriesPerPage = 5;
 
   // Format date as dd/mm/yyyy
   const formatDate = (dateStr) => {
@@ -18,33 +28,35 @@ const Blogs = () => {
     return `${parts[2]}/${parts[1]}/${parts[0]}`;
   };
 
-  // Fetch blogs from Firestore
- // Fetch blogs from Firestore and sort by date
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const blogCollection = collection(db, "blogs");
-      const querySnapshot = await getDocs(blogCollection);
-      const fetchedData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
+  // Fetch blogs from Firestore and sort by date
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const blogCollection = collection(db, "blogs");
+        const querySnapshot = await getDocs(blogCollection);
+        const fetchedData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
 
-      // Sort by date (assuming 'date' is in 'yyyy-mm-dd' format)
-      const sortedData = fetchedData.sort((a, b) => new Date(b.date) - new Date(a.date));
+        // Sort by date (assuming 'date' is in 'yyyy-mm-dd' format)
+        const sortedData = fetchedData.sort(
+          (a, b) => new Date(b.date) - new Date(a.date)
+        );
 
-      setData(sortedData);
-    } catch (error) {
-      console.error("Error fetching documents: ", error);
-    }
-  };
-  fetchData();
-}, []);
-
+        setData(sortedData);
+      } catch (error) {
+        console.error("Error fetching documents: ", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   // Delete blog
   const handleDelete = async (blogId) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this blog?"
+    );
     if (!confirmDelete) return;
 
     try {
@@ -67,6 +79,7 @@ useEffect(() => {
         date: e.target.date.value,
         title: e.target.title.value,
         subtitle: e.target.subtitle.value,
+        image: e.target.image.value,
         description: e.target.description.value,
       };
 
@@ -89,19 +102,45 @@ useEffect(() => {
       alert("Failed to update blog!");
     }
   };
+
+  // Filter blogs based on search query
   const filteredBlogs = data.filter((blog) =>
     blog.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
- // Helper function to truncate the blog description to 40 words
- const truncateDescription = (description, wordLimit = 20) => {
-  if (!description) return "";
-  const words = description.split(" ");
-  if (words.length <= wordLimit) {
-    return description;
+  // Pagination calculations
+  const totalPages = Math.ceil(filteredBlogs.length / entriesPerPage);
+  const indexOfLastEntry = currentPage * entriesPerPage;
+  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+  const currentEntries = filteredBlogs.slice(
+    indexOfFirstEntry,
+    indexOfLastEntry
+  );
+
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Calculate visible pages (2 before and 2 after the current page)
+  const visiblePages = [];
+  for (
+    let i = Math.max(1, currentPage - 2);
+    i <= Math.min(totalPages, currentPage + 2);
+    i++
+  ) {
+    visiblePages.push(i);
   }
-  return words.slice(0, wordLimit).join(" ") + "...";
-};
+
+  // Helper function to truncate the blog description to 20 words
+  const truncateDescription = (description, wordLimit = 20) => {
+    if (!description) return "";
+    const words = description.split(" ");
+    if (words.length <= wordLimit) {
+      return description;
+    }
+    return words.slice(0, wordLimit).join(" ") + "...";
+  };
+
   return (
     <div className="dashboard-container">
       {/* Filter Section */}
@@ -114,21 +153,44 @@ useEffect(() => {
             type="text"
             placeholder="Search by Title..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setCurrentPage(1); // Reset to first page on new search
+            }}
             className="search-input"
           />
         </div>
         <div className="logout-container mx-1">
-          <Link to="/admin/addnew">
+          <a href="/admin/dashboard">
+            <button className="filter-button">Dashboard</button>
+          </a>
+        </div>
+        <div className="logout-container mx-1">
+          <a href="/admin/addnew">
             <button className="filter-button">Add New</button>
-          </Link>
+          </a>
         </div>
       </div>
-
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="pagination-controls d-flex justify-content-center my-2 align-items-center">
+          {visiblePages.map((pageNum) => (
+            <button
+              key={pageNum}
+              className={`btn mx-1 ${
+                currentPage === pageNum ? "btn-primary" : "btn-outline-primary"
+              }`}
+              onClick={() => handlePageClick(pageNum)}
+            >
+              {pageNum}
+            </button>
+          ))}
+        </div>
+      )}
       {/* Table Section */}
       <div className="table-section">
         <div className="table-wrapper">
-        <table className="data-table">
+          <table className="data-table">
             <thead>
               <tr>
                 <th>Date</th>
@@ -140,19 +202,25 @@ useEffect(() => {
               </tr>
             </thead>
             <tbody>
-              {filteredBlogs.map((blog) => (
+              {currentEntries.map((blog) => (
                 <tr key={blog.id} className="data-row">
                   <td>{formatDate(blog.date)}</td>
-                  <td><h4>{blog.title}</h4></td>
+                  <td>
+                    <h4>{blog.title}</h4>
+                  </td>
                   <td>{blog.subtitle}</td>
                   <td>
                     <div
                       className="blog-description"
                       style={{ textAlign: "left" }}
-                      dangerouslySetInnerHTML={{ __html: truncateDescription(blog.description) }}
+                      dangerouslySetInnerHTML={{
+                        __html: truncateDescription(blog.description),
+                      }}
                     ></div>
                   </td>
-                  <td><img src={blog.image} alt="" style={{ width: "30%" }} /></td>
+                  <td>
+                    <img src={blog.image} alt="" style={{ width: "30%" }} />
+                  </td>
                   <td>
                     <button
                       onClick={() => setEditingBlog(blog)}
@@ -185,7 +253,9 @@ useEffect(() => {
               ))}
             </tbody>
           </table>
-          {filteredBlogs.length === 0 && <p className="no-results">No blogs found</p>}
+          {filteredBlogs.length === 0 && (
+            <p className="no-results">No blogs found</p>
+          )}
         </div>
       </div>
 
@@ -221,6 +291,16 @@ useEffect(() => {
                   type="text"
                   name="subtitle"
                   defaultValue={editingBlog.subtitle}
+                  required
+                  className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <label>Image:</label>
+                <input
+                  type="text"
+                  name="image"
+                  defaultValue={editingBlog.image}
                   required
                   className="form-input"
                 />

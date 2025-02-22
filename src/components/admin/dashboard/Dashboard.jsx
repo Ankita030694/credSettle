@@ -4,12 +4,18 @@ import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db, auth } from "../../../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+
+  // Pagination State
+  const [currentPage, setCurrentPage] = useState(1);
+  const entriesPerPage = 5;
+  const [totalEntries, setTotalEntries] = useState(0);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -20,61 +26,52 @@ const Dashboard = () => {
 
     return () => unsubscribe(); // Cleanup the listener
   }, [navigate]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Get a reference to the "contacts" collection
         const contactsCollection = collection(db, "Form");
-
-        // Get the documents in the "contacts" collection
         const querySnapshot = await getDocs(contactsCollection);
 
-        // Map through the documents and extract data
         const fetchedData = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        // Sort by 'created' field in descending order
+
         const sortedData = fetchedData.sort(
           (a, b) => new Date(b.created) - new Date(a.created)
         );
-        // Store the fetched data in the state
+
         setData(sortedData);
         setFilteredData(sortedData);
+        setTotalEntries(sortedData.length);
       } catch (error) {
         console.error("Error fetching documents: ", error);
       }
     };
 
-    fetchData(); // Call fetch function
+    fetchData();
   }, []);
+
   const handleDelete = async (id) => {
-    // Ask for confirmation before deleting
     const isConfirmed = window.confirm(
       "Are you sure you want to delete this record?"
     );
-
     if (isConfirmed) {
       try {
-        // Get a reference to the document to delete
-        const docRef = doc(db, "Form", id); // Ensure you pass the correct document reference
-
-        // Delete the document from Firestore
-        await deleteDoc(docRef);
-
-        // After deletion, filter out the deleted document from the state
+        await deleteDoc(doc(db, "Form", id));
         setData((prevData) => prevData.filter((person) => person.id !== id));
-        console.log("Document deleted successfully!");
+        setFilteredData((prevData) =>
+          prevData.filter((person) => person.id !== id)
+        );
+        setTotalEntries((prev) => prev - 1);
       } catch (error) {
         console.error("Error deleting document: ", error);
       }
-    } else {
-      console.log("Deletion cancelled");
     }
   };
 
   const handleFilter = () => {
-    // If no fromDate or toDate, just return all data
     if (!fromDate || !toDate) {
       setFilteredData(data);
       return;
@@ -84,25 +81,51 @@ const Dashboard = () => {
     const toTimestamp = new Date(toDate).getTime();
 
     const filtered = data.filter((person) => {
-      const personTimestamp = new Date(person.created).getTime(); // Assuming 'created' is a timestamp
+      const personTimestamp = new Date(person.created).getTime();
       return personTimestamp >= fromTimestamp && personTimestamp <= toTimestamp;
     });
 
-    setFilteredData(filtered); // Update the filtered data
+    setFilteredData(filtered);
+    setTotalEntries(filtered.length);
+    setCurrentPage(1); // Reset to first page after filtering
   };
+
   const handleLogout = async () => {
     try {
-      await signOut(auth); // Firebase sign out
-      navigate("/login"); // Redirect to login after logout
+      await signOut(auth);
+      navigate("/login");
     } catch (error) {
       console.error("Logout failed:", error);
     }
   };
 
+  // Pagination Logic
+  const totalPages = Math.ceil(totalEntries / entriesPerPage);
+  const indexOfLastEntry = currentPage * entriesPerPage;
+  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+  const currentEntries = filteredData.slice(
+    indexOfFirstEntry,
+    indexOfLastEntry
+  );
+
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Calculate visible pages (2 before & 2 after the current page)
+  const visiblePages = [];
+  for (
+    let i = Math.max(1, currentPage - 2);
+    i <= Math.min(totalPages, currentPage + 2);
+    i++
+  ) {
+    visiblePages.push(i);
+  }
+
   return (
     <div className="dashboard-container">
       {/* Filter Section */}
-      <div className="filter-section mb-5">
+      <div className="filter-section ">
         <label className="filter-label">From:</label>
         <input
           type="date"
@@ -125,21 +148,32 @@ const Dashboard = () => {
             <button className="filter-button">Blogs</button>
           </Link>
         </div>
-        {/* Logout Button */}
         <div className="logout-container mx-3">
           <button className="filter-button" onClick={handleLogout}>
             Logout
           </button>
         </div>
       </div>
-
+      {/* Pagination Controls */}
+      <div className="pagination-controls d-flex justify-content-center my-2 align-items-center">
+        {visiblePages.map((pageNum) => (
+          <button
+            key={pageNum}
+            className={`btn mx-1 ${
+              currentPage === pageNum ? "btn-primary" : "btn-outline-primary"
+            }`}
+            onClick={() => handlePageClick(pageNum)}
+          >
+            {pageNum}
+          </button>
+        ))}
+      </div>
       {/* Table Section */}
       <div className="table-section">
         <div className="table-wrapper">
           <table className="data-table">
             <thead>
               <tr>
-                {/* Table Headers */}
                 <th>Date</th>
                 <th>Name</th>
                 <th>Number</th>
@@ -156,7 +190,7 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {filteredData.map((person) => (
+              {currentEntries.map((person) => (
                 <tr key={person.id} className="data-row">
                   <td>{new Date(person.created).toLocaleString()}</td>
                   <td>{person.name}</td>
@@ -175,8 +209,8 @@ const Dashboard = () => {
                       href="#"
                       className="delete-link"
                       onClick={(e) => {
-                        e.preventDefault(); // Prevent default link behavior
-                        handleDelete(person.id); // Pass the person.id to handleDelete
+                        e.preventDefault();
+                        handleDelete(person.id);
                       }}
                     >
                       Delete
