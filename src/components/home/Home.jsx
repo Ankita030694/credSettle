@@ -120,7 +120,7 @@ const Home = () => {
               <div className="result1">
                 <p>Your Settlement Amount:</p>
                 <div className="result2">
-                  ₹{formatIndianNumber(withCredSettle)} or more
+                  ₹{formatIndianNumber(withCredSettle)} or less
                 </div>
               </div>
               <div className="result1">
