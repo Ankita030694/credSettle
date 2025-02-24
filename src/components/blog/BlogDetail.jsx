@@ -20,20 +20,21 @@ const BlogDetail = () => {
           ...doc.data(),
         }));
 
-        console.log("Fetched Blogs:", blogs); // Debugging - check if blogs are fetched
-
-        // Function to normalize slugs
+        // Function to normalize and sanitize slugs properly
         const formatSlug = (title) =>
           title
+            .normalize("NFKD") // Normalize special characters (é → e)
+            .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
             .toLowerCase()
             .trim()
-            .replace(/[\s_]+/g, "-") // Convert spaces & underscores to hyphens
-            .replace(/[^\w-]+/g, "") // Remove ALL special characters except hyphens
-            .replace(/-+/g, "-") // Remove duplicate hyphens
-            .replace(/^-|-$/g, ""); // Trim leading and trailing hyphens
+            .replace(/[:&$@!*+=?,;'"()<>[\]{}|\\/]/g, " ") // Replace problematic special characters with space
+            .replace(/[^a-z0-9\s-]/g, "") // Remove any other non-alphanumeric characters except spaces and hyphens
+            .trim()
+            .replace(/\s+/g, "-") // Convert spaces to hyphens
+            .replace(/-+/g, "-"); // Collapse multiple hyphens into one
 
-        // Trim extra hyphen from URL slug
-        const cleanSlug = slug.replace(/^-|-$/g, "");
+        // Normalize the URL slug by collapsing multiple hyphens and trimming
+        const cleanSlug = slug.replace(/-+/g, "-").replace(/^-|-$/g, "");
 
         const blogData = blogs.find((b) => {
           const generatedSlug = formatSlug(b.title);
@@ -42,8 +43,7 @@ const BlogDetail = () => {
             generatedSlug,
             "Clean URL Slug:",
             cleanSlug
-          ); // Debugging
-
+          );
           return generatedSlug === cleanSlug;
         });
 
@@ -85,15 +85,10 @@ const BlogDetail = () => {
         <img src={blog.image} alt="" className="blog-image" />
       </div>
       <h1 className="mt-5">{blog.title}</h1>
-      <a
-        href="/blogs"
-        className="blog-link"
-        style={{ textDecoration: "none" }}
-      >
+      <a href="/blogs" className="blog-link" style={{ textDecoration: "none" }}>
         <h3 className="mt-3">{blog.subtitle}</h3>
       </a>
-      <p>{formatDate(blog.date)}</p> 
-
+      <p>{formatDate(blog.date)}</p>
 
       {/* Render the blog description using dangerouslySetInnerHTML */}
       <div
