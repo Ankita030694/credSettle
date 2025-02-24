@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
-  const entriesPerPage = 5;
+  const entriesPerPage = 50;
   const [totalEntries, setTotalEntries] = useState(0);
 
   useEffect(() => {

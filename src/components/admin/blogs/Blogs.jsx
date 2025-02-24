@@ -17,7 +17,7 @@ const Blogs = () => {
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const entriesPerPage = 5;
+  const entriesPerPage = 10;
 
   // Format date as dd/mm/yyyy
   const formatDate = (dateStr) => {
