@@ -363,7 +363,7 @@ h1 {
 }
 
 .bar-values1 {
-  top: 50%;
+  top: 84%;
   right: 0;
   width: 50%; /* Adjust to fit within bar */
   transform: translateY(-50%);
@@ -381,11 +381,12 @@ h1 {
   .bar-values1 {
     font-size: 12px; /* Reduce text size for mobile */
     width: 51%; /* Adjust width */
+    top: 75%;
   }
   .bar-values{
     font-size: 12px; /* Reduce text size for mobile */
     width: 66.5%; /* Adjust width */
-    top: 73%;
+    top: 75%;
   }
 }
 

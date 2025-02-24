@@ -23,7 +23,7 @@ input[type="range"] {
   .missedEMI{
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
+    margin-top: 5px;
     width: 50%;
     text-align: center;
   }
