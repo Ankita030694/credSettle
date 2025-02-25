@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./Blog.css";
-import banner from "../../assets/images/bgImage.png";
 
 const BlogDetail = () => {
   const { slug } = useParams(); // Get the slug from the URL
@@ -59,14 +58,6 @@ const BlogDetail = () => {
 
     fetchBlog();
   }, [slug]);
-
-  // Function to generate a slug from the title
-  const generateSlug = (title) => {
-    return title
-      .toLowerCase()
-      .replace(/ /g, "-")
-      .replace(/[^\w-]+/g, "");
-  };
 
   if (!blog) {
     return <p>Loading...</p>;
