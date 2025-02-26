@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import "./Blog.css";
@@ -71,28 +72,45 @@ const BlogDetail = () => {
   };
 
   return (
-    <div className="blog-detail">
-      <div className="blog-image-container">
-        <img src={blog.image} alt="" className="blog-image" />
-      </div>
-      <h1 className="mt-5">{blog.title}</h1>
-      <a href="/blogs" className="blog-link" style={{ textDecoration: "none" }}>
-        <h3 className="mt-3">{blog.subtitle}</h3>
-      </a>
-      <p>{formatDate(blog.date)}</p>
+    <>
+      <Helmet>
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.metaDescription || blog.subtitle} />
+        {/* Open Graph tags for social sharing */}
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.metaDescription || blog.subtitle} />
+        <meta property="og:image" content={blog.image} />
+        <meta property="og:type" content="article" />
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.metaDescription || blog.subtitle} />
+        <meta name="twitter:image" content={blog.image} />
+      </Helmet>
 
-      {/* Render the blog description using dangerouslySetInnerHTML */}
-      <div
-        className="blog-description mt-5"
-        dangerouslySetInnerHTML={{ __html: blog.description }}
-        style={{ textAlign: "left" }}
-      />
-      <a href="/form">
-        <button className="btn btn-primary get-started-btn1">
-          Register Now
-        </button>
-      </a>
-    </div>
+      <div className="blog-detail">
+        <div className="blog-image-container">
+          <img src={blog.image} alt="" className="blog-image" />
+        </div>
+        <h1 className="mt-5">{blog.title}</h1>
+        <a href="/blogs" className="blog-link" style={{ textDecoration: "none" }}>
+          <h3 className="mt-3">{blog.subtitle}</h3>
+        </a>
+        <p>{formatDate(blog.date)}</p>
+
+        {/* Render the blog description using dangerouslySetInnerHTML */}
+        <div
+          className="blog-description mt-5"
+          dangerouslySetInnerHTML={{ __html: blog.description }}
+          style={{ textAlign: "left" }}
+        />
+        <a href="/form">
+          <button className="btn btn-primary get-started-btn1">
+            Register Now
+          </button>
+        </a>
+      </div>
+    </>
   );
 };
 

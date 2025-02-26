@@ -6,6 +6,7 @@ import "react-quill/dist/quill.snow.css"; // Import Quill styles
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../firebase"; // Import Firebase instance
 import "./AddNew.css"; // Import the CSS file
+import { Helmet } from "react-helmet"; // Add this import
 
 const AddNew = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const AddNew = () => {
         title: data.title,
         subtitle: data.subtitle,
         description: data.description, // Save rich HTML content
+        metaDescription: data.metaDescription, // Add meta description to Firebase
         date: data.date,
         image: data.imageUrl,
         created: Date.now(),
@@ -39,6 +41,11 @@ const AddNew = () => {
 
   return (
     <div className="dashboard-container1">
+      <Helmet>
+        <title>Add New Blog - Admin Dashboard</title>
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
+      
       <h1 className="form-title">Add New Blog</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="blog-form">
         <div className="form-group">
@@ -112,6 +119,25 @@ const AddNew = () => {
           />
           {errors.description && (
             <p className="error-message">{errors.description.message}</p>
+          )}
+        </div>
+
+        <div className="form-group">
+          <label>Meta Description (for SEO):</label>
+          <textarea
+            {...register("metaDescription", {
+              required: "Meta description is required",
+              maxLength: {
+                value: 160,
+                message: "Meta description should not exceed 160 characters"
+              }
+            })}
+            className="form-input"
+            placeholder="Enter a compelling meta description (max 160 characters)"
+            rows="3"
+          />
+          {errors.metaDescription && (
+            <p className="error-message">{errors.metaDescription.message}</p>
           )}
         </div>
 
