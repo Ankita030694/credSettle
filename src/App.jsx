@@ -34,6 +34,7 @@ import NotFound from "./components/notFound/NotFound";
 import Thanks from "./components/thanks/Thanks";
 import Contact from "./components/contact us/Contact";
 import { Analytics } from "@vercel/analytics/react";
+import BlogMain from "./components/blog/BlogMain";
 
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
           <Route path="/services" element={<ServicesMain/>} />
           <Route path="/faq" element={<WhyusMain/>} />
           <Route path="/testimonials" element={<TestimonialsMain/>} />
-          <Route path="/blogs" element={<Blog/>} />
+          <Route path="/blogs" element={<BlogMain/>} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/services/personalloan" element={<PersonalLoan/>} />
           <Route path="/services/creditloan" element={<CreditLoan/>} />
