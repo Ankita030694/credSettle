@@ -22,6 +22,7 @@ const AddNew = () => {
     try {
       const docRef = await addDoc(collection(db, "blogs"), {
         title: data.title,
+        metaTitle: data.metaTitle,
         subtitle: data.subtitle,
         description: data.description, // Save rich HTML content
         metaDescription: data.metaDescription, // Add meta description to Firebase
@@ -69,6 +70,26 @@ const AddNew = () => {
           />
           {errors.title && (
             <p className="error-message">{errors.title.message}</p>
+          )}
+        </div>
+
+        <div className="form-group">
+          <label>Meta Title (for SEO):</label>
+          <small>Optimal length: 50-60 characters. Include important keywords.</small>
+          <input
+            type="text"
+            {...register("metaTitle", {
+              required: "Meta title is required",
+              maxLength: {
+                value: 60,
+                message: "Meta title should not exceed 60 characters"
+              }
+            })}
+            className="form-input"
+            placeholder="Example: Debt Freedom Guide: 10 Steps to Get Out of Debt Fast (2024) | CredSettle"
+          />
+          {errors.metaTitle && (
+            <p className="error-message">{errors.metaTitle.message}</p>
           )}
         </div>
 

@@ -74,7 +74,8 @@ const BlogDetail = () => {
   return (
     <>
       <Helmet>
-        <title>{blog.title}</title>
+        <title>{blog.metaTitle || blog.title}</title>
+        <meta name="title" content={blog.metaTitle || blog.title} />
         <meta name="description" content={blog.metaDescription || blog.subtitle} />
         {/* Open Graph tags for social sharing */}
         <meta property="og:title" content={blog.title} />
