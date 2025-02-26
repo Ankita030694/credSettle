@@ -49,9 +49,12 @@ const Home = () => {
             <h1 className="tagline">
               SETTLE YOUR LOANS AND STOP YOUR HARASSEMENT IN 24 HOURS
             </h1>
-            {/* <button className="btn btn-primary get-started-btn mt-4">
+            <a href="/form">
+            <button className="btn btn-primary get-started-btn mt-4">
               Register Now
-            </button> */}
+            </button>
+            </a>
+           
           </div>
 
           {/* Second Column - Image */}
