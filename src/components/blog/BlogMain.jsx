@@ -284,7 +284,7 @@ const BlogMain = () => {
                               __html: truncateDescription(blog.description, 40),
                             }}
                           />
-                          <a href={`/blogs/${generateSlug(blog.title)}`} className="btn btn-outline-primary align-self-start">
+                          <a href={`/blogs/${generateSlug(blog.title)}`} className="btn btn-outline-primary align-self-end">
                             Read More
                           </a>
                         </div>

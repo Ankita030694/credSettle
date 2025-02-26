@@ -147,6 +147,7 @@ const Blogs = () => {
       <div className="filter-section justify-content-between">
         <div className="blogsadmin">
           <h1>Blogs</h1>
+          <p>Total Blogs: {filteredBlogs.length}</p>
         </div>
         <div className="search-container">
           <input
