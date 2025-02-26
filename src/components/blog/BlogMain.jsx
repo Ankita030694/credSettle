@@ -251,13 +251,13 @@ const BlogMain = () => {
                 <div className="col-12" key={blog.id}>
                   <div className="card mb-4 border-0 shadow-sm hover-scale">
                     <div className="row g-0">
-                      <div className="col-md-4 d-flex align-items-center">
+                      <div className="col-md-4 d-flex align-items-center" style={{marginBottom: "0px"}}>
                         <a href={`/blogs/${generateSlug(blog.title)}`} className="w-100">
                           <img
                             src={blog.image || blogImage}
                             alt={blog.title}
                             className="img-fluid rounded-start"
-                            style={{height: "250px", width: "100%", objectFit: "cover"}}
+                            style={{height: "350px", width: "100%", objectFit: "cover"}}
                             onError={(e) => {
                               e.target.onerror = null;
                               e.target.src = blogImage;
