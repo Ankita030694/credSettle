@@ -75,7 +75,7 @@ const AddNew = () => {
 
         <div className="form-group">
           <label>Meta Title (for SEO):</label>
-          <small>Optimal length: 50-60 characters. Include important keywords.</small>
+          <small>Optimal length: 50-60 characters</small>
           <input
             type="text"
             {...register("metaTitle", {

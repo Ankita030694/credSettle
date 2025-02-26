@@ -74,11 +74,12 @@ const Blogs = () => {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Prepare the updated data from form fields
       const updatedBlog = {
         date: e.target.date.value,
         title: e.target.title.value,
+        metaTitle: e.target.metaTitle.value,
         subtitle: e.target.subtitle.value,
+        metaDescription: e.target.metaDescription.value,
         image: e.target.image.value,
         description: e.target.description.value,
       };
@@ -94,7 +95,6 @@ const Blogs = () => {
         )
       );
 
-      // Close the edit modal
       setEditingBlog(null);
       alert("Blog updated successfully!");
     } catch (error) {
@@ -287,6 +287,17 @@ const Blogs = () => {
                 />
               </div>
               <div className="form-group">
+                <label>Meta Title (for SEO):</label>
+                <small>Optimal length: 50-60 characters</small>
+                <input
+                  type="text"
+                  name="metaTitle"
+                  defaultValue={editingBlog.metaTitle}
+                  className="form-input"
+                  placeholder="Example: Debt Freedom Guide: 10 Steps to Get Out of Debt Fast (2024) | CredSettle"
+                />
+              </div>
+              <div className="form-group">
                 <label>Sub-Title:</label>
                 <input
                   type="text"
@@ -294,6 +305,17 @@ const Blogs = () => {
                   defaultValue={editingBlog.subtitle}
                   required
                   className="form-input"
+                />
+              </div>
+              <div className="form-group">
+                <label>Meta Description (for SEO):</label>
+                <small>Optimal length: 150-160 characters.</small>
+                <textarea
+                  name="metaDescription"
+                  defaultValue={editingBlog.metaDescription}
+                  className="form-input"
+                  rows={3}
+                  placeholder="Write a compelling description that will appear in search results..."
                 />
               </div>
               <div className="form-group">
