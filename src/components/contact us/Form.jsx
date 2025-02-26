@@ -16,6 +16,8 @@ const Form = () => {
 
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+  const [numberError, setNumberError] = useState("");
+
 
   const {
     register,
@@ -26,6 +28,11 @@ const Form = () => {
 
   const onSubmit = async (data) => {
     if (loading) return;
+    if (!data.number || data.number.length !== 10) {
+      setNumberError("Please enter a valid 10-digit number.");
+      return;
+    }
+    setNumberError(""); // Clear error if valid
     setLoading(true);
     const today = new Date();
     const formattedDate = `${String(today.getDate()).padStart(2, "0")}-${String(
@@ -51,9 +58,15 @@ const Form = () => {
   };
 
   const handleNumberInput = (e) => {
-    const value = e.target.value.replace(/\D/g, "").slice(0, 10);
-    setValue("number", value);
+    let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+  
+    if (value.length > 10) {
+      value = value.slice(0, 10); // Restrict input to 10 digits
+    }
+  
+    setValue("number", value); // Allow input and restrict in validation
   };
+  
 
   const handleEmailInput = (e) => {
     const value = e.target.value;
@@ -134,8 +147,9 @@ const Form = () => {
               onInput={handleNumberInput}
             />
             {errors.number && (
-              <p className="text-danger">{errors.number.message}</p>
+              <p className="text-danger">{errors.number.message}</p>  
             )}
+            {numberError && <p className="text-danger">{numberError}</p>}
           </div>
 
           <div className="col-md-12 form_container">
