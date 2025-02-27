@@ -285,9 +285,9 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li className="nav-item text-center mt-5">
-                    <a href="/form">
+                    <a href="/contact">
                       <button className="btn btn-primary get-started-btn2">
-                        Register Now
+                        Contact Us
                       </button>
                     </a>
                   </li>

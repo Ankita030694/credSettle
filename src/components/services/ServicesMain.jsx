@@ -34,11 +34,11 @@ const ServicesMain = () => {
               reduce harassment, and handle recovery agents, ensuring a
               stress-free path to financial freedom
             </p>
-            <Link to="/faq">
+            <a href="/faq">
               <button className="btn btn-primary get-started-btn serv_btn">
                 Frequently Asked Questions
               </button>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -48,8 +48,8 @@ const ServicesMain = () => {
               {/* Card 1 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link
-                    to="/services/personalloan"
+                  <a
+                    href="/services/personalloan"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <FaBriefcase className="card-icon" />
@@ -61,15 +61,15 @@ const ServicesMain = () => {
                       is possible. Unlike secured loans, personal loans are
                       unsecured and can be negotiated with your lender
                     </p>
-                  </Link>
+                  </a>
                 </div>
               </div>
 
               {/* Card 2 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link
-                    to="/services/creditloan"
+                  <a
+                    href="/services/creditloan"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <FaWallet className="card-icon" />
@@ -81,15 +81,15 @@ const ServicesMain = () => {
                       solution. It has the potential to reduce your debt, save
                       you money, and improve your long-term financial outlook
                     </p>
-                  </Link>
+                  </a>
                 </div>
               </div>
 
               {/* Card 3 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link
-                    to="/services/businessloan"
+                  <a
+                    href="/services/businessloan"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <FaGlobe className="card-icon" />
@@ -102,7 +102,7 @@ const ServicesMain = () => {
                       flow, allowing your business to regain stability and focus
                       on growth
                     </p>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -110,8 +110,8 @@ const ServicesMain = () => {
               {/* Card 1 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link
-                    to="/services/carloan"
+                  <a
+                    href="/services/carloan"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <FaBriefcase className="card-icon" />
@@ -123,15 +123,15 @@ const ServicesMain = () => {
                       manageable payments, easing the fear of losing your asset
                       while restoring financial stability
                     </p>
-                  </Link>
+                  </a>
                 </div>
               </div>
 
               {/* Card 2 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link
-                    to="/services/antiharassement"
+                  <a
+                    href="/services/antiharassement"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <FaWallet className="card-icon" />
@@ -145,15 +145,15 @@ const ServicesMain = () => {
                       allowing individuals to regain control of their financial
                       future.
                     </p>
-                  </Link>
+                  </a>
                 </div>
               </div>
 
               {/* Card 3 */}
               <div className="col-md-4">
                 <div className="card-container text-center">
-                  <Link
-                    to="/services/creditloan"
+                  <a
+                    href="/services/creditloan"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <FaGlobe className="card-icon" />
@@ -165,7 +165,7 @@ const ServicesMain = () => {
                       your creditworthiness, increasing your chances of securing
                       loans and better financial opportunities in the future
                     </p>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

@@ -195,8 +195,8 @@ const Blog = () => {
           {blogs.map((blog) => (
             <div className="col-md-4" key={blog.id}>
               <div className="blog-card shadow-sm rounded">
-                <Link
-                  to={{
+                <a
+                  href={{
                     pathname: `/blogs/${generateSlug(blog.title)}`,
                     state: { fetchBlogs, page, setPage, pageCursors },
                   }}
@@ -224,7 +224,7 @@ const Blog = () => {
                       }}
                     ></div>
                   </div>
-                </Link>
+                </a>
               </div>
             </div>
           ))}

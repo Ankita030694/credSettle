@@ -63,11 +63,11 @@ const Whyus = () => {
                 effectively.
               </p>
             </div>
-            <Link to="/faq">
+            <a href="/faq">
               <button className="btn btn-primary get-started-btn mt-3">
                 Learn More
               </button>
-            </Link>
+            </a>
 
             <div className="d-flex flex-column text-center align-items-center">
               {/* <div className="d-flex flex-row rate_txt  ">

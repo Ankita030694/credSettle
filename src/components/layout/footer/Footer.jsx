@@ -171,7 +171,7 @@ const Footer = () => {
         <hr className="border-light" />
         <Row className="align-items-center justify-content-between mb-5 credits">
           <Col md={6}>
-            <p className="mb-0">&copy; 2025 CredSettle</p>
+            <p className="mb-0">&copy; 2020 CredSettle</p>
           </Col>
           <Col md={6} className="socials">
             <a href="https://x.com/Credsettle">
