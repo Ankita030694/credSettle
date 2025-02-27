@@ -1,6 +1,19 @@
+import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { app } from "../firebase.js"; // Import Firebase config
 
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAJ7rZD96MxIHQ7k4uwQgqaDpJsnKuhhJA",
+  authDomain: "credsettlee.firebaseapp.com",
+  projectId: "credsettlee",
+  storageBucket: "credsettlee.appspot.com",
+  messagingSenderId: "161160283985",
+  appId: "1:161160283985:web:aac411ccdce55c909c3570",
+  measurementId: "G-K488YV2V5N"
+};
+
+// Initialize Firebase for the serverless function
+const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Function to Convert Title to Slug
@@ -40,7 +53,7 @@ export default async function handler(req, res) {
                 loc: `/blogs/${generateSlug(doc.data().title)}`,
                 priority: "0.7"
             }))
-            .filter(route => route.loc !== "/blogs/"); // Filter out invalid routes
+            .filter(route => route.loc !== "/blogs/");
 
         // Generate XML format
         let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -60,9 +73,10 @@ export default async function handler(req, res) {
 
         // Set response headers
         res.setHeader("Content-Type", "application/xml");
+        res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
         res.status(200).send(sitemap);
     } catch (error) {
         console.error("Error generating sitemap:", error);
-        res.status(500).send("Error generating sitemap");
+        res.status(500).json({ error: error.message });
     }
 }
