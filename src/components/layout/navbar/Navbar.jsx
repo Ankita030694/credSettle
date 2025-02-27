@@ -275,7 +275,7 @@ const Navbar = () => {
                       Blogs
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a
                       className="nav-link"
                       href="/contact"
@@ -283,7 +283,7 @@ const Navbar = () => {
                     >
                       Contact
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item text-center mt-5">
                     <a href="/contact">
                       <button className="btn btn-primary get-started-btn2">
