@@ -51,7 +51,7 @@ const Testimonials = () => {
             <div className="testi_img">
               <img src={reviewCard} alt="reviewcard1" />
               <img src={reviewCard2} alt="reviewcard2" />
-              {/* <img src={reviewCard} alt="" /> */}
+              {/* <img src={reviewCard} alt="" /> */} 
             </div>
            
           </div>
