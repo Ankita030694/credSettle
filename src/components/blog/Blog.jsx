@@ -196,10 +196,7 @@ const Blog = () => {
             <div className="col-md-4" key={blog.id}>
               <div className="blog-card shadow-sm rounded">
                 <a
-                  href={{
-                    pathname: `/blogs/${generateSlug(blog.title)}`,
-                    state: { fetchBlogs, page, setPage, pageCursors },
-                  }}
+                  href={`/blogs/${generateSlug(blog.title)}`}
                   className="blog-link"
                   style={{ textDecoration: "none" }}
                 >

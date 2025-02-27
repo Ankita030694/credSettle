@@ -195,11 +195,11 @@ const AboutMain = () => {
               <b style={{ fontWeight: "900", color: "blue" }}>|</b> Legal
               Assistance for Loan Settlement
             </p>
-            <Link to="/services">
+            <a href="/services">
               <button className="btn btn-primary get-started-btn mt-4">
                 Know About Our Services
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
