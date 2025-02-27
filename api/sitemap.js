@@ -41,7 +41,8 @@ const staticRoutes = [
     { loc: "/services/antiharassement", priority: "0.8" },
     { loc: "/services/creditscore", priority: "0.8" },
     { loc: "/privacypolicy", priority: "0.5" },
-    { loc: "/termscondition", priority: "0.5" }
+    { loc: "/termscondition", priority: "0.5" },
+    { loc: "/contact", priority: "0.5" }
 ];
 
 export default async function handler(req, res) {
